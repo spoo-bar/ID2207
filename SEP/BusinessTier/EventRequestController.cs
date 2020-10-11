@@ -34,11 +34,6 @@ namespace BusinessTier
             }
         }
 
-        public EventRequest Find(string recordNr)
-        {
-            return eventRequests.Find(eventRequest => eventRequest.RecordNr.Equals(recordNr));
-        }
-
         public void AddFeedback(string feedback, EventRequest eventRequest)
         {
             eventRequest.FinancialFeedback = feedback;

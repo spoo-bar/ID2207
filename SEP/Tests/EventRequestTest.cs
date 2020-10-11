@@ -70,23 +70,6 @@ namespace Tests
         }
 
         [DataTestMethod]
-        [DataRow("123abc", true)]
-        [DataRow("wrongNr", false)]
-        public void FindEventRequest(string recordNr, bool exists)
-        {
-            //Arrange
-            EventRequestController eventRequestController = new EventRequestController();
-            eventRequestController.EventRequests.Clear();
-            eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
-
-            //Act
-            EventRequest eventRequest = eventRequestController.Find(recordNr);
-
-            //Assert
-            Assert.AreEqual(exists, eventRequest != null);
-        }
-
-        [DataTestMethod]
         [DataRow("test")]
         public void AddFeedbackToEventRequest(string feedback)
         {
