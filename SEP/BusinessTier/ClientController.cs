@@ -18,11 +18,6 @@ namespace BusinessTier
             clients.Add(client);
         }
 
-        public Client Find(string firstName)
-        {
-            return clients.Find(client => client.FirstName.Equals(firstName));
-        }
-
         public List<Client> Clients { get {return clients; }}
     }
 }
