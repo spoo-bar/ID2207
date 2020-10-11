@@ -1,0 +1,9 @@
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Debug\BusinessTier.dll
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Debug\BusinessTier.pdb
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Debug\DataTier.dll
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Debug\DataTier.pdb
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Debug\BusinessTier.csprojAssemblyReference.cache
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Debug\BusinessTier.csproj.CoreCompileInputs.cache
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Debug\BusinessTier.csproj.CopyComplete
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Debug\BusinessTier.dll
+C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Debug\BusinessTier.pdb

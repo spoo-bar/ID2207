@@ -1,0 +1,16 @@
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\bin\Debug\PresentationTier.exe.config
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\bin\Debug\PresentationTier.exe
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\bin\Debug\PresentationTier.pdb
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\bin\Debug\BusinessTier.dll
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\bin\Debug\DataTier.dll
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\bin\Debug\BusinessTier.pdb
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\bin\Debug\DataTier.pdb
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.csprojAssemblyReference.cache
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.ClientForm.resources
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.EventRequestForm.resources
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.Properties.Resources.resources
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.cache
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.csproj.CoreCompileInputs.cache
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.csproj.CopyComplete
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.exe
+C:\Users\bubri\source\repos\ID2207\SEP\PresentationTier\obj\Debug\PresentationTier.pdb

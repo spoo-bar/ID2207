@@ -1,0 +1,6 @@
+C:\Users\bubri\source\repos\ID2207\SEP\DataTier\bin\Debug\DataTier.dll
+C:\Users\bubri\source\repos\ID2207\SEP\DataTier\bin\Debug\DataTier.pdb
+C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Debug\DataTier.csprojAssemblyReference.cache
+C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Debug\DataTier.csproj.CoreCompileInputs.cache
+C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Debug\DataTier.dll
+C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Debug\DataTier.pdb
