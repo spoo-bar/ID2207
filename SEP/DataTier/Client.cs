@@ -2,11 +2,11 @@
 {
     public class Client
     {
-        public Client(string FirstName, string LastName, string PhoneNr)
+        public Client(string firstName, string lastName, string phoneNr)
         {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.PhoneNr = PhoneNr;
+            FirstName = firstName;
+            LastName = lastName;
+            PhoneNr = phoneNr;
         }
 
         public string FirstName { get; set; }

@@ -12,15 +12,17 @@ namespace BusinessTier
             
         }
 
-        public void Create(string FirstName, string LastName, string PhoneNr)
+        public void Create(string firstName, string lastName, string phoneNr)
         {
-            Client client = new Client(FirstName, LastName, PhoneNr);
+            Client client = new Client(firstName, lastName,phoneNr);
             clients.Add(client);
         }
 
-        public Client Find(string FirstName)
+        public Client Find(string firstName)
         {
-            return clients.Find(client => client.FirstName.Equals(FirstName));
+            return clients.Find(client => client.FirstName.Equals(firstName));
         }
+
+        public List<Client> Clients { get {return clients; }}
     }
 }

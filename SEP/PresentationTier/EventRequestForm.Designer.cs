@@ -28,35 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textAttendees = new System.Windows.Forms.TextBox();
-            this.labelAttendees = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.recordNrTextBox = new System.Windows.Forms.TextBox();
+            this.recordNrLabel = new System.Windows.Forms.Label();
+            this.attendeesLabel = new System.Windows.Forms.Label();
+            this.clientLabel = new System.Windows.Forms.Label();
+            this.clientListBox = new System.Windows.Forms.ListBox();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eventTypeLabel = new System.Windows.Forms.Label();
+            this.eventTypeTextBox = new System.Windows.Forms.TextBox();
+            this.attendeesNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.fromLabel = new System.Windows.Forms.Label();
+            this.toLabel = new System.Windows.Forms.Label();
+            this.toDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.budgetLabel = new System.Windows.Forms.Label();
+            this.BudgetTextBox = new System.Windows.Forms.TextBox();
+            this.saveButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attendeesNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // textAttendees
+            // recordNrTextBox
             // 
-            this.textAttendees.Location = new System.Drawing.Point(120, 12);
-            this.textAttendees.Name = "textAttendees";
-            this.textAttendees.Size = new System.Drawing.Size(100, 22);
-            this.textAttendees.TabIndex = 0;
+            this.recordNrTextBox.Location = new System.Drawing.Point(129, 12);
+            this.recordNrTextBox.Name = "recordNrTextBox";
+            this.recordNrTextBox.Size = new System.Drawing.Size(100, 22);
+            this.recordNrTextBox.TabIndex = 0;
             // 
-            // labelAttendees
+            // recordNrLabel
             // 
-            this.labelAttendees.AutoSize = true;
-            this.labelAttendees.Location = new System.Drawing.Point(13, 12);
-            this.labelAttendees.Name = "labelAttendees";
-            this.labelAttendees.Size = new System.Drawing.Size(76, 17);
-            this.labelAttendees.TabIndex = 1;
-            this.labelAttendees.Text = "Attendees:";
+            this.recordNrLabel.AutoSize = true;
+            this.recordNrLabel.Location = new System.Drawing.Point(13, 12);
+            this.recordNrLabel.Name = "recordNrLabel";
+            this.recordNrLabel.Size = new System.Drawing.Size(110, 17);
+            this.recordNrLabel.TabIndex = 1;
+            this.recordNrLabel.Text = "Record number:";
             // 
-            // EventRequest
+            // attendeesLabel
+            // 
+            this.attendeesLabel.AutoSize = true;
+            this.attendeesLabel.Location = new System.Drawing.Point(13, 240);
+            this.attendeesLabel.Name = "attendeesLabel";
+            this.attendeesLabel.Size = new System.Drawing.Size(76, 17);
+            this.attendeesLabel.TabIndex = 3;
+            this.attendeesLabel.Text = "Attendees:";
+            // 
+            // clientLabel
+            // 
+            this.clientLabel.AutoSize = true;
+            this.clientLabel.Location = new System.Drawing.Point(13, 50);
+            this.clientLabel.Name = "clientLabel";
+            this.clientLabel.Size = new System.Drawing.Size(47, 17);
+            this.clientLabel.TabIndex = 4;
+            this.clientLabel.Text = "Client:";
+            // 
+            // clientListBox
+            // 
+            this.clientListBox.FormattingEnabled = true;
+            this.clientListBox.ItemHeight = 16;
+            this.clientListBox.Location = new System.Drawing.Point(129, 50);
+            this.clientListBox.Name = "clientListBox";
+            this.clientListBox.Size = new System.Drawing.Size(120, 52);
+            this.clientListBox.TabIndex = 5;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(DataTier.Client);
+            // 
+            // eventTypeLabel
+            // 
+            this.eventTypeLabel.AutoSize = true;
+            this.eventTypeLabel.Location = new System.Drawing.Point(13, 119);
+            this.eventTypeLabel.Name = "eventTypeLabel";
+            this.eventTypeLabel.Size = new System.Drawing.Size(79, 17);
+            this.eventTypeLabel.TabIndex = 7;
+            this.eventTypeLabel.Text = "Event type:";
+            // 
+            // eventTypeTextBox
+            // 
+            this.eventTypeTextBox.Location = new System.Drawing.Point(129, 119);
+            this.eventTypeTextBox.Name = "eventTypeTextBox";
+            this.eventTypeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.eventTypeTextBox.TabIndex = 6;
+            // 
+            // attendeesNumericUpDown
+            // 
+            this.attendeesNumericUpDown.Location = new System.Drawing.Point(129, 240);
+            this.attendeesNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.attendeesNumericUpDown.Name = "attendeesNumericUpDown";
+            this.attendeesNumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.attendeesNumericUpDown.TabIndex = 8;
+            // 
+            // fromDateTimePicker
+            // 
+            this.fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fromDateTimePicker.Location = new System.Drawing.Point(129, 164);
+            this.fromDateTimePicker.Name = "fromDateTimePicker";
+            this.fromDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.fromDateTimePicker.TabIndex = 9;
+            this.fromDateTimePicker.Value = new System.DateTime(2020, 10, 11, 0, 0, 0, 0);
+            // 
+            // fromLabel
+            // 
+            this.fromLabel.AutoSize = true;
+            this.fromLabel.Location = new System.Drawing.Point(13, 169);
+            this.fromLabel.Name = "fromLabel";
+            this.fromLabel.Size = new System.Drawing.Size(44, 17);
+            this.fromLabel.TabIndex = 10;
+            this.fromLabel.Text = "From:";
+            // 
+            // toLabel
+            // 
+            this.toLabel.AutoSize = true;
+            this.toLabel.Location = new System.Drawing.Point(13, 207);
+            this.toLabel.Name = "toLabel";
+            this.toLabel.Size = new System.Drawing.Size(29, 17);
+            this.toLabel.TabIndex = 12;
+            this.toLabel.Text = "To:";
+            // 
+            // toDateTimePicker
+            // 
+            this.toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.toDateTimePicker.Location = new System.Drawing.Point(129, 202);
+            this.toDateTimePicker.Name = "toDateTimePicker";
+            this.toDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.toDateTimePicker.TabIndex = 11;
+            this.toDateTimePicker.Value = new System.DateTime(2020, 10, 11, 0, 0, 0, 0);
+            // 
+            // budgetLabel
+            // 
+            this.budgetLabel.AutoSize = true;
+            this.budgetLabel.Location = new System.Drawing.Point(13, 277);
+            this.budgetLabel.Name = "budgetLabel";
+            this.budgetLabel.Size = new System.Drawing.Size(57, 17);
+            this.budgetLabel.TabIndex = 14;
+            this.budgetLabel.Text = "Budget:";
+            // 
+            // BudgetTextBox
+            // 
+            this.BudgetTextBox.Location = new System.Drawing.Point(129, 277);
+            this.BudgetTextBox.Name = "BudgetTextBox";
+            this.BudgetTextBox.Size = new System.Drawing.Size(100, 22);
+            this.BudgetTextBox.TabIndex = 13;
+            this.BudgetTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BudgetTextBox_KeyPress);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(16, 317);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 15;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // EventRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelAttendees);
-            this.Controls.Add(this.textAttendees);
-            this.Name = "EventRequest";
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.budgetLabel);
+            this.Controls.Add(this.BudgetTextBox);
+            this.Controls.Add(this.toLabel);
+            this.Controls.Add(this.toDateTimePicker);
+            this.Controls.Add(this.fromLabel);
+            this.Controls.Add(this.fromDateTimePicker);
+            this.Controls.Add(this.attendeesNumericUpDown);
+            this.Controls.Add(this.eventTypeLabel);
+            this.Controls.Add(this.eventTypeTextBox);
+            this.Controls.Add(this.clientListBox);
+            this.Controls.Add(this.clientLabel);
+            this.Controls.Add(this.attendeesLabel);
+            this.Controls.Add(this.recordNrLabel);
+            this.Controls.Add(this.recordNrTextBox);
+            this.Name = "EventRequestForm";
             this.Text = "Request for new event";
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attendeesNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -64,8 +218,22 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textAttendees;
-        private System.Windows.Forms.Label labelAttendees;
+        private System.Windows.Forms.TextBox recordNrTextBox;
+        private System.Windows.Forms.Label recordNrLabel;
+        private System.Windows.Forms.Label attendeesLabel;
+        private System.Windows.Forms.Label clientLabel;
+        private System.Windows.Forms.ListBox clientListBox;
+        private System.Windows.Forms.BindingSource clientBindingSource;
+        private System.Windows.Forms.Label eventTypeLabel;
+        private System.Windows.Forms.TextBox eventTypeTextBox;
+        private System.Windows.Forms.NumericUpDown attendeesNumericUpDown;
+        private System.Windows.Forms.DateTimePicker fromDateTimePicker;
+        private System.Windows.Forms.Label fromLabel;
+        private System.Windows.Forms.Label toLabel;
+        private System.Windows.Forms.DateTimePicker toDateTimePicker;
+        private System.Windows.Forms.Label budgetLabel;
+        private System.Windows.Forms.TextBox BudgetTextBox;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 

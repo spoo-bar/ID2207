@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessTier", "BusinessTie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationTier", "PresentationTier\PresentationTier.csproj", "{C78325F2-A019-4AEF-8145-0A7DA3A65B36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{55801076-5246-4BC2-9486-1446634FC935}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C78325F2-A019-4AEF-8145-0A7DA3A65B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C78325F2-A019-4AEF-8145-0A7DA3A65B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C78325F2-A019-4AEF-8145-0A7DA3A65B36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55801076-5246-4BC2-9486-1446634FC935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55801076-5246-4BC2-9486-1446634FC935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55801076-5246-4BC2-9486-1446634FC935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55801076-5246-4BC2-9486-1446634FC935}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
