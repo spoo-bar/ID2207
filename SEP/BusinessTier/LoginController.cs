@@ -21,6 +21,7 @@ namespace BusinessTier
             var user = users.FirstOrDefault(u => u.Email == email);
             if (user != null)
             {
+                // TODO : Hash password and compare hashed password
                 if(user.Password.Equals(password))
                 {
                     return user;
