@@ -37,7 +37,13 @@ namespace PresentationTier
         private void SaveButton_Click(object sender, EventArgs e)
         {
             EventRequestController eventRequestController = new EventRequestController();
-            if(eventRequestController.Create(recordNrTextBox.Text, clientListBox.SelectedItem as Client, eventTypeTextBox.Text, fromDateTimePicker.Value, toDateTimePicker.Value, attendeesNumericUpDown.Value, BudgetTextBox.Text))
+            if(eventRequestController.Create(
+                recordNrTextBox.Text,
+                clientListBox.SelectedItem as Client,
+                eventTypeTextBox.Text, fromDateTimePicker.Value,
+                toDateTimePicker.Value,
+                attendeesNumericUpDown.Value,
+                BudgetTextBox.Text) != null)
             {
                 saveButton.BackColor = Color.Green;
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataTier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace PresentationTier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+
+            //todo: temp solution
+            var ev = new EventRequest("123abc", new Client("ddd", "", ""), "", DateTime.Now, DateTime.Now, 3, 23.4);
+            
+            Application.Run(new FinancialFeedbackForm(ev));
         }
     }
 }

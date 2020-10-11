@@ -17,11 +17,11 @@ namespace Tests
             eventRequestController.EventRequests.Clear();
 
             //Act
-            bool result = eventRequestController.Create("123abc", new Client("","",""), "", DateTime.Now, DateTime.Now, 3, "23.4");
+            EventRequest result = eventRequestController.Create("123abc", new Client("","",""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Assert
-            Assert.IsTrue(result);
-            Assert.AreNotEqual(eventRequestController.EventRequests.Count, 0);
+            Assert.IsNotNull(result);
+            Assert.AreNotEqual(0, eventRequestController.EventRequests.Count);
         }
 
         [TestMethod]
@@ -32,11 +32,11 @@ namespace Tests
             eventRequestController.EventRequests.Clear();
 
             //Act
-            bool result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "fdgdg");
+            EventRequest result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "fdgdg");
 
             //Assert
-            Assert.IsFalse(result);
-            Assert.AreEqual(eventRequestController.EventRequests.Count, 0);
+            Assert.IsNull(result);
+            Assert.AreEqual(0, eventRequestController.EventRequests.Count);
         }
 
         [TestMethod]
@@ -47,11 +47,11 @@ namespace Tests
             eventRequestController.EventRequests.Clear();
 
             //Act
-            bool result = eventRequestController.Create("123abc", null, "", DateTime.Now, DateTime.Now, 3, "23.4");
+            EventRequest result = eventRequestController.Create("123abc", null, "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Assert
-            Assert.IsFalse(result);
-            Assert.AreEqual(eventRequestController.EventRequests.Count, 0);
+            Assert.IsNull(result);
+            Assert.AreEqual(0, eventRequestController.EventRequests.Count);
         }
 
         [TestMethod]
@@ -62,11 +62,11 @@ namespace Tests
             eventRequestController.EventRequests.Clear();
 
             //Act
-            bool result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now.AddDays(1), DateTime.Now, 3, "23.4");
+            EventRequest result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now.AddDays(1), DateTime.Now, 3, "23.4");
 
             //Assert
-            Assert.IsFalse(result);
-            Assert.AreEqual(eventRequestController.EventRequests.Count, 0);
+            Assert.IsNull(result);
+            Assert.AreEqual(0, eventRequestController.EventRequests.Count);
         }
 
         [DataTestMethod]
@@ -83,7 +83,23 @@ namespace Tests
             EventRequest eventRequest = eventRequestController.Find(recordNr);
 
             //Assert
-            Assert.AreEqual(eventRequest != null, exists);
+            Assert.AreEqual(exists, eventRequest != null);
+        }
+
+        [DataTestMethod]
+        [DataRow("test")]
+        public void AddFeedbackToEventRequest(string feedback)
+        {
+            //Arrange
+            EventRequestController eventRequestController = new EventRequestController();
+            eventRequestController.EventRequests.Clear();
+            EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
+
+            //Act
+            eventRequestController.AddFeedback(feedback, eventRequest);
+
+            //Assert
+            Assert.AreEqual(feedback, eventRequest.FinancialFeedback);
         }
     }
 }

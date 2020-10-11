@@ -22,5 +22,6 @@ namespace DataTier
         public DateTime To { get; set; }
         public int Attendees { get; set; }
         public double Budget { get; set; }
+        public string FinancialFeedback { get; set; }
     }
 }
