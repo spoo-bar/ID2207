@@ -49,7 +49,12 @@ namespace PresentationTier
             attendeesNumericUpDown.Enabled = false;
             BudgetTextBox.Enabled = false;
 
-            if (!Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.EditEvent))
+            if(eventRequest.State == EventRequest.States.Finalized)
+            {
+                feedbackTextBox.Enabled = false;
+                saveButton.Hide();
+            }
+            else if (!Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.EditEvent))
             {//if cannot edit can only approve
                 feedbackTextBox.Enabled = false;
                 saveButton.Text = "Approve";

@@ -17,12 +17,13 @@ namespace PresentationTier
             UpdateDataGridView();
         }
 
+        //todo: place logic in business tier
         private void UpdateDataGridView()
         {
             EventRequestController eventRequestController = new EventRequestController();
             if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.ApproveEventRequest))
             {
-                requestDataGridView.DataSource = eventRequestController.EventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created).ToList();
+                requestDataGridView.DataSource = eventRequestController.EventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created || eventRequest.State == EventRequest.States.Finalized).ToList();
             }
             else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.EditEvent))
             {
