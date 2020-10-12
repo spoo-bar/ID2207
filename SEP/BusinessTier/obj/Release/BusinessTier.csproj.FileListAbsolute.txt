@@ -1,9 +1,0 @@
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Release\BusinessTier.dll
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Release\BusinessTier.pdb
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Release\DataTier.dll
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\bin\Release\DataTier.pdb
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Release\BusinessTier.csprojAssemblyReference.cache
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Release\BusinessTier.csproj.CoreCompileInputs.cache
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Release\BusinessTier.csproj.CopyComplete
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Release\BusinessTier.dll
-C:\Users\bubri\source\repos\ID2207\SEP\BusinessTier\obj\Release\BusinessTier.pdb

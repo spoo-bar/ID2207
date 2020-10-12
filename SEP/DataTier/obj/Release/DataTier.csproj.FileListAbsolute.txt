@@ -1,6 +1,0 @@
-C:\Users\bubri\source\repos\ID2207\SEP\DataTier\bin\Release\DataTier.dll
-C:\Users\bubri\source\repos\ID2207\SEP\DataTier\bin\Release\DataTier.pdb
-C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Release\DataTier.csprojAssemblyReference.cache
-C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Release\DataTier.csproj.CoreCompileInputs.cache
-C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Release\DataTier.dll
-C:\Users\bubri\source\repos\ID2207\SEP\DataTier\obj\Release\DataTier.pdb
