@@ -16,25 +16,25 @@ namespace DataTier
                 {
                     Email = "sarah@sep.se",
                     Password = "password",
-                    Permissions = new List<Permission> { Permission.CreateEvent }
+                    Role = Role.CustomerService
                 };
                 var janetUser = new User() // Senior Customer Service Officer 
                 {
                     Email = "janet@sep.se",
                     Password = "password",
-                    Permissions = new List<Permission> { Permission.ApproveEventRequest }
+                    Role = Role.SeniorCustomerServiceOfficer
                 };
                 var aliceUser = new User() // Financial Manager
                 {
                     Email = "alice@sep.se",
                     Password = "password",
-                    Permissions = new List<Permission> { Permission.EditEvent }
+                    Role = Role.FinancialManager
                 };
                 var mikeUser = new User() // Administration Department Manager
                 {
                     Email = "mike@sep.se",
                     Password = "password",
-                    Permissions = new List<Permission> { Permission.ApproveEvent}
+                    Role = Role.AdministrationDepartmentManager
                 };
                 return new List<User>
                 {

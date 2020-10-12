@@ -56,7 +56,7 @@ namespace PresentationTier
                 feedbackTextBox.Enabled = false;
                 saveButton.Hide();
             }
-            else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.ApproveEventRequest || permission == Permission.ApproveEvent))
+            else if (Session.UserSession.LoggedInUser.Role == Role.SeniorCustomerServiceOfficer || Session.UserSession.LoggedInUser.Role == Role.AdministrationDepartmentManager)
             {//if cannot edit can only approve
                 feedbackTextBox.Enabled = false;
                 saveButton.Text = "Approve";
@@ -94,7 +94,7 @@ namespace PresentationTier
             }
             else
             {
-                result = eventRequestController.ChangeState(eventRequest, Session.UserSession.LoggedInUser.Permissions.ToList()[0], feedbackTextBox.Text);
+                result = eventRequestController.ChangeState(eventRequest, Session.UserSession.LoggedInUser.Role, feedbackTextBox.Text);
             }
 
             if (result)

@@ -32,18 +32,18 @@ namespace BusinessTier
             }
         }
 
-        public bool ChangeState(EventRequest eventRequest, Permission permission, string feedback)
+        public bool ChangeState(EventRequest eventRequest, Role role, string feedback)
         {
-            switch (permission)
+            switch (role)
             {
-                case Permission.ApproveEventRequest:
+                case Role.SeniorCustomerServiceOfficer:
                     eventRequest.State = EventRequest.States.ApprovedBySCSO;
                     return true;
-                case Permission.EditEvent:
+                case Role.FinancialManager:
                     eventRequest.State = EventRequest.States.FinancialFeedbackAdded;
                     eventRequest.FinancialFeedback = feedback;
                     return true;
-                case Permission.ApproveEvent:
+                case Role.AdministrationDepartmentManager:
                     eventRequest.State = EventRequest.States.Finalized;
                     return true;
                 default:
@@ -51,15 +51,15 @@ namespace BusinessTier
             }
         }
 
-        public List<EventRequest> GetEventRequests(Permission permission)
+        public List<EventRequest> GetEventRequests(Role role)
         {
-            switch (permission)
+            switch (role)
             {
-                case Permission.ApproveEventRequest:
+                case Role.SeniorCustomerServiceOfficer:
                     return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created || eventRequest.State == EventRequest.States.Finalized).ToList();
-                case Permission.EditEvent:
+                case Role.FinancialManager:
                     return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.ApprovedBySCSO).ToList();
-                case Permission.ApproveEvent:
+                case Role.AdministrationDepartmentManager:
                     return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.FinancialFeedbackAdded).ToList();
                 default:
                     return null;

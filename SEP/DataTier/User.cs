@@ -12,16 +12,24 @@ namespace DataTier
 
         public string Password { get; set; }
 
-        public IEnumerable<Permission> Permissions { get; set; }
+        public Role Role { get; set; }
 
     }
 
-    //todo: maybe instead of permissions we should have roles, because i can't differentiate between SCSO and manager
-    public enum Permission
+    ////todo: maybe instead of permissions we should have roles, because i can't differentiate between SCSO and manager
+    //public enum Permission
+    //{
+    //    CreateEvent,
+    //    ApproveEventRequest,
+    //    EditEvent,
+    //    ApproveEvent
+    //}
+
+    public enum Role
     {
-        CreateEvent,
-        ApproveEventRequest,
-        EditEvent,
-        ApproveEvent
+        AdministrationDepartmentManager,
+        SeniorCustomerServiceOfficer,
+        CustomerService,
+        FinancialManager
     }
 }

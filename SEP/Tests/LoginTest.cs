@@ -49,8 +49,7 @@ namespace Tests
             var expectedUser = new User
             {
                 Email = "sarah@sep.se",
-                Password = "password",
-                Permissions = new List<Permission> { Permission.CreateEvent }
+                Password = "password"
             };
 
             // Act

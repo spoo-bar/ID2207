@@ -16,7 +16,7 @@ namespace PresentationTier
             this.mainForm = mainForm;
 
             EventRequestController eventRequestController = new EventRequestController();
-            requestDataGridView.DataSource = eventRequestController.GetEventRequests(Session.UserSession.LoggedInUser.Permissions.ToList()[0]);
+            requestDataGridView.DataSource = eventRequestController.GetEventRequests(Session.UserSession.LoggedInUser.Role);
         }
 
         private void RequestDataGridView_DoubleClick(object sender, EventArgs e)

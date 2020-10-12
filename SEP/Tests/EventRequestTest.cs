@@ -14,14 +14,14 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
+            int eventRequestCount = eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", new Client("","",""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(eventRequestCount + 1, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
+            Assert.AreEqual(eventRequestCount + 1, eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count);
         }
 
         [TestMethod]
@@ -29,14 +29,14 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
+            int eventRequestCount = eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "fdgdg");
 
             //Assert
             Assert.IsNull(result);
-            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
+            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count);
         }
 
         [TestMethod]
@@ -44,14 +44,14 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
+            int eventRequestCount = eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", null, "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Assert
             Assert.IsNull(result);
-            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
+            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count);
         }
 
         [TestMethod]
@@ -59,14 +59,14 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
+            int eventRequestCount = eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now.AddDays(1), DateTime.Now, 3, "23.4");
 
             //Assert
             Assert.IsNull(result);
-            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
+            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Role.SeniorCustomerServiceOfficer).Count);
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@ namespace Tests
             EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.ChangeState(eventRequest, Permission.ApproveEventRequest, "");
+            eventRequestController.ChangeState(eventRequest, Role.SeniorCustomerServiceOfficer, "");
 
             //Assert
             Assert.AreEqual(EventRequest.States.ApprovedBySCSO, eventRequest.State);
@@ -104,7 +104,7 @@ namespace Tests
             EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.ChangeState(eventRequest, Permission.EditEvent, "");
+            eventRequestController.ChangeState(eventRequest, Role.FinancialManager, "");
 
             //Assert
             Assert.AreEqual(EventRequest.States.FinancialFeedbackAdded, eventRequest.State);
@@ -118,7 +118,7 @@ namespace Tests
             EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.ChangeState(eventRequest, Permission.ApproveEvent, "");
+            eventRequestController.ChangeState(eventRequest, Role.AdministrationDepartmentManager, "");
 
             //Assert
             Assert.AreEqual(EventRequest.States.Finalized, eventRequest.State);
