@@ -44,5 +44,11 @@ namespace PresentationTier
             loggedinUserLabel.Text =  "Logged In : " + Session.UserSession.LoggedInUser.Email;
             loggedinUserLabel.Refresh();
         }
+
+        private void EventRequestButton_Click(object sender, EventArgs e)
+        {
+            new EventRequestForm(this).Show();
+            this.Hide();
+        }
     }
 }

@@ -1,56 +1,33 @@
 ﻿using BusinessTier;
-using DataTier;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
 {
     public partial class EventRequestForm : Form
     {
-        public EventRequestForm()
+        private readonly Form mainForm;
+        public EventRequestForm(Form mainForm)
         {
             InitializeComponent();
-            ClientController clientController = new ClientController();
-            //todo: remove when can move between forms
-            clientController.Create("testName", "testSurname", "testPhone");
+            this.mainForm = mainForm;
 
-            clientListBox.DataSource = clientController.Clients;
-            clientListBox.DisplayMember = "FirstName";
-        }
-
-        private void BudgetTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
             EventRequestController eventRequestController = new EventRequestController();
-            if(eventRequestController.Create(
-                recordNrTextBox.Text,
-                clientListBox.SelectedItem as Client,
-                eventTypeTextBox.Text, fromDateTimePicker.Value,
-                toDateTimePicker.Value,
-                attendeesNumericUpDown.Value,
-                BudgetTextBox.Text) != null)
-            {
-                saveButton.BackColor = Color.Green;
-            }
-            else
-            {
-                saveButton.BackColor = Color.Red;
-            }
+            //todo: remove when can move between forms
+
+            requestDataGridView.DataSource = eventRequestController.EventRequests;
+        }
+
+        private void EventRequestForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.Show();
         }
     }
 }
