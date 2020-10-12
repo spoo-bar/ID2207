@@ -50,5 +50,11 @@ namespace PresentationTier
             new EventRequestForm(this).Show();
             this.Hide();
         }
+
+        private void CreateClientButton_Click(object sender, EventArgs e)
+        {
+            new ClientForm(this).Show();
+            this.Hide();
+        }
     }
 }

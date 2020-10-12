@@ -45,5 +45,36 @@ namespace DataTier
                 };
             }
         }
+
+        public static List<Client> Clients
+        {
+            get
+            {
+                var client = new Client("testName", "testSurname", "testPhone");
+                return new List<Client>
+                {
+                    client
+                };
+            }
+        }
+
+        public static List<EventRequest> EventRequests
+        {
+            get
+            {
+                EventRequest eventRequest = new EventRequest("123",
+                                                             Clients[0],
+                                                             "type 1",
+                                                             DateTime.Now,
+                                                             DateTime.Now.AddDays(1),
+                                                             3,
+                                                             12.4);
+                return new List<EventRequest>
+                {
+                    eventRequest
+                };
+            }
+        }
+
     }
 }

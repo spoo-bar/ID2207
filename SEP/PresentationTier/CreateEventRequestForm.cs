@@ -8,13 +8,13 @@ namespace PresentationTier
 {
     public partial class CreateEventRequestForm : Form
     {
-        public CreateEventRequestForm()
+        private readonly Form mainForm;
+        public CreateEventRequestForm(Form mainForm)
         {
             InitializeComponent();
-            ClientController clientController = new ClientController();
-            //todo: remove when can move between forms
-            clientController.Create("testName", "testSurname", "testPhone");
+            this.mainForm = mainForm;
 
+            ClientController clientController = new ClientController();
             clientListBox.DataSource = clientController.Clients;
             clientListBox.DisplayMember = "FirstName";
         }
@@ -51,6 +51,11 @@ namespace PresentationTier
             {
                 saveButton.BackColor = Color.Red;
             }
+        }
+
+        private void CreateEventRequestForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.Show();
         }
     }
 }

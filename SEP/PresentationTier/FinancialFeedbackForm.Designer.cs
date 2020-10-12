@@ -221,6 +221,7 @@
             this.Controls.Add(this.recordNrTextBox);
             this.Name = "FinancialFeedbackForm";
             this.Text = "FinancialFeedbackForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FinancialFeedbackForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

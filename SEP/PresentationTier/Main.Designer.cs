@@ -32,6 +32,7 @@ namespace PresentationTier
         {
             this.loggedinUserLabel = new System.Windows.Forms.Label();
             this.eventRequestButton = new System.Windows.Forms.Button();
+            this.createClientButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loggedinUserLabel
@@ -42,15 +43,25 @@ namespace PresentationTier
             this.loggedinUserLabel.Size = new System.Drawing.Size(0, 17);
             this.loggedinUserLabel.TabIndex = 0;
             // 
-            // saveButton
+            // eventRequestButton
             // 
             this.eventRequestButton.Location = new System.Drawing.Point(16, 16);
             this.eventRequestButton.Name = "eventRequestButton";
-            this.eventRequestButton.Size = new System.Drawing.Size(75, 23);
+            this.eventRequestButton.Size = new System.Drawing.Size(200, 23);
             this.eventRequestButton.TabIndex = 6;
             this.eventRequestButton.Text = "event requests";
             this.eventRequestButton.UseVisualStyleBackColor = true;
             this.eventRequestButton.Click += new System.EventHandler(this.EventRequestButton_Click);
+            // 
+            // eventRequestButton
+            // 
+            this.createClientButton.Location = new System.Drawing.Point(16, 50);
+            this.createClientButton.Name = "createClientButton";
+            this.createClientButton.Size = new System.Drawing.Size(200, 23);
+            this.createClientButton.TabIndex = 6;
+            this.createClientButton.Text = "Create client";
+            this.createClientButton.UseVisualStyleBackColor = true;
+            this.createClientButton.Click += new System.EventHandler(this.CreateClientButton_Click);
             // 
             // Main
             // 
@@ -59,6 +70,7 @@ namespace PresentationTier
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.loggedinUserLabel);
             this.Controls.Add(this.eventRequestButton);
+            this.Controls.Add(this.createClientButton);
             this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);
@@ -69,5 +81,6 @@ namespace PresentationTier
 
         private System.Windows.Forms.Label loggedinUserLabel;
         private System.Windows.Forms.Button eventRequestButton;
+        private System.Windows.Forms.Button createClientButton;
     }
 }

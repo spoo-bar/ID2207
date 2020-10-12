@@ -1,4 +1,5 @@
 ﻿using BusinessTier;
+using DataTier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,14 +21,25 @@ namespace PresentationTier
             this.mainForm = mainForm;
 
             EventRequestController eventRequestController = new EventRequestController();
-            //todo: remove when can move between forms
-
             requestDataGridView.DataSource = eventRequestController.EventRequests;
         }
 
         private void EventRequestForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.Show();
+        }
+
+        private void RequestDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            EventRequest selected = (EventRequest)requestDataGridView.CurrentRow.DataBoundItem;
+            new FinancialFeedbackForm(this, selected).Show();
+            this.Hide();
+        }
+
+        private void CreateEventRequestButton_Click(object sender, EventArgs e)
+        {
+            new CreateEventRequestForm(this).Show();
+            this.Hide();
         }
     }
 }

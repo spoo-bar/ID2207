@@ -209,6 +209,7 @@
             this.Controls.Add(this.recordNrTextBox);
             this.Name = "CreateEventRequestForm";
             this.Text = "Request for new event";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateEventRequestForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendeesNumericUpDown)).EndInit();
             this.ResumeLayout(false);

@@ -5,7 +5,7 @@ namespace BusinessTier
 {
     public class ClientController
     {
-        private static List<Client> clients = new List<Client>();
+        private static List<Client> clients = Seed.Clients;
 
         public ClientController()
         {

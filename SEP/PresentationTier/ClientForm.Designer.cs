@@ -109,6 +109,7 @@
             this.Controls.Add(this.firstNameTextBox);
             this.Name = "ClientForm";
             this.Text = "ClientForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

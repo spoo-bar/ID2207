@@ -7,11 +7,13 @@ namespace PresentationTier
 {
     public partial class FinancialFeedbackForm : Form
     {
+        private readonly Form mainForm;
         private EventRequest eventRequest;
 
-        public FinancialFeedbackForm(EventRequest eventRequest)
+        public FinancialFeedbackForm(Form mainForm, EventRequest eventRequest)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
 
             this.eventRequest = eventRequest;
             recordNrTextBox.Text = eventRequest.RecordNr;
@@ -27,6 +29,11 @@ namespace PresentationTier
         {
             EventRequestController eventRequestController = new EventRequestController();
             eventRequestController.AddFeedback(feedbackTextBox.Text, eventRequest);
+        }
+
+        private void FinancialFeedbackForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.Show();
         }
     }
 }

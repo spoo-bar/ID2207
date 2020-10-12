@@ -1,15 +1,12 @@
 ﻿using DataTier;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessTier
 {
     public class EventRequestController
     {
-        private static List<EventRequest> eventRequests = new List<EventRequest>();
+        private static List<EventRequest> eventRequests = Seed.EventRequests;
 
         public EventRequestController()
         {
