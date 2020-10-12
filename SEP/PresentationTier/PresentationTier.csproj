@@ -70,23 +70,17 @@
     <Compile Include="ClientForm.Designer.cs">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateEventRequestForm.cs">
+    <Compile Include="ManageEventRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateEventRequestForm.Designer.cs">
-      <DependentUpon>CreateEventRequestForm.cs</DependentUpon>
+    <Compile Include="ManageEventRequestForm.Designer.cs">
+      <DependentUpon>ManageEventRequestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EventRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EventRequestForm.Designer.cs">
       <DependentUpon>EventRequestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FinancialFeedbackForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FinancialFeedbackForm.Designer.cs">
-      <DependentUpon>FinancialFeedbackForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs" />
     <Compile Include="LoginForm.Designer.cs">
@@ -102,14 +96,11 @@
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateEventRequestForm.resx">
-      <DependentUpon>CreateEventRequestForm.cs</DependentUpon>
+    <EmbeddedResource Include="ManageEventRequestForm.resx">
+      <DependentUpon>ManageEventRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EventRequestForm.resx">
       <DependentUpon>EventRequestForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FinancialFeedbackForm.resx">
-      <DependentUpon>FinancialFeedbackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

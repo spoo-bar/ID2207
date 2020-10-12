@@ -16,9 +16,11 @@ namespace DataTier
 
     }
 
+    //todo: maybe instead of permissions we should have roles, because i can't differentiate between SCSO and manager
     public enum Permission
     {
         CreateEvent,
+        ApproveEventRequest,
         EditEvent,
         ApproveEvent
     }

@@ -1,6 +1,6 @@
 ﻿namespace PresentationTier
 {
-    partial class CreateEventRequestForm
+    partial class ManageEventRequestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,8 @@
             this.budgetLabel = new System.Windows.Forms.Label();
             this.BudgetTextBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
+            this.feedbackTextBox = new System.Windows.Forms.TextBox();
+            this.feedbackLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendeesNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -179,7 +181,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(16, 317);
+            this.saveButton.Location = new System.Drawing.Point(12, 415);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 15;
@@ -187,11 +189,30 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // feedbackTextBox
+            // 
+            this.feedbackTextBox.Location = new System.Drawing.Point(129, 305);
+            this.feedbackTextBox.Multiline = true;
+            this.feedbackTextBox.Name = "feedbackTextBox";
+            this.feedbackTextBox.Size = new System.Drawing.Size(565, 104);
+            this.feedbackTextBox.TabIndex = 33;
+            // 
+            // feedbackLabel
+            // 
+            this.feedbackLabel.AutoSize = true;
+            this.feedbackLabel.Location = new System.Drawing.Point(13, 305);
+            this.feedbackLabel.Name = "feedbackLabel";
+            this.feedbackLabel.Size = new System.Drawing.Size(119, 17);
+            this.feedbackLabel.TabIndex = 32;
+            this.feedbackLabel.Text = "Budget feedback:";
+            // 
             // CreateEventRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.feedbackTextBox);
+            this.Controls.Add(this.feedbackLabel);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.budgetLabel);
             this.Controls.Add(this.BudgetTextBox);
@@ -235,6 +256,8 @@
         private System.Windows.Forms.Label budgetLabel;
         private System.Windows.Forms.TextBox BudgetTextBox;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.TextBox feedbackTextBox;
+        private System.Windows.Forms.Label feedbackLabel;
     }
 }
 

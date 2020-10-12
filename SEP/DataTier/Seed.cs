@@ -22,7 +22,7 @@ namespace DataTier
                 {
                     Email = "janet@sep.se",
                     Password = "password",
-                    Permissions = new List<Permission> { Permission.ApproveEvent }
+                    Permissions = new List<Permission> { Permission.ApproveEventRequest }
                 };
                 var aliceUser = new User() // Financial Manager
                 {
@@ -50,28 +50,65 @@ namespace DataTier
         {
             get
             {
-                var client = new Client("testName", "testSurname", "testPhone");
+                var peter = new Client("Peter", "Pen", "238740291");
+                var anna = new Client("Anna", "Bergman", "648878978");
+                var jeff = new Client("Jeff", "Bezos", "4563444432");
                 return new List<Client>
                 {
-                    client
+                    peter,
+                    anna,
+                    jeff
                 };
             }
         }
 
-        public static List<EventRequest> EventRequests
+        public static List<EventRequest> EventRequest
         {
             get
             {
                 EventRequest eventRequest = new EventRequest("123",
-                                                             Clients[0],
-                                                             "type 1",
-                                                             DateTime.Now,
-                                                             DateTime.Now.AddDays(1),
-                                                             3,
-                                                             12.4);
+                                                Clients[0],
+                                                "Party",
+                                                DateTime.Now,
+                                                DateTime.Now.AddDays(1),
+                                                33,
+                                                321);
+                EventRequest approvedRequest = new EventRequest("52344",
+                                                Clients[1],
+                                                "Boat show",
+                                                DateTime.Now.AddDays(30),
+                                                DateTime.Now.AddDays(35),
+                                                100,
+                                                4500)
+                { 
+                    State = DataTier.EventRequest.States.ApprovedBySCSO 
+                };
+                EventRequest financialFeedbackAddedRequest = new EventRequest("72909",
+                                                Clients[0],
+                                                "Pain ball",
+                                                DateTime.Now.AddDays(26),
+                                                DateTime.Now.AddDays(26),
+                                                5,
+                                                50)
+                {
+                    State = DataTier.EventRequest.States.FinancialFeedbackAdded
+                };
+                EventRequest finalizedRequest = new EventRequest("43555",
+                                                Clients[2],
+                                                "Trip to moon",
+                                                DateTime.Now.AddDays(45),
+                                                DateTime.Now.AddDays(67),
+                                                2,
+                                                10000000)
+                {
+                    State = DataTier.EventRequest.States.Finalized
+                };
                 return new List<EventRequest>
                 {
-                    eventRequest
+                    eventRequest,
+                    approvedRequest,
+                    financialFeedbackAddedRequest,
+                    finalizedRequest
                 };
             }
         }

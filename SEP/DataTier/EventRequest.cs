@@ -14,6 +14,7 @@ namespace DataTier
             To = to;
             Attendees = attendees;
             Budget = budget;
+            State = EventRequest.States.Created;
         }
 
         public string RecordNr { get; set; }
@@ -26,5 +27,14 @@ namespace DataTier
         public double Budget { get; set; }
         [Browsable(false)]
         public string FinancialFeedback { get; set; }
+        [Browsable(false)]
+        public States State { get; set; }
+        public enum States
+        {
+            Created,
+            ApprovedBySCSO,
+            FinancialFeedbackAdded,
+            Finalized
+        }
     }
 }

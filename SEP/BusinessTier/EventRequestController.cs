@@ -6,7 +6,7 @@ namespace BusinessTier
 {
     public class EventRequestController
     {
-        private static List<EventRequest> eventRequests = Seed.EventRequests;
+        private static List<EventRequest> eventRequests = Seed.EventRequest;
 
         public EventRequestController()
         {
@@ -34,6 +34,11 @@ namespace BusinessTier
         public void AddFeedback(string feedback, EventRequest eventRequest)
         {
             eventRequest.FinancialFeedback = feedback;
+        }
+
+        public void ChangeState(EventRequest eventRequest, EventRequest.States state)
+        {
+            eventRequest.State = state;
         }
 
         public List<EventRequest> EventRequests { get { return eventRequests; } }

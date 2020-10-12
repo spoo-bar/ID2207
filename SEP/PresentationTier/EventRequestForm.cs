@@ -1,13 +1,8 @@
 ﻿using BusinessTier;
 using DataTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -19,9 +14,29 @@ namespace PresentationTier
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            UpdateDataGridView();
+        }
 
+        private void UpdateDataGridView()
+        {
             EventRequestController eventRequestController = new EventRequestController();
-            requestDataGridView.DataSource = eventRequestController.EventRequests;
+            if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.ApproveEventRequest))
+            {
+                requestDataGridView.DataSource = eventRequestController.EventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created).ToList();
+            }
+            else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.EditEvent))
+            {
+                requestDataGridView.DataSource = eventRequestController.EventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.ApprovedBySCSO).ToList();
+            }
+            else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.ApproveEvent))
+            {
+                requestDataGridView.DataSource = eventRequestController.EventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.FinancialFeedbackAdded).ToList();
+            }
+            else
+            {
+                requestDataGridView.DataSource = null;
+                requestDataGridView.Hide();
+            }
         }
 
         private void EventRequestForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -32,13 +47,13 @@ namespace PresentationTier
         private void RequestDataGridView_DoubleClick(object sender, EventArgs e)
         {
             EventRequest selected = (EventRequest)requestDataGridView.CurrentRow.DataBoundItem;
-            new FinancialFeedbackForm(this, selected).Show();
+            new ManageEventRequestForm(this, selected).Show();
             this.Hide();
         }
 
         private void CreateEventRequestButton_Click(object sender, EventArgs e)
         {
-            new CreateEventRequestForm(this).Show();
+            new ManageEventRequestForm(this).Show();
             this.Hide();
         }
     }

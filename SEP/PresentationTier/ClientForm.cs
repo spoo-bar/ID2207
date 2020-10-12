@@ -18,6 +18,7 @@ namespace PresentationTier
         {
             ClientController clientController = new ClientController();
             clientController.Create(firstNameTextBox.Text, lastNameTextBox.Text, phoneNrTextBox.Text);
+            this.Close();
         }
 
         private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)

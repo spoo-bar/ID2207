@@ -84,5 +84,24 @@ namespace Tests
             //Assert
             Assert.AreEqual(feedback, eventRequest.FinancialFeedback);
         }
+
+        [DataTestMethod]
+        [DataRow(EventRequest.States.Created)]
+        [DataRow(EventRequest.States.ApprovedBySCSO)]
+        [DataRow(EventRequest.States.FinancialFeedbackAdded)]
+        [DataRow(EventRequest.States.Finalized)]
+        public void UpdateEventRequestStatus(EventRequest.States state)
+        {
+            //Arrange
+            EventRequestController eventRequestController = new EventRequestController();
+            eventRequestController.EventRequests.Clear();
+            EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
+
+            //Act
+            eventRequestController.ChangeState(eventRequest, state);
+
+            //Assert
+            Assert.AreEqual(state, eventRequest.State);
+        }
     }
 }
