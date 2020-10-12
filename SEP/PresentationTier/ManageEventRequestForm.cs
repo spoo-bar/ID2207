@@ -10,7 +10,7 @@ namespace PresentationTier
     public partial class ManageEventRequestForm : Form
     {
         private readonly Form mainForm;
-        private EventRequest eventRequest;
+        private EventRequest eventRequest = null;
 
         public ManageEventRequestForm(Form mainForm)// create new event request
         {
@@ -33,6 +33,7 @@ namespace PresentationTier
             this.mainForm = mainForm;
             this.eventRequest = eventRequest;
 
+            #region fill info
             recordNrTextBox.Text = eventRequest.RecordNr;
             clientListBox.Items.Add(eventRequest.Client.FirstName);
             eventTypeTextBox.Text = eventRequest.EventType;
@@ -48,13 +49,14 @@ namespace PresentationTier
             toDateTimePicker.Enabled = false;
             attendeesNumericUpDown.Enabled = false;
             BudgetTextBox.Enabled = false;
+            #endregion
 
-            if(eventRequest.State == EventRequest.States.Finalized)
+            if (eventRequest.State == EventRequest.States.Finalized)
             {
                 feedbackTextBox.Enabled = false;
                 saveButton.Hide();
             }
-            else if (!Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.EditEvent))
+            else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.ApproveEventRequest || permission == Permission.ApproveEvent))
             {//if cannot edit can only approve
                 feedbackTextBox.Enabled = false;
                 saveButton.Text = "Approve";
@@ -79,42 +81,30 @@ namespace PresentationTier
         private void SaveButton_Click(object sender, EventArgs e)
         {
             EventRequestController eventRequestController = new EventRequestController();
-            if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.CreateEvent))
+            bool result;
+            if (eventRequest == null)
             {
-                if (eventRequestController.Create(
+                result = (eventRequestController.Create(
                     recordNrTextBox.Text,
                     clientListBox.SelectedItem as Client,
                     eventTypeTextBox.Text, fromDateTimePicker.Value,
                     toDateTimePicker.Value,
                     attendeesNumericUpDown.Value,
-                    BudgetTextBox.Text) != null)
-                {
-                    this.Close();
-                }
-                else
-                {
-                    //failed to create
-                    saveButton.BackColor = Color.Red;
-                }
+                    BudgetTextBox.Text) != null);
             }
-            else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.ApproveEventRequest))
+            else
             {
-                //approved by SCSO
-                eventRequestController.ChangeState(eventRequest, EventRequest.States.ApprovedBySCSO);
+                result = eventRequestController.ChangeState(eventRequest, Session.UserSession.LoggedInUser.Permissions.ToList()[0], feedbackTextBox.Text);
+            }
+
+            if (result)
+            {
                 this.Close();
             }
-            else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.EditEvent))
+            else
             {
-                //Feedback added
-                eventRequestController.ChangeState(eventRequest, EventRequest.States.FinancialFeedbackAdded);
-                eventRequestController.AddFeedback(feedbackTextBox.Text, eventRequest);
-                this.Close();
-            }
-            else if (Session.UserSession.LoggedInUser.Permissions.Any(permission => permission == Permission.ApproveEvent))
-            {
-                //approved by manager
-                eventRequestController.ChangeState(eventRequest, EventRequest.States.Finalized);
-                this.Close();
+                //failed to do the operation
+                saveButton.BackColor = Color.Red;
             }
         }
 

@@ -29,6 +29,7 @@ namespace DataTier
         public string FinancialFeedback { get; set; }
         [Browsable(false)]
         public States State { get; set; }
+
         public enum States
         {
             Created,

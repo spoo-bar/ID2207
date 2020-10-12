@@ -14,14 +14,14 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            eventRequestController.EventRequests.Clear();
+            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", new Client("","",""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Assert
             Assert.IsNotNull(result);
-            Assert.AreNotEqual(0, eventRequestController.EventRequests.Count);
+            Assert.AreEqual(eventRequestCount + 1, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
         }
 
         [TestMethod]
@@ -29,14 +29,14 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            eventRequestController.EventRequests.Clear();
+            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "fdgdg");
 
             //Assert
             Assert.IsNull(result);
-            Assert.AreEqual(0, eventRequestController.EventRequests.Count);
+            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
         }
 
         [TestMethod]
@@ -44,14 +44,14 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            eventRequestController.EventRequests.Clear();
+            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", null, "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Assert
             Assert.IsNull(result);
-            Assert.AreEqual(0, eventRequestController.EventRequests.Count);
+            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
         }
 
         [TestMethod]
@@ -59,49 +59,69 @@ namespace Tests
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            eventRequestController.EventRequests.Clear();
+            int eventRequestCount = eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count;
 
             //Act
             EventRequest result = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now.AddDays(1), DateTime.Now, 3, "23.4");
 
             //Assert
             Assert.IsNull(result);
-            Assert.AreEqual(0, eventRequestController.EventRequests.Count);
+            Assert.AreEqual(eventRequestCount, eventRequestController.GetEventRequests(Permission.ApproveEventRequest).Count);
         }
 
-        [DataTestMethod]
-        [DataRow("test")]
-        public void AddFeedbackToEventRequest(string feedback)
+        [TestMethod]
+        public void UpdateEventRequestStatus_CreateEvent()
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            eventRequestController.EventRequests.Clear();
-            EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.AddFeedback(feedback, eventRequest);
+            EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Assert
-            Assert.AreEqual(feedback, eventRequest.FinancialFeedback);
+            Assert.AreEqual(EventRequest.States.Created, eventRequest.State);
         }
 
-        [DataTestMethod]
-        [DataRow(EventRequest.States.Created)]
-        [DataRow(EventRequest.States.ApprovedBySCSO)]
-        [DataRow(EventRequest.States.FinancialFeedbackAdded)]
-        [DataRow(EventRequest.States.Finalized)]
-        public void UpdateEventRequestStatus(EventRequest.States state)
+        [TestMethod]
+        public void UpdateEventRequestStatus_ApproveRequest()
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();
-            eventRequestController.EventRequests.Clear();
             EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.ChangeState(eventRequest, state);
+            eventRequestController.ChangeState(eventRequest, Permission.ApproveEventRequest, "");
 
             //Assert
-            Assert.AreEqual(state, eventRequest.State);
+            Assert.AreEqual(EventRequest.States.ApprovedBySCSO, eventRequest.State);
+        }
+
+        [TestMethod]
+        public void UpdateEventRequestStatus_EditEvent()
+        {
+            //Arrange
+            EventRequestController eventRequestController = new EventRequestController();
+            EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
+
+            //Act
+            eventRequestController.ChangeState(eventRequest, Permission.EditEvent, "");
+
+            //Assert
+            Assert.AreEqual(EventRequest.States.FinancialFeedbackAdded, eventRequest.State);
+        }
+
+        [TestMethod]
+        public void UpdateEventRequestStatus_ApproveEvent()
+        {
+            //Arrange
+            EventRequestController eventRequestController = new EventRequestController();
+            EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
+
+            //Act
+            eventRequestController.ChangeState(eventRequest, Permission.ApproveEvent, "");
+
+            //Assert
+            Assert.AreEqual(EventRequest.States.Finalized, eventRequest.State);
         }
     }
 }

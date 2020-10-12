@@ -1,6 +1,7 @@
 ﻿using DataTier;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BusinessTier
 {
@@ -31,16 +32,38 @@ namespace BusinessTier
             }
         }
 
-        public void AddFeedback(string feedback, EventRequest eventRequest)
+        public bool ChangeState(EventRequest eventRequest, Permission permission, string feedback)
         {
-            eventRequest.FinancialFeedback = feedback;
+            switch (permission)
+            {
+                case Permission.ApproveEventRequest:
+                    eventRequest.State = EventRequest.States.ApprovedBySCSO;
+                    return true;
+                case Permission.EditEvent:
+                    eventRequest.State = EventRequest.States.FinancialFeedbackAdded;
+                    eventRequest.FinancialFeedback = feedback;
+                    return true;
+                case Permission.ApproveEvent:
+                    eventRequest.State = EventRequest.States.Finalized;
+                    return true;
+                default:
+                    return false;
+            }
         }
 
-        public void ChangeState(EventRequest eventRequest, EventRequest.States state)
+        public List<EventRequest> GetEventRequests(Permission permission)
         {
-            eventRequest.State = state;
+            switch (permission)
+            {
+                case Permission.ApproveEventRequest:
+                    return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created || eventRequest.State == EventRequest.States.Finalized).ToList();
+                case Permission.EditEvent:
+                    return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.ApprovedBySCSO).ToList();
+                case Permission.ApproveEvent:
+                    return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.FinancialFeedbackAdded).ToList();
+                default:
+                    return null;
+            }
         }
-
-        public List<EventRequest> EventRequests { get { return eventRequests; } }
     }
 }
