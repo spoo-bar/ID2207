@@ -17,6 +17,11 @@ namespace PresentationTier
 
             EventRequestController eventRequestController = new EventRequestController();
             requestDataGridView.DataSource = eventRequestController.GetEventRequests(Session.UserSession.LoggedInUser.Role);
+
+            if(Session.UserSession.LoggedInUser.Role != Role.CustomerService)
+            {
+                createEventRequestButton.Visible = false;
+            }
         }
 
         private void RequestDataGridView_DoubleClick(object sender, EventArgs e)

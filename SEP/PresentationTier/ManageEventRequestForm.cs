@@ -41,6 +41,7 @@ namespace PresentationTier
             toDateTimePicker.Value = eventRequest.To;
             attendeesNumericUpDown.Text = eventRequest.Attendees.ToString();
             BudgetTextBox.Text = eventRequest.Budget.ToString();
+            feedbackTextBox.Text = eventRequest.FinancialFeedback;
 
             recordNrTextBox.Enabled = false;
             clientListBox.Enabled = false;
