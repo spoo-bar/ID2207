@@ -172,5 +172,33 @@ namespace DataTier
             }
         }
 
+        public static List<Event> Events
+        {
+            get
+            {
+                var newevent = new Event()
+                {
+                    RecordNr = "97438",
+                    Client = Clients[0],
+                    From = DateTime.Now.AddDays(25),
+                    To = DateTime.Now.AddDays(35),
+                    EventType = "Workshop",
+                    Attendees = 200,
+                    Budget = 500000,
+                    Description = "Workshop about Software Engineering",
+                    Decorations = "Special Lighting",
+                    FoodAndDrinks = "Fika at 8:30am",
+                    Filming = "Pictures of Audience",
+                    Music = "Music played during breaks",
+                    Posters = "One poster at the entrace",
+                    ComputerRelatedIssues = "Wifi should be available",
+                    OtherNeeds = ""
+                };
+                return new List<Event>() {
+                    newevent
+                };
+            }
+        }
+
     }
 }

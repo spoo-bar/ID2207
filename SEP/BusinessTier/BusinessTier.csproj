@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientController.cs" />
+    <Compile Include="EventController.cs" />
     <Compile Include="EventRequestController.cs" />
     <Compile Include="Exceptions\LoginException.cs" />
     <Compile Include="LoginController.cs" />

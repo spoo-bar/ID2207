@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace DataTier
 {
-    public class EventRequest
+    public class EventRequest : IEvent
     {
         public EventRequest(string recordNr, Client client, string eventType, DateTime from, DateTime to, int attendees, double budget)
         {

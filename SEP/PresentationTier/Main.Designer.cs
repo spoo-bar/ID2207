@@ -34,6 +34,7 @@ namespace PresentationTier
             this.eventRequestButton = new System.Windows.Forms.Button();
             this.createClientButton = new System.Windows.Forms.Button();
             this.staffButton = new System.Windows.Forms.Button();
+            this.eventButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loggedinUserLabel
@@ -74,6 +75,17 @@ namespace PresentationTier
             this.staffButton.UseVisualStyleBackColor = true;
             this.staffButton.Click += new System.EventHandler(this.StaffButton_Click);
             // 
+            // eventButton
+            // 
+            this.eventButton.Location = new System.Drawing.Point(16, 118);
+            this.eventButton.Name = "eventButton";
+            this.eventButton.Size = new System.Drawing.Size(200, 23);
+            this.eventButton.TabIndex = 6;
+            this.eventButton.Text = "Event";
+            this.eventButton.UseVisualStyleBackColor = true;
+            this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
+
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -83,6 +95,7 @@ namespace PresentationTier
             this.Controls.Add(this.eventRequestButton);
             this.Controls.Add(this.createClientButton);
             this.Controls.Add(this.staffButton);
+            this.Controls.Add(this.eventButton);
             this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);
@@ -95,5 +108,6 @@ namespace PresentationTier
         private System.Windows.Forms.Button eventRequestButton;
         private System.Windows.Forms.Button createClientButton;
         private System.Windows.Forms.Button staffButton;
+        private System.Windows.Forms.Button eventButton;
     }
 }
