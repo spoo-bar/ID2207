@@ -64,6 +64,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignmentForm.Designer.cs">
+      <DependentUpon>AssignmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAssignmentForm.Designer.cs">
+      <DependentUpon>ManageAssignmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,11 +112,15 @@
     <Compile Include="EventRequestForm.Designer.cs">
       <DependentUpon>EventRequestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
@@ -117,6 +133,12 @@
     <Compile Include="StaffAvailabilityForm.Designer.cs">
       <DependentUpon>StaffAvailabilityForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AssignmentForm.resx">
+      <DependentUpon>AssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAssignmentForm.resx">
+      <DependentUpon>ManageAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>

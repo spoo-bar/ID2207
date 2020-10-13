@@ -24,6 +24,11 @@ namespace DataTier
         }
 
         public List<User> Subordinates { get => _subordinates; }
+
+        public override string ToString()
+        {
+            return Email;
+        }
     }
 
     public enum Role

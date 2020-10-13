@@ -35,6 +35,7 @@ namespace PresentationTier
             this.createClientButton = new System.Windows.Forms.Button();
             this.staffButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
+            this.assignmentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loggedinUserLabel
@@ -65,7 +66,7 @@ namespace PresentationTier
             this.createClientButton.UseVisualStyleBackColor = true;
             this.createClientButton.Click += new System.EventHandler(this.CreateClientButton_Click);
             // 
-            // eventRequestButton
+            // staffButton
             // 
             this.staffButton.Location = new System.Drawing.Point(16, 84);
             this.staffButton.Name = "staffButton";
@@ -84,13 +85,23 @@ namespace PresentationTier
             this.eventButton.Text = "Event";
             this.eventButton.UseVisualStyleBackColor = true;
             this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
-
+            // 
+            // assignmentButton
+            // 
+            this.assignmentButton.Location = new System.Drawing.Point(16, 147);
+            this.assignmentButton.Name = "assignmentButton";
+            this.assignmentButton.Size = new System.Drawing.Size(200, 23);
+            this.assignmentButton.TabIndex = 7;
+            this.assignmentButton.Text = "Assignment";
+            this.assignmentButton.UseVisualStyleBackColor = true;
+            this.assignmentButton.Click += new System.EventHandler(this.AssignmentButton_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.assignmentButton);
             this.Controls.Add(this.loggedinUserLabel);
             this.Controls.Add(this.eventRequestButton);
             this.Controls.Add(this.createClientButton);
@@ -109,5 +120,6 @@ namespace PresentationTier
         private System.Windows.Forms.Button createClientButton;
         private System.Windows.Forms.Button staffButton;
         private System.Windows.Forms.Button eventButton;
+        private System.Windows.Forms.Button assignmentButton;
     }
 }

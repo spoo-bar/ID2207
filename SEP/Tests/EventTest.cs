@@ -97,5 +97,47 @@ namespace Tests
             // Assert
             Assert.IsTrue(events.Count >= 2);
         }
+
+        [TestMethod]
+        public void GetTasks()
+        {
+            // Arrange
+            User user = new User() { Email = "abcd@xy.z" };
+            var oldTasksCount = eventController.GetTasks(user).Count;
+            var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
+                                                DateTime.Now, DateTime.Now.AddDays(1),
+                                                33, 321);
+            eventController.Create(eventRequest);
+            var eventTask = new EventTask()
+            {
+                Description = "test description",
+                AssignedTo = user
+            };
+            eventController.CreateTask("123", eventTask);
+
+            // Act
+            var tasks = eventController.GetTasks(user);
+
+            // Assert
+            Assert.AreEqual(oldTasksCount+1, tasks.Count);
+        }
+
+        [TestMethod]
+        public void GetTasks_noTask()
+        {
+            // Arrange
+            User user = new User() { Email = "abcd@xy.z" };
+            var oldTasksCount = eventController.GetTasks(user).Count;
+            var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
+                                                DateTime.Now, DateTime.Now.AddDays(1),
+                                                33, 321);
+            eventController.Create(eventRequest);
+
+            // Act
+            var tasks = eventController.GetTasks(user);
+
+            // Assert
+            Assert.AreEqual(oldTasksCount, tasks.Count);
+        }
     }
 }

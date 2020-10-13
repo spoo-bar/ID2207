@@ -39,6 +39,17 @@ namespace BusinessTier
             }
         }
 
+        public List<EventTask> GetTasks(User user)
+        {
+            List<EventTask> eventTasks = new List<EventTask>();
+            foreach (Event evnt in events)
+            {
+                var userTasks = evnt.Tasks.Where(task => task.AssignedTo.Email.Equals(user.Email));
+                eventTasks.AddRange(userTasks);
+            }
+            return eventTasks;
+        }
+
         public List<Event> GetEvents()
         {
             return events;

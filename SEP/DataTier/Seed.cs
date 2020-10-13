@@ -194,6 +194,14 @@ namespace DataTier
                     ComputerRelatedIssues = "Wifi should be available",
                     OtherNeeds = ""
                 };
+
+                var eventTask = new EventTask()
+                {
+                    Description = "test description",
+                    AssignedTo = Users.ToList()[0]
+                };
+
+                newevent.Tasks.Add(eventTask);
                 return new List<Event>() {
                     newevent
                 };
