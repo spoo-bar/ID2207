@@ -27,7 +27,7 @@ namespace PresentationTier
         private void EventDataGridView_DoubleClick(object sender, EventArgs e)
         {
             var selectedEvent = (Event)eventFormGridView.CurrentRow.DataBoundItem;
-            //new ManageEventRequestForm(this, selectedEvent).Show();
+            new ManageEventForm(this, selectedEvent).Show();
             this.Hide();
         }
 
