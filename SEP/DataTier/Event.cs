@@ -31,6 +31,8 @@ namespace DataTier
 
         public DateTime To { get; set; }
 
+        public string Status { get; set; }
+
         public string Decorations { get; set; }
 
         public string FoodAndDrinks { get; set; }

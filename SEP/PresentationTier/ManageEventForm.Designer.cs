@@ -60,6 +60,8 @@
             this.budgetText = new System.Windows.Forms.TextBox();
             this.addTaskButton = new System.Windows.Forms.Button();
             this.eventTasksDataGrid = new System.Windows.Forms.DataGridView();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.statusLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventTasksDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -327,11 +329,35 @@
             this.eventTasksDataGrid.Size = new System.Drawing.Size(699, 150);
             this.eventTasksDataGrid.TabIndex = 32;
             // 
+            // statusComboBox
+            // 
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "open",
+            "in progress",
+            "finalized"});
+            this.statusComboBox.Location = new System.Drawing.Point(572, 17);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(121, 24);
+            this.statusComboBox.TabIndex = 33;
+            this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.StatusComboBox_SelectedIndexChanged);
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(446, 20);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(48, 17);
+            this.statusLabel.TabIndex = 34;
+            this.statusLabel.Text = "Status";
+            // 
             // ManageEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 591);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.statusComboBox);
             this.Controls.Add(this.eventTasksDataGrid);
             this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.budgetText);
@@ -407,5 +433,7 @@
         private System.Windows.Forms.TextBox budgetText;
         private System.Windows.Forms.Button addTaskButton;
         private System.Windows.Forms.DataGridView eventTasksDataGrid;
+        private System.Windows.Forms.ComboBox statusComboBox;
+        private System.Windows.Forms.Label statusLabel;
     }
 }

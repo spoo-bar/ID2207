@@ -16,10 +16,13 @@ namespace PresentationTier
     {
         private readonly Form mainForm;
         public string eventRecordNumber;
+        private Event evnt;
+
         public ManageEventForm(Form mainForm, Event ev)
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            evnt = ev;
 
             this.eventRecordNumber = ev.RecordNr;
             this.eventRecordText.Text = ev.RecordNr;
@@ -48,6 +51,14 @@ namespace PresentationTier
             this.computerText.Text = ev.ComputerRelatedIssues;
             this.otherText.Text = ev.OtherNeeds;
             this.eventTasksDataGrid.DataSource = ev.Tasks;
+            if (ev.Status != null)
+            {
+                this.statusComboBox.SelectedItem = ev.Status;
+            }
+            else
+            {
+                this.statusComboBox.SelectedIndex = 0;
+            }
         }
 
         private void addTaskButton_Click(object sender, EventArgs e)
@@ -67,6 +78,11 @@ namespace PresentationTier
             var updatedEvent = new EventController().GetEvents().First(e => e.RecordNr == this.eventRecordNumber);
             this.eventTasksDataGrid.DataSource = updatedEvent;
             this.eventTasksDataGrid.Update();
+        }
+
+        private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            evnt.Status = statusComboBox.Text;
         }
     }
 }
