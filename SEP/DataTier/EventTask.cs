@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DataTier
 {
     public class EventTask
     {
-        public string TaskID { get; set; }
+        [Browsable(false)]
+        public string TaskID { get; }
         public string Description { get; set; }
 
         public User AssignedTo { get; set; }

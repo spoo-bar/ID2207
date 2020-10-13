@@ -86,8 +86,8 @@ namespace DataTier
                     Password = "password",
                     Role = Role.ServicesDepartmentManager,
                 };
-                jackUser.AddSubordinate(helenUser);
-                jackUser.AddSubordinate(kateUser);
+                helenUser.AddSubordinate(helenUser);
+                helenUser.AddSubordinate(kateUser);
 
                 return new List<User>
                 {

@@ -76,6 +76,12 @@
     <Compile Include="EventForm.Designer.cs">
       <DependentUpon>EventForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventTaskForm.Designer.cs">
+      <DependentUpon>EventTaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventTaskForm.resx">
+      <DependentUpon>EventTaskForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageEventForm.resx">
       <DependentUpon>ManageEventForm.cs</DependentUpon>

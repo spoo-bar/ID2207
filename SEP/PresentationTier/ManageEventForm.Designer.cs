@@ -58,6 +58,9 @@
             this.postersText = new System.Windows.Forms.TextBox();
             this.otherText = new System.Windows.Forms.TextBox();
             this.budgetText = new System.Windows.Forms.TextBox();
+            this.addTaskButton = new System.Windows.Forms.Button();
+            this.eventTasksDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.eventTasksDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // eventRecordLabel
@@ -302,11 +305,35 @@
             this.budgetText.Size = new System.Drawing.Size(100, 22);
             this.budgetText.TabIndex = 30;
             // 
+            // addTaskButton
+            // 
+            this.addTaskButton.Location = new System.Drawing.Point(24, 415);
+            this.addTaskButton.Name = "addTaskButton";
+            this.addTaskButton.Size = new System.Drawing.Size(75, 23);
+            this.addTaskButton.TabIndex = 31;
+            this.addTaskButton.Text = "Add Task";
+            this.addTaskButton.UseVisualStyleBackColor = true;
+            this.addTaskButton.Click += new System.EventHandler(this.addTaskButton_Click);
+            // 
+            // eventTasksDataGrid
+            // 
+            this.eventTasksDataGrid.AllowUserToAddRows = false;
+            this.eventTasksDataGrid.AllowUserToDeleteRows = false;
+            this.eventTasksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eventTasksDataGrid.Location = new System.Drawing.Point(24, 462);
+            this.eventTasksDataGrid.Name = "eventTasksDataGrid";
+            this.eventTasksDataGrid.RowHeadersWidth = 51;
+            this.eventTasksDataGrid.RowTemplate.Height = 24;
+            this.eventTasksDataGrid.Size = new System.Drawing.Size(699, 150);
+            this.eventTasksDataGrid.TabIndex = 32;
+            // 
             // ManageEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(759, 591);
+            this.Controls.Add(this.eventTasksDataGrid);
+            this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.budgetText);
             this.Controls.Add(this.otherText);
             this.Controls.Add(this.computerText);
@@ -339,6 +366,8 @@
             this.Controls.Add(this.eventRecordLabel);
             this.Name = "ManageEventForm";
             this.Text = "ManageEventForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageEventForm_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.eventTasksDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +405,7 @@
         private System.Windows.Forms.TextBox postersText;
         private System.Windows.Forms.TextBox otherText;
         private System.Windows.Forms.TextBox budgetText;
+        private System.Windows.Forms.Button addTaskButton;
+        private System.Windows.Forms.DataGridView eventTasksDataGrid;
     }
 }

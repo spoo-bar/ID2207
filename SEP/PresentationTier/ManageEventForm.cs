@@ -1,4 +1,5 @@
-﻿using DataTier;
+﻿using BusinessTier;
+using DataTier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,13 @@ namespace PresentationTier
     public partial class ManageEventForm : Form
     {
         private readonly Form mainForm;
+        public string eventRecordNumber;
         public ManageEventForm(Form mainForm, Event ev)
         {
             InitializeComponent();
             this.mainForm = mainForm;
 
+            this.eventRecordNumber = ev.RecordNr;
             this.eventRecordText.Text = ev.RecordNr;
             this.eventRecordText.Enabled = false;
             this.eventClientText.Text = ev.Client.FirstName + " " + ev.Client.LastName;
@@ -44,7 +47,26 @@ namespace PresentationTier
             this.postersText.Text = ev.Posters;
             this.computerText.Text = ev.ComputerRelatedIssues;
             this.otherText.Text = ev.OtherNeeds;
+            this.eventTasksDataGrid.DataSource = ev.Tasks;
         }
 
+        private void addTaskButton_Click(object sender, EventArgs e)
+        {
+            var eventTaskForm = new EventTaskForm(this);
+            eventTaskForm.Show(this);
+        }
+
+        private void ManageEventForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.Show();
+        }
+
+        public void RefreshTasks()
+        {
+            //TODO : refersh the tasks datagrid.
+            var updatedEvent = new EventController().GetEvents().First(e => e.RecordNr == this.eventRecordNumber);
+            this.eventTasksDataGrid.DataSource = updatedEvent;
+            this.eventTasksDataGrid.Update();
+        }
     }
 }
