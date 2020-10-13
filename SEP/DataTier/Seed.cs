@@ -42,12 +42,65 @@ namespace DataTier
                 };
                 mikeUser.AddSubordinate(janetUser);
 
+
+                var tobiasUser = new User() // Photographer
+                {
+                    Email = "tobias@sep.se",
+                    Password = "password",
+                    Role = Role.Photographer
+                };
+
+                var juliaUser = new User() // Graphic Designer
+                {
+                    Email = "julia@sep.se",
+                    Password = "password",
+                    Role = Role.GraphicDesigner
+                };
+
+                var jackUser = new User() // Production Manager
+                {
+                    Email = "jack@sep.se",
+                    Password = "password",
+                    Role = Role.ProductionManager,
+                };
+                jackUser.AddSubordinate(tobiasUser);
+                jackUser.AddSubordinate(juliaUser);
+
+                var helenUser = new User() // Top Chef
+                {
+                    Email = "helen@sep.se",
+                    Password = "password",
+                    Role = Role.TopChef
+                };
+
+                var kateUser = new User() // Senior Waitress
+                {
+                    Email = "kate@sep.se",
+                    Password = "password",
+                    Role = Role.SeniorWaitress
+                };
+
+                var natalieUser = new User() // Services Department Manager
+                {
+                    Email = "natalie@sep.se",
+                    Password = "password",
+                    Role = Role.ServicesDepartmentManager,
+                };
+                jackUser.AddSubordinate(helenUser);
+                jackUser.AddSubordinate(kateUser);
+
                 return new List<User>
                 {
                     sarahUser,
                     janetUser,
                     aliceUser,
-                    mikeUser
+                    mikeUser,
+                    jackUser,
+                    tobiasUser,
+                    juliaUser,
+                    helenUser,
+                    kateUser,
+                    natalieUser
                 };
             }
         }
