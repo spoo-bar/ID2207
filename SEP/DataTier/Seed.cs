@@ -18,24 +18,30 @@ namespace DataTier
                     Password = "password",
                     Role = Role.CustomerService
                 };
+
                 var janetUser = new User() // Senior Customer Service Officer 
                 {
                     Email = "janet@sep.se",
                     Password = "password",
                     Role = Role.SeniorCustomerServiceOfficer
                 };
+                janetUser.AddSubordinate(sarahUser);
+
                 var aliceUser = new User() // Financial Manager
                 {
                     Email = "alice@sep.se",
                     Password = "password",
                     Role = Role.FinancialManager
                 };
+
                 var mikeUser = new User() // Administration Department Manager
                 {
                     Email = "mike@sep.se",
                     Password = "password",
                     Role = Role.AdministrationDepartmentManager
                 };
+                mikeUser.AddSubordinate(janetUser);
+
                 return new List<User>
                 {
                     sarahUser,

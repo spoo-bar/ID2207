@@ -56,5 +56,11 @@ namespace PresentationTier
             new ClientForm(this).Show();
             this.Hide();
         }
+
+        private void StaffButton_Click(object sender, EventArgs e)
+        {
+            new StaffAvailabilityForm(this).Show();
+            this.Hide();
+        }
     }
 }

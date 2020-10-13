@@ -33,6 +33,7 @@ namespace PresentationTier
             this.loggedinUserLabel = new System.Windows.Forms.Label();
             this.eventRequestButton = new System.Windows.Forms.Button();
             this.createClientButton = new System.Windows.Forms.Button();
+            this.staffButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loggedinUserLabel
@@ -53,7 +54,7 @@ namespace PresentationTier
             this.eventRequestButton.UseVisualStyleBackColor = true;
             this.eventRequestButton.Click += new System.EventHandler(this.EventRequestButton_Click);
             // 
-            // eventRequestButton
+            // createClientButton
             // 
             this.createClientButton.Location = new System.Drawing.Point(16, 50);
             this.createClientButton.Name = "createClientButton";
@@ -63,6 +64,16 @@ namespace PresentationTier
             this.createClientButton.UseVisualStyleBackColor = true;
             this.createClientButton.Click += new System.EventHandler(this.CreateClientButton_Click);
             // 
+            // eventRequestButton
+            // 
+            this.staffButton.Location = new System.Drawing.Point(16, 84);
+            this.staffButton.Name = "staffButton";
+            this.staffButton.Size = new System.Drawing.Size(200, 23);
+            this.staffButton.TabIndex = 6;
+            this.staffButton.Text = "Review staff";
+            this.staffButton.UseVisualStyleBackColor = true;
+            this.staffButton.Click += new System.EventHandler(this.StaffButton_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -71,6 +82,7 @@ namespace PresentationTier
             this.Controls.Add(this.loggedinUserLabel);
             this.Controls.Add(this.eventRequestButton);
             this.Controls.Add(this.createClientButton);
+            this.Controls.Add(this.staffButton);
             this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);
@@ -82,5 +94,6 @@ namespace PresentationTier
         private System.Windows.Forms.Label loggedinUserLabel;
         private System.Windows.Forms.Button eventRequestButton;
         private System.Windows.Forms.Button createClientButton;
+        private System.Windows.Forms.Button staffButton;
     }
 }
