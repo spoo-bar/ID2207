@@ -45,6 +45,7 @@ namespace BusinessTier
                     return true;
                 case Role.AdministrationDepartmentManager:
                     eventRequest.State = EventRequest.States.Finalized;
+                    new EventController().Create(eventRequest);
                     return true;
                 default:
                     return false;
