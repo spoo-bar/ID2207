@@ -139,5 +139,56 @@ namespace Tests
             // Assert
             Assert.AreEqual(oldTasksCount, tasks.Count);
         }
+
+        //todo: should add more tests for all possible cases
+        [TestMethod]
+        public void GetAvailableUsers()
+        {
+            // Arrange
+            EventController.events = new List<Event>();
+            User user = new User() { Email = "abcd@xy.z" };
+            var oldUserCount = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now, DateTime.Now.AddDays(1)).Count;
+            var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
+                                                DateTime.Now, DateTime.Now.AddDays(1),
+                                                33, 321);
+            eventController.Create(eventRequest);
+            var eventTask = new EventTask()
+            {
+                Description = "test description",
+                AssignedTo = user
+            };
+            eventController.CreateTask("123", eventTask);
+
+            // Act
+            var users = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now.AddDays(2), DateTime.Now.AddDays(3));
+
+            // Assert
+            Assert.AreEqual(oldUserCount + 1, users.Count);
+        }
+
+        [TestMethod]
+        public void GetAvailableUsers_overlap()
+        {
+            // Arrange
+            EventController.events = new List<Event>();
+            User user = new User() { Email = "abcd@xy.z" };
+            var oldUserCount = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now, DateTime.Now.AddDays(1)).Count;
+            var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
+                                                DateTime.Now, DateTime.Now.AddDays(1),
+                                                33, 321);
+            eventController.Create(eventRequest);
+            var eventTask = new EventTask()
+            {
+                Description = "test description",
+                AssignedTo = user
+            };
+            eventController.CreateTask("123", eventTask);
+
+            // Act
+            var users = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now, DateTime.Now.AddDays(1));
+
+            // Assert
+            Assert.AreEqual(oldUserCount, users.Count);
+        }
     }
 }

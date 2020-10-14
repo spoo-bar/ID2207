@@ -1,6 +1,7 @@
 ﻿using DataTier;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,8 @@ namespace BusinessTier
 {
     public class EventController
     {
-        private static List<Event> events = Seed.Events;
+        //todo:was made public since i could not test it, maybe dependency injection should be used
+        public static List<Event> events = Seed.Events;
 
         public Event Create(EventRequest eventRequest)
         {
@@ -48,6 +50,35 @@ namespace BusinessTier
                 eventTasks.AddRange(userTasks);
             }
             return eventTasks;
+        }
+
+        private List<Event> GetUserEvents(User user)
+        {
+            List<Event> userEvents = new List<Event>();
+            foreach (Event evnt in events)
+            {
+                if(evnt.Tasks.Any(task => task.AssignedTo.Email.Equals(user.Email)))
+                {
+                    userEvents.Add(evnt);
+                }
+            }
+            return userEvents;
+        }
+
+        public List<User> GetAvailableUsers(List<User> subordinates, DateTime from, DateTime to)
+        {
+            var users = new List<User>();
+            foreach (User user in subordinates)
+            {
+                var events = GetUserEvents(user);
+                if (events == null || events.Any(
+                    ev => (ev.To < from || to < ev.From) &&
+                    to > from))
+                {
+                    users.Add(user);
+                }
+            }
+            return users;
         }
 
         public List<Event> GetEvents()

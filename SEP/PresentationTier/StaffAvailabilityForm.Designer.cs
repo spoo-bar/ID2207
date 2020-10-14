@@ -1,4 +1,6 @@
-﻿namespace PresentationTier
+﻿using System;
+
+namespace PresentationTier
 {
     partial class StaffAvailabilityForm
     {
@@ -40,6 +42,7 @@
             // 
             this.fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fromDateTimePicker.Location = new System.Drawing.Point(62, 17);
+            this.fromDateTimePicker.Value = DateTime.Now;
             this.fromDateTimePicker.Name = "fromDateTimePicker";
             this.fromDateTimePicker.Size = new System.Drawing.Size(128, 22);
             this.fromDateTimePicker.TabIndex = 0;
@@ -49,6 +52,7 @@
             // 
             this.toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.toDateTimePicker.Location = new System.Drawing.Point(249, 17);
+            this.fromDateTimePicker.Value = DateTime.Now.AddDays(1);
             this.toDateTimePicker.Name = "toDateTimePicker";
             this.toDateTimePicker.Size = new System.Drawing.Size(128, 22);
             this.toDateTimePicker.TabIndex = 1;

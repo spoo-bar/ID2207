@@ -21,8 +21,7 @@ namespace PresentationTier
             InitializeComponent();
             this.mainForm = mainForm;
 
-            var user = Session.UserSession.LoggedInUser;
-            staffDataGridView.DataSource = user.Subordinates;
+            DateTimePicker_ValueChanged(null, null);
         }
 
         private void StaffAvailabilityForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -32,7 +31,8 @@ namespace PresentationTier
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-
+            EventController eventController = new EventController();
+            staffDataGridView.DataSource = eventController.GetAvailableUsers(Session.UserSession.LoggedInUser.Subordinates, fromDateTimePicker.Value, toDateTimePicker.Value);
         }
     }
 }
