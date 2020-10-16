@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataTier
+{
+    public class FinancialRequest
+    {
+        public FinancialRequest(RequestingDepartment department, Event reuqestedEvent, double ammount, string reason)
+        {
+            this.Department = department;
+            this.Event = reuqestedEvent;
+            this.Ammount = ammount;
+            this.Reason = reason;
+        }
+
+        public RequestingDepartment Department { get; }
+
+        public Event Event { get; }
+
+        public double Ammount { get; }
+
+        public string Reason { get; }
+    }
+}

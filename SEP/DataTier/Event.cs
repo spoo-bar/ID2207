@@ -48,5 +48,10 @@ namespace DataTier
         public string OtherNeeds { get; set; }
 
         public List<EventTask> Tasks { get; set; }
+
+        public override string ToString()
+        {
+            return RecordNr;
+        }
     }
 }

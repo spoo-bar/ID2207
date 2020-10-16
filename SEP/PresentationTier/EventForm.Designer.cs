@@ -44,7 +44,8 @@
             this.eventFormGridView.RowTemplate.Height = 24;
             this.eventFormGridView.Size = new System.Drawing.Size(788, 438);
             this.eventFormGridView.TabIndex = 0;
-            this.eventFormGridView.DoubleClick += new System.EventHandler(EventDataGridView_DoubleClick);
+            this.eventFormGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EventFormGridView_CellMouseClick);
+            this.eventFormGridView.DoubleClick += new System.EventHandler(this.EventDataGridView_DoubleClick);
             // 
             // EventForm
             // 
@@ -54,8 +55,8 @@
             this.Controls.Add(this.eventFormGridView);
             this.Name = "EventForm";
             this.Text = "EventForm";
-            ((System.ComponentModel.ISupportInitialize)(this.eventFormGridView)).EndInit();
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventForm_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.eventFormGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

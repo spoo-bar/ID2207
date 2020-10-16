@@ -48,6 +48,7 @@ namespace PresentationTier
 
         private void DisableButtonsWithoutPermission()
         {
+            //todo: could be placed in designer
             this.eventRequestButton.Enabled = false;
             this.createClientButton.Enabled = false;
             this.staffButton.Enabled = false;
@@ -136,6 +137,12 @@ namespace PresentationTier
         private void recruitmentButton_Click(object sender, EventArgs e)
         {
             new ManageRecruitmentForm(this).Show();
+            this.Hide();
+        }
+
+        private void financialRequestButton_Click(object sender, EventArgs e)
+        {
+            new FinancialRequestForm(this).Show();
             this.Hide();
         }
     }

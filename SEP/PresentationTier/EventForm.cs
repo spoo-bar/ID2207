@@ -35,5 +35,25 @@ namespace PresentationTier
         {
             mainForm.Show();
         }
+
+        private void EventFormGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex != -1 && e.RowIndex != -1 && e.Button == MouseButtons.Right)
+            {
+                eventFormGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+                ContextMenu cm = new ContextMenu();
+                cm.MenuItems.Add(new MenuItem("Financial request", FinancialRequestItem_Click));
+
+                var relativeMousePosition = eventFormGridView.PointToClient(Cursor.Position);
+                cm.Show(eventFormGridView, relativeMousePosition);
+            }
+        }
+
+        private void FinancialRequestItem_Click(object sender, EventArgs e)
+        {
+            var selectedEvent = (Event)eventFormGridView.CurrentRow.DataBoundItem;
+            new ManageFinancialRequestForm(this, selectedEvent).Show();
+            this.Hide();
+        }
     }
 }

@@ -70,6 +70,18 @@
     <Compile Include="AssignmentForm.Designer.cs">
       <DependentUpon>AssignmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FinancialRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinancialRequestForm.Designer.cs">
+      <DependentUpon>FinancialRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageFinancialRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageFinancialRequestForm.Designer.cs">
+      <DependentUpon>ManageFinancialRequestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     </Compile>
     <EmbeddedResource Include="AssignmentForm.resx">
       <DependentUpon>AssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancialRequestForm.resx">
+      <DependentUpon>FinancialRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageFinancialRequestForm.resx">
+      <DependentUpon>ManageFinancialRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageAssignmentForm.resx">
       <DependentUpon>ManageAssignmentForm.cs</DependentUpon>

@@ -37,6 +37,7 @@ namespace PresentationTier
             this.eventButton = new System.Windows.Forms.Button();
             this.assignmentButton = new System.Windows.Forms.Button();
             this.recruitmentButton = new System.Windows.Forms.Button();
+            this.financialRequestButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loggedinUserLabel
@@ -107,11 +108,22 @@ namespace PresentationTier
             this.recruitmentButton.UseVisualStyleBackColor = true;
             this.recruitmentButton.Click += new System.EventHandler(this.recruitmentButton_Click);
             // 
+            // financialRequestButton
+            // 
+            this.financialRequestButton.Location = new System.Drawing.Point(16, 205);
+            this.financialRequestButton.Name = "financialRequestButton";
+            this.financialRequestButton.Size = new System.Drawing.Size(200, 23);
+            this.financialRequestButton.TabIndex = 9;
+            this.financialRequestButton.Text = "Financial requests";
+            this.financialRequestButton.UseVisualStyleBackColor = true;
+            this.financialRequestButton.Click += new System.EventHandler(this.financialRequestButton_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.financialRequestButton);
             this.Controls.Add(this.recruitmentButton);
             this.Controls.Add(this.assignmentButton);
             this.Controls.Add(this.loggedinUserLabel);
@@ -134,5 +146,6 @@ namespace PresentationTier
         private System.Windows.Forms.Button eventButton;
         private System.Windows.Forms.Button assignmentButton;
         private System.Windows.Forms.Button recruitmentButton;
+        private System.Windows.Forms.Button financialRequestButton;
     }
 }

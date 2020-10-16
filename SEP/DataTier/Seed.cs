@@ -235,5 +235,21 @@ namespace DataTier
                 };
             }
         }
+
+        public static List<FinancialRequest> FinancialRequests
+        {
+            get
+            {
+                var financialRequest = new FinancialRequest(
+                    RequestingDepartment.Production,
+                    Events[0],
+                    123.4,
+                    "Having Picasso painting is not cheap");
+                return new List<FinancialRequest>
+                {
+                    financialRequest
+                };
+            }
+        }
     }
 }
