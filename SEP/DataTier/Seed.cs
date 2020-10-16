@@ -41,7 +41,7 @@ namespace DataTier
                     Role = Role.AdministrationDepartmentManager
                 };
                 mikeUser.AddSubordinate(janetUser);
-
+                mikeUser.AddSubordinate(janetUser);
 
                 var tobiasUser = new User() // Photographer
                 {
@@ -89,6 +89,14 @@ namespace DataTier
                 helenUser.AddSubordinate(helenUser);
                 helenUser.AddSubordinate(kateUser);
 
+                var simonUser = new User() // Senior HR Manager
+                {
+                    Email = "simon@sep.se",
+                    Password = "password",
+                    Role = Role.SeniorHRManager
+                };
+                mikeUser.AddSubordinate(simonUser);
+
                 return new List<User>
                 {
                     sarahUser,
@@ -100,7 +108,8 @@ namespace DataTier
                     juliaUser,
                     helenUser,
                     kateUser,
-                    natalieUser
+                    natalieUser,
+                    simonUser
                 };
             }
         }

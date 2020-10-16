@@ -31,6 +31,7 @@ namespace PresentationTier
             if (loginForm.ShowDialog(this) == DialogResult.OK)
             {
                 SetLoginInUserLabel();
+                DisableButtonsWithoutPermission();
             }
             else
             {
@@ -43,6 +44,63 @@ namespace PresentationTier
         {
             loggedinUserLabel.Text =  "Logged In : " + Session.UserSession.LoggedInUser.Email;
             loggedinUserLabel.Refresh();
+        }
+
+        private void DisableButtonsWithoutPermission()
+        {
+            this.eventRequestButton.Enabled = false;
+            this.createClientButton.Enabled = false;
+            this.staffButton.Enabled = false;
+            this.eventButton.Enabled = false;
+            this.assignmentButton.Enabled = false;
+            this.recruitmentButton.Enabled = false;
+
+            var userRole = Session.UserSession.LoggedInUser.Role;
+            switch (userRole)
+            {
+                case DataTier.Role.AdministrationDepartmentManager:
+                    this.eventRequestButton.Enabled = true;
+                    this.recruitmentButton.Enabled = false;
+                    break;
+                case DataTier.Role.SeniorCustomerServiceOfficer:
+                    this.eventRequestButton.Enabled = true;
+                    this.eventButton.Enabled = true;
+                    break;
+                case DataTier.Role.CustomerService:
+                    this.eventRequestButton.Enabled = true;
+                    this.createClientButton.Enabled = true;
+                    break;
+                case DataTier.Role.FinancialManager:
+                    this.eventRequestButton.Enabled = true;
+                    this.eventButton.Enabled = true;
+                    this.recruitmentButton.Enabled = false;
+                    break;
+                case DataTier.Role.ProductionManager:
+                    this.eventButton.Enabled = true;
+                    this.assignmentButton.Enabled = true;
+                    break;
+                case DataTier.Role.Photographer:
+                    this.assignmentButton.Enabled = true;
+                    break;
+                case DataTier.Role.GraphicDesigner:
+                    this.assignmentButton.Enabled = true;
+                    break;
+                case DataTier.Role.ServicesDepartmentManager:
+                    this.assignmentButton.Enabled = true;
+                    this.eventButton.Enabled = true;
+                    break;
+                case DataTier.Role.TopChef:
+                    this.assignmentButton.Enabled = true;
+                    break;
+                case DataTier.Role.SeniorWaitress:
+                    this.assignmentButton.Enabled = true;
+                    break;
+                case DataTier.Role.SeniorHRManager:
+                    this.createClientButton.Enabled = true;
+                    this.staffButton.Enabled = true;
+                    this.recruitmentButton.Enabled = false;
+                    break;
+            }
         }
 
         private void EventRequestButton_Click(object sender, EventArgs e)

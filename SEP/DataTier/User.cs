@@ -42,6 +42,7 @@ namespace DataTier
         GraphicDesigner,
         ServicesDepartmentManager,
         TopChef,
-        SeniorWaitress
+        SeniorWaitress,
+        SeniorHRManager
     }
 }
