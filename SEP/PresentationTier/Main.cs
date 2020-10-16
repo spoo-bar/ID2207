@@ -74,5 +74,11 @@ namespace PresentationTier
             new AssignmentForm(this).Show();
             this.Hide();
         }
+
+        private void recruitmentButton_Click(object sender, EventArgs e)
+        {
+            new ManageRecruitmentForm(this).Show();
+            this.Hide();
+        }
     }
 }

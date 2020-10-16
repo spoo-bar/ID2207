@@ -208,5 +208,23 @@ namespace DataTier
             }
         }
 
+        public static List<RecruitmentRequest> RecruitmentRequests
+        {
+            get
+            {
+                var recruitmentRequest = new RecruitmentRequest()
+                {
+                    Contractype = Contractype.PartTime,
+                    RequestingDepartment = RequestingDepartment.Production,
+                    YearsOfExperience = "3 years minimum",
+                    JobTitle = "Graphic Designer",
+                    JobDescription = ""
+                };
+                return new List<RecruitmentRequest>
+                {
+                    recruitmentRequest
+                };
+            }
+        }
     }
 }

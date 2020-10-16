@@ -36,6 +36,7 @@ namespace PresentationTier
             this.staffButton = new System.Windows.Forms.Button();
             this.eventButton = new System.Windows.Forms.Button();
             this.assignmentButton = new System.Windows.Forms.Button();
+            this.recruitmentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loggedinUserLabel
@@ -96,11 +97,22 @@ namespace PresentationTier
             this.assignmentButton.UseVisualStyleBackColor = true;
             this.assignmentButton.Click += new System.EventHandler(this.AssignmentButton_Click);
             // 
+            // recruitmentButton
+            // 
+            this.recruitmentButton.Location = new System.Drawing.Point(16, 176);
+            this.recruitmentButton.Name = "recruitmentButton";
+            this.recruitmentButton.Size = new System.Drawing.Size(200, 23);
+            this.recruitmentButton.TabIndex = 8;
+            this.recruitmentButton.Text = "Recruitment";
+            this.recruitmentButton.UseVisualStyleBackColor = true;
+            this.recruitmentButton.Click += new System.EventHandler(this.recruitmentButton_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.recruitmentButton);
             this.Controls.Add(this.assignmentButton);
             this.Controls.Add(this.loggedinUserLabel);
             this.Controls.Add(this.eventRequestButton);
@@ -121,5 +133,6 @@ namespace PresentationTier
         private System.Windows.Forms.Button staffButton;
         private System.Windows.Forms.Button eventButton;
         private System.Windows.Forms.Button assignmentButton;
+        private System.Windows.Forms.Button recruitmentButton;
     }
 }
