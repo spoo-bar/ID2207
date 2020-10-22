@@ -18,14 +18,7 @@ namespace Tests
         public void GetRecruitmentRequestTest()
         {
             // Arrange
-            var expectedRecruitmentRequest = new RecruitmentRequest()
-            {
-                Contractype = Contractype.PartTime,
-                RequestingDepartment = RequestingDepartment.Production,
-                YearsOfExperience = "3 years minimum",
-                JobTitle = "Graphic Designer",
-                JobDescription = ""
-            };
+            var expectedRecruitmentRequest = new RecruitmentRequest(Contractype.PartTime, RequestingDepartment.Production, 3, "Graphic Designer", "");
 
             // Act
             var recruitmentRequests = recruitmentRequestController.GetRecruitmentRequests();
@@ -45,7 +38,7 @@ namespace Tests
             // Arrange
             var contractType = Contractype.FullTime;
             var requestingDepartment = RequestingDepartment.Financial;
-            var yearsOfExp = "10 years";
+            var yearsOfExp = "10";
             var jobTitle = "Financial Manager";
             var jobDescrimination = "";
 
@@ -56,7 +49,7 @@ namespace Tests
             Assert.IsNotNull(requirementRequest);
             Assert.AreEqual(contractType, requirementRequest.Contractype);
             Assert.AreEqual(requestingDepartment, requirementRequest.RequestingDepartment);
-            Assert.AreEqual(yearsOfExp, requirementRequest.YearsOfExperience);
+            Assert.AreEqual(yearsOfExp, requirementRequest.YearsOfExperience.ToString());
             Assert.AreEqual(jobTitle, requirementRequest.JobTitle);
             Assert.AreEqual(jobDescrimination, requirementRequest.JobDescription);
         }

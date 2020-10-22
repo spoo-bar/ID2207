@@ -15,17 +15,14 @@ namespace PresentationTier
             this.mainForm = mainForm;
             evnt = ev;
 
+            //todo: show only available
             this.assignedTo_Combo.DataSource = Session.UserSession.LoggedInUser.Subordinates;
             this.assignedTo_Combo.DisplayMember = "Email";
         }
 
         private void CreateTask_Button_Click(object sender, EventArgs e)
         {
-            var eventTask = new EventTask()
-            {
-                Description = this.descriptionText.Text,
-                AssignedTo = (User)this.assignedTo_Combo.SelectedItem
-            };
+            var eventTask = new EventTask(this.descriptionText.Text, (User)this.assignedTo_Combo.SelectedItem);
             var eventController = new EventController();
             eventController.CreateTask(evnt.RecordNr, eventTask);
             mainForm.RefreshTasks();

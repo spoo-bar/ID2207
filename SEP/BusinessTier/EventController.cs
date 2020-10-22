@@ -10,7 +10,7 @@ namespace BusinessTier
 {
     public class EventController
     {
-        public Event Create(EventRequest eventRequest)
+        public Event Create(IEvent eventRequest)
         {
             var newEvent = new Event();
             newEvent.RecordNr = eventRequest.RecordNr;

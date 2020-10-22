@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataTier
 {
@@ -13,89 +11,45 @@ namespace DataTier
         {
             get
             {
-                var sarahUser = new User() // Customer Service
-                {
-                    Email = "sarah@sep.se",
-                    Password = "password",
-                    Role = Role.CustomerService
-                };
+                // Customer Service
+                var sarahUser = new User("sarah@sep.se","password",User.Roles.CustomerService);
 
-                var janetUser = new User() // Senior Customer Service Officer 
-                {
-                    Email = "janet@sep.se",
-                    Password = "password",
-                    Role = Role.SeniorCustomerServiceOfficer
-                };
+                // Senior Customer Service Officer 
+                var janetUser = new User("janet@sep.se", "password", User.Roles.SeniorCustomerServiceOfficer);
                 janetUser.AddSubordinate(sarahUser);
 
-                var aliceUser = new User() // Financial Manager
-                {
-                    Email = "alice@sep.se",
-                    Password = "password",
-                    Role = Role.FinancialManager
-                };
+                // Financial Manager
+                var aliceUser = new User("alice@sep.se", "password", User.Roles.FinancialManager);
 
-                var mikeUser = new User() // Administration Department Manager
-                {
-                    Email = "mike@sep.se",
-                    Password = "password",
-                    Role = Role.AdministrationDepartmentManager
-                };
+                // Administration Department Manager
+                var mikeUser = new User("mike@sep.se", "password", User.Roles.AdministrationDepartmentManager);
                 mikeUser.AddSubordinate(janetUser);
                 mikeUser.AddSubordinate(janetUser);
 
-                var tobiasUser = new User() // Photographer
-                {
-                    Email = "tobias@sep.se",
-                    Password = "password",
-                    Role = Role.Photographer
-                };
+                // Photographer
+                var tobiasUser = new User("tobias@sep.se", "password", User.Roles.Photographer);
 
-                var juliaUser = new User() // Graphic Designer
-                {
-                    Email = "julia@sep.se",
-                    Password = "password",
-                    Role = Role.GraphicDesigner
-                };
+                // Graphic Designer
+                var juliaUser = new User("julia@sep.se", "password", User.Roles.GraphicDesigner);
 
-                var jackUser = new User() // Production Manager
-                {
-                    Email = "jack@sep.se",
-                    Password = "password",
-                    Role = Role.ProductionManager,
-                };
+                // Production Manager
+                var jackUser = new User("jack@sep.se", "password", User.Roles.ProductionManager);
                 jackUser.AddSubordinate(tobiasUser);
                 jackUser.AddSubordinate(juliaUser);
 
-                var helenUser = new User() // Top Chef
-                {
-                    Email = "helen@sep.se",
-                    Password = "password",
-                    Role = Role.TopChef
-                };
+                // Top Chef
+                var helenUser = new User("helen@sep.se", "password", User.Roles.TopChef);
 
-                var kateUser = new User() // Senior Waitress
-                {
-                    Email = "kate@sep.se",
-                    Password = "password",
-                    Role = Role.SeniorWaitress
-                };
+                // Senior Waitress
+                var kateUser = new User("kate@sep.se", "password", User.Roles.SeniorWaitress);
 
-                var natalieUser = new User() // Services Department Manager
-                {
-                    Email = "natalie@sep.se",
-                    Password = "password",
-                    Role = Role.ServicesDepartmentManager,
-                };
+                // Services Department Manager
+                var natalieUser = new User("natalie@sep.se", "password", User.Roles.ServicesDepartmentManager);
                 helenUser.AddSubordinate(helenUser);
                 helenUser.AddSubordinate(kateUser);
 
-                var simonUser = new User() // Senior HR Manager
-                {
-                    Email = "simon@sep.se",
-                    Password = "password",
-                    Role = Role.SeniorHRManager
-                };
+                // Senior HR Manager
+                var simonUser = new User("simon@sep.se", "password", User.Roles.SeniorHRManager);
                 mikeUser.AddSubordinate(simonUser);
 
                 return new List<User>
@@ -208,11 +162,7 @@ namespace DataTier
                     OtherNeeds = ""
                 };
 
-                var eventTask = new EventTask()
-                {
-                    Description = "test description",
-                    AssignedTo = Users.ToList()[0]
-                };
+                var eventTask = new EventTask("test description", users.ToList()[5]);
 
                 newevent.Tasks.Add(eventTask);
                 return new List<Event>() {
@@ -226,14 +176,11 @@ namespace DataTier
         {
             get
             {
-                var recruitmentRequest = new RecruitmentRequest()
-                {
-                    Contractype = Contractype.PartTime,
-                    RequestingDepartment = RequestingDepartment.Production,
-                    YearsOfExperience = "3 years minimum",
-                    JobTitle = "Graphic Designer",
-                    JobDescription = ""
-                };
+                var recruitmentRequest = new RecruitmentRequest(Contractype.PartTime, 
+                    RequestingDepartment.Production, 
+                    3, 
+                    "Graphic Designer", 
+                    "");
                 return new List<RecruitmentRequest>
                 {
                     recruitmentRequest

@@ -18,15 +18,23 @@ namespace DataTier
         }
 
         public string RecordNr { get; set; }
+
         [Browsable(false)]
         public Client Client { get; set; }
+
         public string EventType { get; set; }
+
         public DateTime From { get; set; }
+
         public DateTime To { get; set; }
+
         public int Attendees { get; set; }
+
         public double Budget { get; set; }
+
         [Browsable(false)]
         public string FinancialFeedback { get; set; }
+
         [Browsable(false)]
         public States State { get; set; }
 

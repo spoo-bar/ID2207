@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace DataTier
 {
@@ -10,8 +8,16 @@ namespace DataTier
     {
         private List<TaskComment> comments = new List<TaskComment>();
 
+        public EventTask(string description, User user)
+        {
+            this.TaskID = Guid.NewGuid().ToString();
+            Description = description;
+            AssignedTo = user;
+        }
+
         [Browsable(false)]
         public string TaskID { get; }
+
         public string Description { get; set; }
 
         public User AssignedTo { get; set; }
@@ -19,10 +25,5 @@ namespace DataTier
         public string Plan { get; set; }
 
         public List<TaskComment> TaskComments { get => comments; set => comments = value; }
-
-        public EventTask()
-        {
-            this.TaskID = Guid.NewGuid().ToString();
-        }
     }
 }

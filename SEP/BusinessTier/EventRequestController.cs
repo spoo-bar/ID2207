@@ -27,18 +27,18 @@ namespace BusinessTier
             }
         }
 
-        public bool ChangeState(EventRequest eventRequest, Role role, string feedback)
+        public bool ChangeState(EventRequest eventRequest, User.Roles role, string feedback)
         {
             switch (role)
             {
-                case Role.SeniorCustomerServiceOfficer:
+                case User.Roles.SeniorCustomerServiceOfficer:
                     eventRequest.State = EventRequest.States.ApprovedBySCSO;
                     return true;
-                case Role.FinancialManager:
+                case User.Roles.FinancialManager:
                     eventRequest.State = EventRequest.States.FinancialFeedbackAdded;
                     eventRequest.FinancialFeedback = feedback;
                     return true;
-                case Role.AdministrationDepartmentManager:
+                case User.Roles.AdministrationDepartmentManager:
                     eventRequest.State = EventRequest.States.Finalized;
                     new EventController().Create(eventRequest);
                     return true;
@@ -47,15 +47,15 @@ namespace BusinessTier
             }
         }
 
-        public List<EventRequest> GetEventRequests(Role role)
+        public List<EventRequest> GetEventRequests(User.Roles role)
         {
             switch (role)
             {
-                case Role.SeniorCustomerServiceOfficer:
+                case User.Roles.SeniorCustomerServiceOfficer:
                     return Seed.eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created || eventRequest.State == EventRequest.States.Finalized).ToList();
-                case Role.FinancialManager:
+                case User.Roles.FinancialManager:
                     return Seed.eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.ApprovedBySCSO).ToList();
-                case Role.AdministrationDepartmentManager:
+                case User.Roles.AdministrationDepartmentManager:
                     return Seed.eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.FinancialFeedbackAdded).ToList();
                 default:
                     return null;

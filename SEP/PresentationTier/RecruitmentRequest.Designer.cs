@@ -43,8 +43,8 @@
             this.createRecruitmentButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.fulltimeRadioButton = new System.Windows.Forms.RadioButton();
             this.parttimeRadioButton = new System.Windows.Forms.RadioButton();
+            this.fulltimeRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,6 +144,7 @@
             this.yearsOfExpText.Name = "yearsOfExpText";
             this.yearsOfExpText.Size = new System.Drawing.Size(172, 22);
             this.yearsOfExpText.TabIndex = 11;
+            this.yearsOfExpText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.YearsOfExpText_KeyPress);
             // 
             // jobTitleText
             // 
@@ -155,13 +156,14 @@
             // jobDescText
             // 
             this.jobDescText.Location = new System.Drawing.Point(209, 317);
+            this.jobDescText.Multiline = true;
             this.jobDescText.Name = "jobDescText";
-            this.jobDescText.Size = new System.Drawing.Size(540, 22);
+            this.jobDescText.Size = new System.Drawing.Size(540, 73);
             this.jobDescText.TabIndex = 14;
             // 
             // createRecruitmentButton
             // 
-            this.createRecruitmentButton.Location = new System.Drawing.Point(38, 367);
+            this.createRecruitmentButton.Location = new System.Drawing.Point(38, 415);
             this.createRecruitmentButton.Name = "createRecruitmentButton";
             this.createRecruitmentButton.Size = new System.Drawing.Size(75, 23);
             this.createRecruitmentButton.TabIndex = 15;
@@ -187,28 +189,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " ";
             // 
+            // parttimeRadioButton
+            // 
+            this.parttimeRadioButton.AutoSize = true;
+            this.parttimeRadioButton.Location = new System.Drawing.Point(186, 21);
+            this.parttimeRadioButton.Name = "parttimeRadioButton";
+            this.parttimeRadioButton.Size = new System.Drawing.Size(85, 21);
+            this.parttimeRadioButton.TabIndex = 20;
+            this.parttimeRadioButton.TabStop = true;
+            this.parttimeRadioButton.Text = "Part time";
+            this.parttimeRadioButton.UseVisualStyleBackColor = true;
+            // 
             // fulltimeRadioButton
             // 
             this.fulltimeRadioButton.AutoSize = true;
             this.fulltimeRadioButton.Checked = true;
             this.fulltimeRadioButton.Location = new System.Drawing.Point(16, 21);
             this.fulltimeRadioButton.Name = "fulltimeRadioButton";
-            this.fulltimeRadioButton.Size = new System.Drawing.Size(101, 26);
+            this.fulltimeRadioButton.Size = new System.Drawing.Size(81, 21);
             this.fulltimeRadioButton.TabIndex = 19;
             this.fulltimeRadioButton.TabStop = true;
             this.fulltimeRadioButton.Text = "Full time";
             this.fulltimeRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // parttimeRadioButton
-            // 
-            this.parttimeRadioButton.AutoSize = true;
-            this.parttimeRadioButton.Location = new System.Drawing.Point(186, 21);
-            this.parttimeRadioButton.Name = "parttimeRadioButton";
-            this.parttimeRadioButton.Size = new System.Drawing.Size(106, 26);
-            this.parttimeRadioButton.TabIndex = 20;
-            this.parttimeRadioButton.TabStop = true;
-            this.parttimeRadioButton.Text = "Part time";
-            this.parttimeRadioButton.UseVisualStyleBackColor = true;
             // 
             // RecruitmentRequest
             // 

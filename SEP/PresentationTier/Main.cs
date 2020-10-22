@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataTier;
+using System;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -48,45 +49,45 @@ namespace PresentationTier
             var userRole = Session.UserSession.LoggedInUser.Role;
             switch (userRole)
             {
-                case DataTier.Role.AdministrationDepartmentManager:
+                case User.Roles.AdministrationDepartmentManager:
                     eventRequestButton.Enabled = true;
                     recruitmentButton.Enabled = false;
                     break;
-                case DataTier.Role.SeniorCustomerServiceOfficer:
+                case User.Roles.SeniorCustomerServiceOfficer:
                     eventRequestButton.Enabled = true;
                     eventButton.Enabled = true;
                     break;
-                case DataTier.Role.CustomerService:
+                case User.Roles.CustomerService:
                     eventRequestButton.Enabled = true;
                     createClientButton.Enabled = true;
                     break;
-                case DataTier.Role.FinancialManager:
+                case User.Roles.FinancialManager:
                     eventRequestButton.Enabled = true;
                     eventButton.Enabled = true;
                     recruitmentButton.Enabled = false;
                     financialRequestButton.Enabled = true;
                     break;
-                case DataTier.Role.ProductionManager:
+                case User.Roles.ProductionManager:
                     eventButton.Enabled = true;
                     assignmentButton.Enabled = true;
                     break;
-                case DataTier.Role.Photographer:
+                case User.Roles.Photographer:
                     assignmentButton.Enabled = true;
                     break;
-                case DataTier.Role.GraphicDesigner:
+                case User.Roles.GraphicDesigner:
                     assignmentButton.Enabled = true;
                     break;
-                case DataTier.Role.ServicesDepartmentManager:
+                case User.Roles.ServicesDepartmentManager:
                     assignmentButton.Enabled = true;
                     eventButton.Enabled = true;
                     break;
-                case DataTier.Role.TopChef:
+                case User.Roles.TopChef:
                     assignmentButton.Enabled = true;
                     break;
-                case DataTier.Role.SeniorWaitress:
+                case User.Roles.SeniorWaitress:
                     assignmentButton.Enabled = true;
                     break;
-                case DataTier.Role.SeniorHRManager:
+                case User.Roles.SeniorHRManager:
                     createClientButton.Enabled = true;
                     staffButton.Enabled = true;
                     recruitmentButton.Enabled = false;

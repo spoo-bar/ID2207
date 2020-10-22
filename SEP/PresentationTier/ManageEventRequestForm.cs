@@ -56,7 +56,7 @@ namespace PresentationTier
                 feedbackTextBox.Enabled = false;
                 saveButton.Hide();
             }
-            else if (Session.UserSession.LoggedInUser.Role == Role.SeniorCustomerServiceOfficer || Session.UserSession.LoggedInUser.Role == Role.AdministrationDepartmentManager)
+            else if (Session.UserSession.LoggedInUser.Role == User.Roles.SeniorCustomerServiceOfficer || Session.UserSession.LoggedInUser.Role == User.Roles.AdministrationDepartmentManager)
             {//if cannot edit can only approve
                 feedbackTextBox.Enabled = false;
                 saveButton.Text = "Approve";

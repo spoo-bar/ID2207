@@ -46,11 +46,7 @@ namespace Tests
             // Arrange
             var email = "sarah@sep.se";
             var password = "password";
-            var expectedUser = new User
-            {
-                Email = "sarah@sep.se",
-                Password = "password"
-            };
+            var expectedUser = new User(email, password, User.Roles.Photographer);
 
             // Act
             var user = LoginController.Login(email, password);

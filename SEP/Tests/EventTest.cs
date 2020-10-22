@@ -43,11 +43,7 @@ namespace Tests
                                                 DateTime.Now, DateTime.Now.AddDays(1),
                                                 33, 321);
             eventController.Create(eventRequest);
-            var eventTask = new EventTask()
-            {
-                Description = "test description",
-                AssignedTo = new User() { Email = "abcd@xy.z" }
-            };
+            var eventTask = new EventTask("test description",new User("abcd@xy.z", "", User.Roles.Photographer));
 
             // Act
             var ev = eventController.CreateTask("123", eventTask);
@@ -63,11 +59,7 @@ namespace Tests
         public void CreateTaskEventDoesNotExistTest()
         {
             // Arrange
-            var eventTask = new EventTask()
-            {
-                Description = "test description",
-                AssignedTo = new User() { Email = "abcd@xy.z" }
-            };
+            var eventTask = new EventTask("test description", new User("abcd@xy.z", "", User.Roles.Photographer));
 
             // Act
             var exception = Assert.ThrowsException<ApplicationException>(() => eventController.CreateTask("123", eventTask));
@@ -85,11 +77,7 @@ namespace Tests
                                                 DateTime.Now, DateTime.Now.AddDays(1),
                                                 33, 321);
             eventController.Create(eventRequest);
-            var eventTask = new EventTask()
-            {
-                Description = "test description",
-                AssignedTo = new User() { Email = "abcd@xy.z" }
-            };
+            var eventTask = new EventTask("test description", new User("abcd@xy.z", "", User.Roles.Photographer));
 
             // Act
             var events = eventController.GetEvents();
@@ -102,17 +90,13 @@ namespace Tests
         public void GetTasks()
         {
             // Arrange
-            User user = new User() { Email = "abcd@xy.z" };
+            User user = new User("abcd@xy.z", "", User.Roles.Photographer);
             var oldTasksCount = eventController.GetTasks(user).Count;
             var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
                                                 DateTime.Now, DateTime.Now.AddDays(1),
                                                 33, 321);
             eventController.Create(eventRequest);
-            var eventTask = new EventTask()
-            {
-                Description = "test description",
-                AssignedTo = user
-            };
+            var eventTask = new EventTask("test description", user);
             eventController.CreateTask("123", eventTask);
 
             // Act
@@ -126,7 +110,7 @@ namespace Tests
         public void GetTasks_noTask()
         {
             // Arrange
-            User user = new User() { Email = "abcd@xy.z" };
+            User user = new User("abcd@xy.z", "", User.Roles.Photographer);
             var oldTasksCount = eventController.GetTasks(user).Count;
             var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
                                                 DateTime.Now, DateTime.Now.AddDays(1),
@@ -140,23 +124,18 @@ namespace Tests
             Assert.AreEqual(oldTasksCount, tasks.Count);
         }
 
-        //todo: should add more tests for all possible cases
         [TestMethod]
         public void GetAvailableUsers()
         {
             // Arrange
             Seed.events = new List<Event>();
-            User user = new User() { Email = "abcd@xy.z" };
+            User user = new User("abcd@xy.z", "", User.Roles.Photographer);
             var oldUserCount = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now, DateTime.Now.AddDays(1)).Count;
             var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
                                                 DateTime.Now, DateTime.Now.AddDays(1),
                                                 33, 321);
             eventController.Create(eventRequest);
-            var eventTask = new EventTask()
-            {
-                Description = "test description",
-                AssignedTo = user
-            };
+            var eventTask = new EventTask("test description", user);
             eventController.CreateTask("123", eventTask);
 
             // Act
@@ -171,17 +150,13 @@ namespace Tests
         {
             // Arrange
             Seed.events = new List<Event>();
-            User user = new User() { Email = "abcd@xy.z" };
+            User user = new User("abcd@xy.z", "", User.Roles.Photographer);
             var oldUserCount = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now, DateTime.Now.AddDays(1)).Count;
             var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
                                                 DateTime.Now, DateTime.Now.AddDays(1),
                                                 33, 321);
             eventController.Create(eventRequest);
-            var eventTask = new EventTask()
-            {
-                Description = "test description",
-                AssignedTo = user
-            };
+            var eventTask = new EventTask("test description", user);
             eventController.CreateTask("123", eventTask);
 
             // Act

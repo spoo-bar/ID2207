@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DataTier
 {
     public class User
     {
         private List<User> _subordinates = new List<User>();
+
+        public User(string email, string password, Roles role)
+        {
+            Email = email;
+            Password = password;
+            Role = role;
+        }
+
         public string Email { get; set; }
+
         public string Password { get; set; }
-        public Role Role { get; set; }
+
+        public Roles Role { get; set; }
 
         public void AddSubordinate(User subordinate)
         {
@@ -29,20 +35,20 @@ namespace DataTier
         {
             return Email;
         }
-    }
 
-    public enum Role
-    {
-        AdministrationDepartmentManager,
-        SeniorCustomerServiceOfficer,
-        CustomerService,
-        FinancialManager,
-        ProductionManager,
-        Photographer,
-        GraphicDesigner,
-        ServicesDepartmentManager,
-        TopChef,
-        SeniorWaitress,
-        SeniorHRManager
+        public enum Roles
+        {
+            AdministrationDepartmentManager,
+            SeniorCustomerServiceOfficer,
+            CustomerService,
+            FinancialManager,
+            ProductionManager,
+            Photographer,
+            GraphicDesigner,
+            ServicesDepartmentManager,
+            TopChef,
+            SeniorWaitress,
+            SeniorHRManager
+        }
     }
 }

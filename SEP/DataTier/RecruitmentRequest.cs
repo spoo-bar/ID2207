@@ -1,18 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataTier
+﻿namespace DataTier
 {
     public class RecruitmentRequest
     {
+        public RecruitmentRequest(Contractype type, RequestingDepartment department, int yearsOfExperience, string jobTitle, string jobDescription)
+        {
+            Contractype = type;
+            RequestingDepartment = department;
+            YearsOfExperience = yearsOfExperience;
+            JobTitle = jobTitle;
+            JobDescription = jobDescription;
+        }
+
         public Contractype Contractype { get; set; }
 
         public RequestingDepartment RequestingDepartment { get; set; }
 
-        public string YearsOfExperience { get; set; }
+        public int YearsOfExperience { get; set; }
 
         public string JobTitle { get; set; }
 

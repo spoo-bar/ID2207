@@ -1,9 +1,6 @@
 ﻿using DataTier;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessTier
 {
@@ -14,14 +11,11 @@ namespace BusinessTier
             if (string.IsNullOrEmpty(yearsOfExperience)) throw new ApplicationException("Years of experience for the job is not specified");
             if (string.IsNullOrEmpty(jobTitle)) throw new ApplicationException("Job Title is not specified");
 
-            var recruitmentRequest = new RecruitmentRequest()
-            {
-                Contractype = contractype,
-                RequestingDepartment = requestingDepartment,
-                YearsOfExperience = yearsOfExperience,
-                JobTitle = jobTitle,
-                JobDescription = jobDescription
-            };
+            var recruitmentRequest = new RecruitmentRequest(contractype,
+                requestingDepartment,
+                int.Parse(yearsOfExperience),
+                jobTitle,
+                jobDescription);
             Seed.recruitmentRequests.Add(recruitmentRequest);
             return recruitmentRequest;
         }
