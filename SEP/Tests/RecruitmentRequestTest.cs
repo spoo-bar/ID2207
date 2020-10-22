@@ -2,17 +2,14 @@
 using DataTier;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tests
 {
     [TestClass]
     public class RecruitmentRequestTest
     {
-        private RecruitmentRequestController recruitmentRequestController = new RecruitmentRequestController();
+        private readonly RecruitmentRequestController recruitmentRequestController = new RecruitmentRequestController();
 
         [TestMethod]
         public void GetRecruitmentRequestTest()
@@ -67,7 +64,6 @@ namespace Tests
             // Act
             var exception = Assert.ThrowsException<ApplicationException>(() => recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination));
 
-
             // Assert
             Assert.AreEqual("Years of experience for the job is not specified", exception.Message);
         }
@@ -78,13 +74,12 @@ namespace Tests
             // Arrange
             var contractType = Contractype.FullTime;
             var requestingDepartment = RequestingDepartment.Financial;
-            var yearsOfExp = "10 years";
+            var yearsOfExp = "10";
             var jobTitle = "";
             var jobDescrimination = "";
 
             // Act
             var exception = Assert.ThrowsException<ApplicationException>(() => recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination));
-
 
             // Assert
             Assert.AreEqual("Job Title is not specified", exception.Message);

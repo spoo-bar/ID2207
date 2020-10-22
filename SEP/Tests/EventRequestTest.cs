@@ -8,9 +8,8 @@ namespace Tests
     [TestClass]
     public class EventRequestTest
     {
-        //todo: make all test better
         [TestMethod]
-        public void CreateEventRequest()
+        public void CreateEventRequest_Success()
         {
             //Arrange
             EventRequestController eventRequestController = new EventRequestController();

@@ -1,5 +1,4 @@
 ﻿using BusinessTier;
-using DataTier;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
