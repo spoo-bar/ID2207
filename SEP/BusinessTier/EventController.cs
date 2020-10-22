@@ -68,7 +68,7 @@ namespace BusinessTier
             foreach (User user in subordinates)
             {
                 var events = GetUserEvents(user);
-                if (events == null || events.Any(
+                if (events.Count == 0 || events.Any(
                     ev => (ev.To < from || to < ev.From) &&
                     to > from))
                 {
