@@ -33,6 +33,8 @@
             this.commentLabel = new System.Windows.Forms.Label();
             this.commentDataGridView = new System.Windows.Forms.DataGridView();
             this.saveButton = new System.Windows.Forms.Button();
+            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.commentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +67,9 @@
             // commentDataGridView
             // 
             this.commentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.commentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Comment,
+            this.User});
             this.commentDataGridView.Location = new System.Drawing.Point(15, 271);
             this.commentDataGridView.Name = "commentDataGridView";
             this.commentDataGridView.RowHeadersWidth = 51;
@@ -81,6 +86,21 @@
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // Comment
+            // 
+            this.Comment.HeaderText = "Comment";
+            this.Comment.MinimumWidth = 6;
+            this.Comment.Name = "Comment";
+            this.Comment.Width = 125;
+            // 
+            // User
+            // 
+            this.User.HeaderText = "User";
+            this.User.MinimumWidth = 6;
+            this.User.Name = "User";
+            this.User.ReadOnly = true;
+            this.User.Width = 125;
             // 
             // ManageAssignmentForm
             // 
@@ -108,5 +128,7 @@
         private System.Windows.Forms.Label commentLabel;
         private System.Windows.Forms.DataGridView commentDataGridView;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User;
     }
 }

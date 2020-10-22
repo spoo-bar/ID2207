@@ -6,13 +6,12 @@ namespace DataTier
 {
     public class EventTask
     {
-        private List<TaskComment> comments = new List<TaskComment>();
-
         public EventTask(string description, User user)
         {
             this.TaskID = Guid.NewGuid().ToString();
             Description = description;
             AssignedTo = user;
+            TaskComments = new List<TaskComment>();
         }
 
         [Browsable(false)]
@@ -24,6 +23,6 @@ namespace DataTier
 
         public string Plan { get; set; }
 
-        public List<TaskComment> TaskComments { get => comments; set => comments = value; }
+        public List<TaskComment> TaskComments { get; set; }
     }
 }

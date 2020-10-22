@@ -4,7 +4,6 @@ namespace DataTier
 {
     public class TaskComment
     {
-        //todo: not done yet
         public TaskComment(string comment, User user)
         {
             Comment = comment;
@@ -13,7 +12,6 @@ namespace DataTier
 
         public string Comment { get; set; }
 
-        [Browsable(false)]
         public User CommentBy { get; set; }
     }
 }

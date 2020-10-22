@@ -17,7 +17,17 @@ namespace PresentationTier
             this.eventTask = eventTask;
 
             planTextBox.Text = eventTask.Plan;
-            commentDataGridView.DataSource = eventTask.TaskComments;
+
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            commentDataGridView.Rows.Clear();
+            foreach (TaskComment comment in eventTask.TaskComments)
+            {
+                commentDataGridView.Rows.Add(comment.Comment, comment.CommentBy.Email);
+            }
         }
 
         private void AssignmentForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -28,6 +38,14 @@ namespace PresentationTier
         private void SaveButton_Click(object sender, EventArgs e)
         {
             eventTask.Plan = planTextBox.Text;
+            foreach(DataGridViewRow row in commentDataGridView.Rows)
+            {
+                if(row.Cells[1].Value == null && row.Cells[0].Value != null)
+                {
+                    eventTask.TaskComments.Add(new TaskComment(row.Cells[0].Value.ToString(), Session.UserSession.LoggedInUser));
+                }
+            }
+            Refresh();
         }
     }
 }
