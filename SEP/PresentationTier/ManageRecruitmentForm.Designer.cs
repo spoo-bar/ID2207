@@ -53,7 +53,7 @@
             this.createRecruitmentRequestButton.TabIndex = 1;
             this.createRecruitmentRequestButton.Text = "Create Recruitment Request";
             this.createRecruitmentRequestButton.UseVisualStyleBackColor = true;
-            this.createRecruitmentRequestButton.Click += new System.EventHandler(this.createRecruitmentRequestButton_Click);
+            this.createRecruitmentRequestButton.Click += new System.EventHandler(this.CreateRecruitmentRequestButton_Click);
             // 
             // ManageRecruitmentForm
             // 

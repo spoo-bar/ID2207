@@ -1,12 +1,5 @@
 ﻿using BusinessTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -21,7 +14,6 @@ namespace PresentationTier
 
             var recruitmentsRequestController = new RecruitmentRequestController();
             var recruitmentsRequests = recruitmentsRequestController.GetRecruitmentRequests();
-
             this.recruitmentRequestDataGrid.DataSource = recruitmentsRequests;
         }
 
@@ -30,7 +22,7 @@ namespace PresentationTier
             mainForm.Show();
         }
 
-        private void createRecruitmentRequestButton_Click(object sender, EventArgs e)
+        private void CreateRecruitmentRequestButton_Click(object sender, EventArgs e)
         {
             new RecruitmentRequest(this).Show();
             this.Hide();

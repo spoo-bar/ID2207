@@ -1,13 +1,6 @@
 ﻿using BusinessTier;
 using DataTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -15,14 +8,13 @@ namespace PresentationTier
     public partial class FinancialRequestForm : Form
     {
         private readonly Form mainForm;
-        private readonly FinancialRequestController financialRequestController = new FinancialRequestController();
         public FinancialRequestForm(Form mainForm)
         {
             InitializeComponent();
 
             this.mainForm = mainForm;
 
-            financialRequestDataGridView.DataSource = financialRequestController.GetFinancialRequests();
+            financialRequestDataGridView.DataSource = new FinancialRequestController().GetFinancialRequests();
         }
 
         private void FinancialRequestForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -47,10 +39,11 @@ namespace PresentationTier
         private void SolveFinancialRequestItem_Click(object sender, EventArgs e)
         {
             var selectedRequest = (FinancialRequest)financialRequestDataGridView.CurrentRow.DataBoundItem;
+            FinancialRequestController financialRequestController = new FinancialRequestController();
             financialRequestController.SolveFinancialRequest(selectedRequest);
-            List<FinancialRequest> financialRequests = financialRequestController.GetFinancialRequests();
+
             financialRequestDataGridView.DataSource = null;
-            financialRequestDataGridView.DataSource = financialRequests;
+            financialRequestDataGridView.DataSource = financialRequestController.GetFinancialRequests();
         }
     }
 }

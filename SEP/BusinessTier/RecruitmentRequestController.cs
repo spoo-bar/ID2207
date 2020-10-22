@@ -9,8 +9,6 @@ namespace BusinessTier
 {
     public class RecruitmentRequestController
     {
-        private static List<RecruitmentRequest> recruitmentRequests = Seed.RecruitmentRequests;
-
         public RecruitmentRequest Create(Contractype contractype, RequestingDepartment requestingDepartment, string yearsOfExperience, string jobTitle, string jobDescription)
         {
             if (string.IsNullOrEmpty(yearsOfExperience)) throw new ApplicationException("Years of experience for the job is not specified");
@@ -24,13 +22,13 @@ namespace BusinessTier
                 JobTitle = jobTitle,
                 JobDescription = jobDescription
             };
-            recruitmentRequests.Add(recruitmentRequest);
+            Seed.recruitmentRequests.Add(recruitmentRequest);
             return recruitmentRequest;
         }
 
         public List<RecruitmentRequest> GetRecruitmentRequests()
         {
-            return recruitmentRequests;
+            return Seed.recruitmentRequests;
         }
     }
 }

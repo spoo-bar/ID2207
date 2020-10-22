@@ -1,23 +1,14 @@
 ﻿using BusinessTier.Exceptions;
 using DataTier;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessTier
 {
     public class LoginController
     {
-        public LoginController()
-        {
-
-        }
-
         public User Login(string email, string password)
         {
-            var users = Seed.Users;
+            var users = Seed.users;
             var user = users.FirstOrDefault(u => u.Email == email);
             if (user != null)
             {

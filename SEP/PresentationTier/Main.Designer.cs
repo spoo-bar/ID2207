@@ -57,6 +57,7 @@ namespace PresentationTier
             this.eventRequestButton.Text = "event requests";
             this.eventRequestButton.UseVisualStyleBackColor = true;
             this.eventRequestButton.Click += new System.EventHandler(this.EventRequestButton_Click);
+            this.eventRequestButton.Enabled = false;
             // 
             // createClientButton
             // 
@@ -67,6 +68,7 @@ namespace PresentationTier
             this.createClientButton.Text = "Create client";
             this.createClientButton.UseVisualStyleBackColor = true;
             this.createClientButton.Click += new System.EventHandler(this.CreateClientButton_Click);
+            this.createClientButton.Enabled = false;
             // 
             // staffButton
             // 
@@ -77,6 +79,7 @@ namespace PresentationTier
             this.staffButton.Text = "Review staff";
             this.staffButton.UseVisualStyleBackColor = true;
             this.staffButton.Click += new System.EventHandler(this.StaffButton_Click);
+            this.staffButton.Enabled = false;
             // 
             // eventButton
             // 
@@ -87,6 +90,7 @@ namespace PresentationTier
             this.eventButton.Text = "Event";
             this.eventButton.UseVisualStyleBackColor = true;
             this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
+            this.eventButton.Enabled = false;
             // 
             // assignmentButton
             // 
@@ -97,6 +101,7 @@ namespace PresentationTier
             this.assignmentButton.Text = "Assignment";
             this.assignmentButton.UseVisualStyleBackColor = true;
             this.assignmentButton.Click += new System.EventHandler(this.AssignmentButton_Click);
+            this.assignmentButton.Enabled = false;
             // 
             // recruitmentButton
             // 
@@ -106,7 +111,8 @@ namespace PresentationTier
             this.recruitmentButton.TabIndex = 8;
             this.recruitmentButton.Text = "Recruitment";
             this.recruitmentButton.UseVisualStyleBackColor = true;
-            this.recruitmentButton.Click += new System.EventHandler(this.recruitmentButton_Click);
+            this.recruitmentButton.Click += new System.EventHandler(this.RecruitmentButton_Click);
+            this.recruitmentButton.Enabled = false;
             // 
             // financialRequestButton
             // 
@@ -116,7 +122,8 @@ namespace PresentationTier
             this.financialRequestButton.TabIndex = 9;
             this.financialRequestButton.Text = "Financial requests";
             this.financialRequestButton.UseVisualStyleBackColor = true;
-            this.financialRequestButton.Click += new System.EventHandler(this.financialRequestButton_Click);
+            this.financialRequestButton.Click += new System.EventHandler(this.FinancialRequestButton_Click);
+            this.financialRequestButton.Enabled = false;
             // 
             // Main
             // 

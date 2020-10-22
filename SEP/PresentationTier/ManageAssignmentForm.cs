@@ -1,13 +1,5 @@
-﻿using BusinessTier;
-using DataTier;
+﻿using DataTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -15,7 +7,7 @@ namespace PresentationTier
     public partial class ManageAssignmentForm : Form
     {
         private readonly Form mainForm;
-        private EventTask eventTask;
+        private readonly EventTask eventTask;
 
         public ManageAssignmentForm(Form mainForm, EventTask eventTask)
         {
@@ -26,8 +18,6 @@ namespace PresentationTier
 
             planTextBox.Text = eventTask.Plan;
             commentDataGridView.DataSource = eventTask.TaskComments;
-
-            //todo:comment later
         }
 
         private void AssignmentForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -35,7 +25,7 @@ namespace PresentationTier
             mainForm.Show();
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             eventTask.Plan = planTextBox.Text;
         }

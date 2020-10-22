@@ -1,13 +1,5 @@
-﻿using BusinessTier;
-using DataTier;
+﻿using DataTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -15,8 +7,7 @@ namespace PresentationTier
     public partial class ManageEventForm : Form
     {
         private readonly Form mainForm;
-        public string eventRecordNumber;
-        private Event evnt;
+        private readonly Event evnt;
 
         public ManageEventForm(Form mainForm, Event ev)
         {
@@ -24,46 +15,39 @@ namespace PresentationTier
             this.mainForm = mainForm;
             evnt = ev;
 
-            this.eventRecordNumber = ev.RecordNr;
-            this.eventRecordText.Text = ev.RecordNr;
-            this.eventRecordText.Enabled = false;
-            this.eventClientText.Text = ev.Client.FirstName + " " + ev.Client.LastName;
-            this.eventClientText.Enabled = false;
-            this.eventTypeText.Text = ev.EventType;
-            this.eventTypeText.Enabled = false;
-            this.descriptionText.Text = ev.Description;
-            this.descriptionText.Enabled = false;
-            this.attendeesText.Text = ev.Attendees.ToString();
-            this.attendeesText.Enabled = false;
-            this.budgetText.Text = ev.Budget.ToString();
-            this.budgetText.Enabled = false;
-            this.fromDatePicker.Value = ev.From;
-            this.fromDatePicker.Enabled = false;
-            this.toDatePicker.Value = ev.To;
-            this.toDatePicker.Enabled = false;
+            #region assign values
+            this.eventRecordText.Text = evnt.RecordNr;
+            this.eventClientText.Text = evnt.Client.FirstName + " " + evnt.Client.LastName;
+            this.eventTypeText.Text = evnt.EventType;
+            this.descriptionText.Text = evnt.Description;
+            this.attendeesText.Text = evnt.Attendees.ToString();
+            this.budgetText.Text = evnt.Budget.ToString();
+            this.fromDatePicker.Value = evnt.From;
+            this.toDatePicker.Value = evnt.To;
 
+            this.decorationsText.Text = evnt.Decorations;
+            this.foodText.Text = evnt.FoodAndDrinks;
+            this.filmingText.Text = evnt.Filming;
+            this.musicText.Text = evnt.Music;
+            this.postersText.Text = evnt.Posters;
+            this.computerText.Text = evnt.ComputerRelatedIssues;
+            this.otherText.Text = evnt.OtherNeeds;
 
-            this.decorationsText.Text = ev.Decorations;
-            this.foodText.Text = ev.FoodAndDrinks;
-            this.filmingText.Text = ev.Filming;
-            this.musicText.Text = ev.Music;
-            this.postersText.Text = ev.Posters;
-            this.computerText.Text = ev.ComputerRelatedIssues;
-            this.otherText.Text = ev.OtherNeeds;
-            this.eventTasksDataGrid.DataSource = ev.Tasks;
-            if (ev.Status != null)
+            RefreshTasks();
+            if (evnt.Status != null)
             {
-                this.statusComboBox.SelectedItem = ev.Status;
+                this.statusComboBox.SelectedItem = evnt.Status;
             }
             else
             {
                 this.statusComboBox.SelectedIndex = 0;
             }
+            #endregion
         }
 
-        private void addTaskButton_Click(object sender, EventArgs e)
+        private void AddTaskButton_Click(object sender, EventArgs e)
         {
-            var eventTaskForm = new EventTaskForm(this);
+            var eventTaskForm = new EventTaskForm(this, evnt);
             eventTaskForm.Show(this);
         }
 
@@ -74,10 +58,8 @@ namespace PresentationTier
 
         public void RefreshTasks()
         {
-            //TODO : refersh the tasks datagrid.
-            var updatedEvent = new EventController().GetEvents().First(e => e.RecordNr == this.eventRecordNumber);
-            this.eventTasksDataGrid.DataSource = updatedEvent;
-            this.eventTasksDataGrid.Update();
+            eventTasksDataGrid.DataSource = null;
+            eventTasksDataGrid.DataSource = evnt.Tasks;
         }
 
         private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)

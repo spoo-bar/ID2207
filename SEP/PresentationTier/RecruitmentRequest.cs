@@ -1,13 +1,6 @@
 ﻿using BusinessTier;
 using DataTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -21,18 +14,19 @@ namespace PresentationTier
             this.mainForm = mainForm;
         }
 
-        private void createRecruitmentButton_Click(object sender, EventArgs e)
+        private void CreateRecruitmentButton_Click(object sender, EventArgs e)
         {
             var recruitmentRequestController = new RecruitmentRequestController();
-            var contractType = this.fulltimeRadioButton.Checked ? Contractype.FullTime : Contractype.PartTime;
-            var requestingDepartment = this.administrationRadioButton.Checked ? RequestingDepartment.Administration :
-                this.serviceRadioButton.Checked ? RequestingDepartment.Service :
-                this.productionRadioButton.Checked ? RequestingDepartment.Production : RequestingDepartment.Financial;
-            var yearsOfExperience = this.yearsOfExpText.Text;
-            var jobTitle = this.jobTitleText.Text;
-            var jobDescription = this.jobDescText.Text;
+            var contractType = fulltimeRadioButton.Checked ? Contractype.FullTime : Contractype.PartTime;
+            var requestingDepartment = administrationRadioButton.Checked ? RequestingDepartment.Administration :
+                serviceRadioButton.Checked ? RequestingDepartment.Service :
+                productionRadioButton.Checked ? RequestingDepartment.Production : RequestingDepartment.Financial;
 
-            var recruitmentRest = recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExperience, jobTitle, jobDescription);
+            var yearsOfExperience = yearsOfExpText.Text;
+            var jobTitle = jobTitleText.Text;
+            var jobDescription = jobDescText.Text;
+
+            recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExperience, jobTitle, jobDescription);
             this.Close();
             mainForm.Show();
         }

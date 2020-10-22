@@ -167,7 +167,7 @@
             this.createRecruitmentButton.TabIndex = 15;
             this.createRecruitmentButton.Text = "Create";
             this.createRecruitmentButton.UseVisualStyleBackColor = true;
-            this.createRecruitmentButton.Click += new System.EventHandler(this.createRecruitmentButton_Click);
+            this.createRecruitmentButton.Click += new System.EventHandler(this.CreateRecruitmentButton_Click);
             // 
             // panel2
             // 

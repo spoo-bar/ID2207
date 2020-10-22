@@ -206,6 +206,7 @@
             this.eventRecordText.Name = "eventRecordText";
             this.eventRecordText.Size = new System.Drawing.Size(100, 22);
             this.eventRecordText.TabIndex = 15;
+            this.eventRecordText.Enabled = false;
             // 
             // eventClientText
             // 
@@ -213,6 +214,7 @@
             this.eventClientText.Name = "eventClientText";
             this.eventClientText.Size = new System.Drawing.Size(100, 22);
             this.eventClientText.TabIndex = 16;
+            this.eventClientText.Enabled = false;
             // 
             // eventTypeText
             // 
@@ -220,6 +222,7 @@
             this.eventTypeText.Name = "eventTypeText";
             this.eventTypeText.Size = new System.Drawing.Size(100, 22);
             this.eventTypeText.TabIndex = 17;
+            this.eventTypeText.Enabled = false;
             // 
             // descriptionText
             // 
@@ -227,6 +230,7 @@
             this.descriptionText.Name = "descriptionText";
             this.descriptionText.Size = new System.Drawing.Size(100, 22);
             this.descriptionText.TabIndex = 18;
+            this.descriptionText.Enabled = false;
             // 
             // fromDatePicker
             // 
@@ -235,6 +239,7 @@
             this.fromDatePicker.Name = "fromDatePicker";
             this.fromDatePicker.Size = new System.Drawing.Size(200, 22);
             this.fromDatePicker.TabIndex = 20;
+            this.fromDatePicker.Enabled = false;
             // 
             // toDatePicker
             // 
@@ -243,6 +248,7 @@
             this.toDatePicker.Name = "toDatePicker";
             this.toDatePicker.Size = new System.Drawing.Size(200, 22);
             this.toDatePicker.TabIndex = 21;
+            this.toDatePicker.Enabled = false;
             // 
             // attendeesText
             // 
@@ -250,6 +256,7 @@
             this.attendeesText.Name = "attendeesText";
             this.attendeesText.Size = new System.Drawing.Size(100, 22);
             this.attendeesText.TabIndex = 22;
+            this.attendeesText.Enabled = false;
             // 
             // decorationsText
             // 
@@ -306,6 +313,7 @@
             this.budgetText.Name = "budgetText";
             this.budgetText.Size = new System.Drawing.Size(100, 22);
             this.budgetText.TabIndex = 30;
+            this.budgetText.Enabled = false;
             // 
             // addTaskButton
             // 
@@ -315,7 +323,7 @@
             this.addTaskButton.TabIndex = 31;
             this.addTaskButton.Text = "Add Task";
             this.addTaskButton.UseVisualStyleBackColor = true;
-            this.addTaskButton.Click += new System.EventHandler(this.addTaskButton_Click);
+            this.addTaskButton.Click += new System.EventHandler(this.AddTaskButton_Click);
             // 
             // eventTasksDataGrid
             // 

@@ -145,7 +145,7 @@ namespace Tests
         public void GetAvailableUsers()
         {
             // Arrange
-            EventController.events = new List<Event>();
+            Seed.events = new List<Event>();
             User user = new User() { Email = "abcd@xy.z" };
             var oldUserCount = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now, DateTime.Now.AddDays(1)).Count;
             var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",
@@ -170,7 +170,7 @@ namespace Tests
         public void GetAvailableUsers_overlap()
         {
             // Arrange
-            EventController.events = new List<Event>();
+            Seed.events = new List<Event>();
             User user = new User() { Email = "abcd@xy.z" };
             var oldUserCount = eventController.GetAvailableUsers(new List<User> { user }, DateTime.Now, DateTime.Now.AddDays(1)).Count;
             var eventRequest = new EventRequest("123", new Client("Peter", "Pen", "238740291"), "Party",

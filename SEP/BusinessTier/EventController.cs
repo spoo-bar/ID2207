@@ -10,9 +10,6 @@ namespace BusinessTier
 {
     public class EventController
     {
-        //todo:was made public since i could not test it, maybe dependency injection should be used
-        public static List<Event> events = Seed.Events;
-
         public Event Create(EventRequest eventRequest)
         {
             var newEvent = new Event();
@@ -23,13 +20,13 @@ namespace BusinessTier
             newEvent.Budget = eventRequest.Budget;
             newEvent.From = eventRequest.From;
             newEvent.To = eventRequest.To;
-            events.Add(newEvent);
+            Seed.events.Add(newEvent);
             return newEvent;
         }
 
         public Event CreateTask(string recordNumber, EventTask task)
         {
-            var ev = events.FirstOrDefault(events => events.RecordNr == recordNumber);
+            var ev = Seed.events.FirstOrDefault(events => events.RecordNr == recordNumber);
             if(ev != null)
             {
                 ev.Tasks.Add(task);
@@ -44,7 +41,7 @@ namespace BusinessTier
         public List<EventTask> GetTasks(User user)
         {
             List<EventTask> eventTasks = new List<EventTask>();
-            foreach (Event evnt in events)
+            foreach (Event evnt in Seed.events)
             {
                 var userTasks = evnt.Tasks.Where(task => task.AssignedTo.Email.Equals(user.Email));
                 eventTasks.AddRange(userTasks);
@@ -55,7 +52,7 @@ namespace BusinessTier
         private List<Event> GetUserEvents(User user)
         {
             List<Event> userEvents = new List<Event>();
-            foreach (Event evnt in events)
+            foreach (Event evnt in Seed.events)
             {
                 if(evnt.Tasks.Any(task => task.AssignedTo.Email.Equals(user.Email)))
                 {
@@ -83,7 +80,7 @@ namespace BusinessTier
 
         public List<Event> GetEvents()
         {
-            return events;
+            return Seed.events;
         }
 
     }

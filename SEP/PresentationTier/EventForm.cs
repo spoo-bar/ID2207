@@ -1,26 +1,19 @@
 ﻿using BusinessTier;
 using DataTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
 {
     public partial class EventForm : Form
     {
-        private EventController eventController = new EventController();
         private readonly Form mainForm;
         public EventForm(Form mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
 
+            EventController eventController = new EventController();
             eventFormGridView.DataSource = eventController.GetEvents();
         }
 

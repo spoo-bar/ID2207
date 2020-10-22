@@ -2,7 +2,6 @@
 using DataTier;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -10,7 +9,7 @@ namespace PresentationTier
     public partial class ManageEventRequestForm : Form
     {
         private readonly Form mainForm;
-        private EventRequest eventRequest = null;
+        private readonly EventRequest eventRequest = null;
 
         public ManageEventRequestForm(Form mainForm)// create new event request
         {

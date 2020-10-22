@@ -8,7 +8,8 @@ namespace DataTier
 {
     public class Seed
     {
-        public static IEnumerable<User> Users
+        public static IEnumerable<User> users = Users;
+        private static IEnumerable<User> Users
         {
             get
             {
@@ -114,7 +115,8 @@ namespace DataTier
             }
         }
 
-        public static List<Client> Clients
+        public static List<Client> clients = Clients;
+        private static List<Client> Clients
         {
             get
             {
@@ -130,7 +132,8 @@ namespace DataTier
             }
         }
 
-        public static List<EventRequest> EventRequest
+        public static List<EventRequest> eventRequests = EventRequests;
+        private static List<EventRequest> EventRequests
         {
             get
             {
@@ -181,7 +184,8 @@ namespace DataTier
             }
         }
 
-        public static List<Event> Events
+        public static List<Event> events = Events;
+        private static List<Event> Events
         {
             get
             {
@@ -217,7 +221,8 @@ namespace DataTier
             }
         }
 
-        public static List<RecruitmentRequest> RecruitmentRequests
+        public static List<RecruitmentRequest> recruitmentRequests = RecruitmentRequests;
+        private static List<RecruitmentRequest> RecruitmentRequests
         {
             get
             {
@@ -236,7 +241,8 @@ namespace DataTier
             }
         }
 
-        public static List<FinancialRequest> FinancialRequests
+        public static List<FinancialRequest> financialRequests = FinancialRequests;
+        private static List<FinancialRequest> FinancialRequests
         {
             get
             {

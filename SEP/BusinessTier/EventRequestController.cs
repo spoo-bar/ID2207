@@ -7,11 +7,6 @@ namespace BusinessTier
 {
     public class EventRequestController
     {
-        private static List<EventRequest> eventRequests = Seed.EventRequest;
-
-        public EventRequestController()
-        {
-        }
 
         public EventRequest Create(string recordNr, Client client, string eventType, DateTime from, DateTime to, decimal attendees, string budgetString)
         {
@@ -23,7 +18,7 @@ namespace BusinessTier
                 double budget = double.Parse(budgetString);
 
                 EventRequest eventRequest = new EventRequest(recordNr, client, eventType, from, to, Convert.ToInt32(attendees), budget);
-                eventRequests.Add(eventRequest);
+                Seed.eventRequests.Add(eventRequest);
                 return eventRequest;
             }
             catch (Exception)
@@ -57,11 +52,11 @@ namespace BusinessTier
             switch (role)
             {
                 case Role.SeniorCustomerServiceOfficer:
-                    return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created || eventRequest.State == EventRequest.States.Finalized).ToList();
+                    return Seed.eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.Created || eventRequest.State == EventRequest.States.Finalized).ToList();
                 case Role.FinancialManager:
-                    return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.ApprovedBySCSO).ToList();
+                    return Seed.eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.ApprovedBySCSO).ToList();
                 case Role.AdministrationDepartmentManager:
-                    return eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.FinancialFeedbackAdded).ToList();
+                    return Seed.eventRequests.Where(eventRequest => eventRequest.State == EventRequest.States.FinancialFeedbackAdded).ToList();
                 default:
                     return null;
             }

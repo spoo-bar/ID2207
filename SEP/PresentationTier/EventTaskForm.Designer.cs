@@ -47,7 +47,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 90);
+            this.label2.Location = new System.Drawing.Point(23, 382);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 1;
@@ -56,27 +56,28 @@
             // descriptionText
             // 
             this.descriptionText.Location = new System.Drawing.Point(124, 33);
+            this.descriptionText.Multiline = true;
             this.descriptionText.Name = "descriptionText";
-            this.descriptionText.Size = new System.Drawing.Size(621, 22);
+            this.descriptionText.Size = new System.Drawing.Size(621, 340);
             this.descriptionText.TabIndex = 2;
             // 
             // assignedTo_Combo
             // 
             this.assignedTo_Combo.FormattingEnabled = true;
-            this.assignedTo_Combo.Location = new System.Drawing.Point(124, 87);
+            this.assignedTo_Combo.Location = new System.Drawing.Point(124, 379);
             this.assignedTo_Combo.Name = "assignedTo_Combo";
             this.assignedTo_Combo.Size = new System.Drawing.Size(121, 24);
             this.assignedTo_Combo.TabIndex = 3;
             // 
             // createTask_Button
             // 
-            this.createTask_Button.Location = new System.Drawing.Point(26, 147);
+            this.createTask_Button.Location = new System.Drawing.Point(26, 415);
             this.createTask_Button.Name = "createTask_Button";
             this.createTask_Button.Size = new System.Drawing.Size(75, 23);
             this.createTask_Button.TabIndex = 4;
             this.createTask_Button.Text = "Create ";
             this.createTask_Button.UseVisualStyleBackColor = true;
-            this.createTask_Button.Click += new System.EventHandler(this.createTask_Button_Click);
+            this.createTask_Button.Click += new System.EventHandler(this.CreateTask_Button_Click);
             // 
             // EventTaskForm
             // 

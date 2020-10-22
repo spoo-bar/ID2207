@@ -1,14 +1,7 @@
 ﻿using BusinessTier;
 using BusinessTier.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -20,7 +13,7 @@ namespace PresentationTier
             InitializeComponent();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             var email = this.emailTextbox.Text;
             var password = this.passwordTextBox.Text;

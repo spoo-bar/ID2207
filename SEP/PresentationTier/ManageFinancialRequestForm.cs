@@ -9,7 +9,6 @@ namespace PresentationTier
     {
         private readonly Form mainForm;
         private readonly Event requestEvent;
-        private readonly FinancialRequestController financialRequestController = new FinancialRequestController();
 
         public ManageFinancialRequestForm(Form mainForm, Event requestEvent)
         {
@@ -31,6 +30,8 @@ namespace PresentationTier
             var requestingDepartment = administrationRadioButton.Checked ? RequestingDepartment.Administration :
                 serviceRadioButton.Checked ? RequestingDepartment.Service :
                 productionRadioButton.Checked ? RequestingDepartment.Production : RequestingDepartment.Financial;
+
+            FinancialRequestController financialRequestController = new FinancialRequestController();
             financialRequestController.AddFinancialRequest(requestingDepartment, requestEvent, ammountTextBox.Text, reasonTextBox.Text);
             this.Close();
         }

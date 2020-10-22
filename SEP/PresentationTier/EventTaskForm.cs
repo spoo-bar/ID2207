@@ -1,13 +1,6 @@
 ﻿using BusinessTier;
 using DataTier;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -15,18 +8,18 @@ namespace PresentationTier
     public partial class EventTaskForm : Form
     {
         private readonly ManageEventForm mainForm;
-        public EventTaskForm(ManageEventForm mainForm)
+        private readonly Event evnt;
+        public EventTaskForm(ManageEventForm mainForm, Event ev)
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            evnt = ev;
 
-            var subordinates = Session.UserSession.LoggedInUser.Subordinates;
-            this.assignedTo_Combo.DataSource = subordinates;
+            this.assignedTo_Combo.DataSource = Session.UserSession.LoggedInUser.Subordinates;
             this.assignedTo_Combo.DisplayMember = "Email";
-            this.assignedTo_Combo.ValueMember = "Email";
         }
 
-        private void createTask_Button_Click(object sender, EventArgs e)
+        private void CreateTask_Button_Click(object sender, EventArgs e)
         {
             var eventTask = new EventTask()
             {
@@ -34,7 +27,7 @@ namespace PresentationTier
                 AssignedTo = (User)this.assignedTo_Combo.SelectedItem
             };
             var eventController = new EventController();
-            eventController.CreateTask(this.mainForm.eventRecordNumber, eventTask);
+            eventController.CreateTask(evnt.RecordNr, eventTask);
             mainForm.RefreshTasks();
             this.Hide();
         }
@@ -42,6 +35,7 @@ namespace PresentationTier
         private void EventTaskForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.Show();
+            mainForm.RefreshTasks();
         }
     }
 }
