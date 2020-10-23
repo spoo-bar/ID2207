@@ -1,5 +1,6 @@
 ﻿using BusinessTier;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -11,10 +12,15 @@ namespace PresentationTier
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            var recruitmentsRequests = getRecruitmentRequests();
+            this.recruitmentRequestDataGrid.DataSource = recruitmentsRequests;
+        }
 
+        private static List<DataTier.RecruitmentRequest> getRecruitmentRequests()
+        {
             var recruitmentsRequestController = new RecruitmentRequestController();
             var recruitmentsRequests = recruitmentsRequestController.GetRecruitmentRequests();
-            this.recruitmentRequestDataGrid.DataSource = recruitmentsRequests;
+            return recruitmentsRequests;
         }
 
         private void ManageRecruitmentRequest_FormClosed(object sender, FormClosedEventArgs e)
@@ -26,6 +32,12 @@ namespace PresentationTier
         {
             new RecruitmentRequest(this).Show();
             this.Hide();
+        }
+
+        public void RefreshRecruitmentDatagrid()
+        {
+            this.recruitmentRequestDataGrid.DataSource = null;
+            this.recruitmentRequestDataGrid.DataSource = getRecruitmentRequests();
         }
     }
 }

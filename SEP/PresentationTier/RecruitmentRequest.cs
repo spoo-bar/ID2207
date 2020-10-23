@@ -7,8 +7,8 @@ namespace PresentationTier
 {
     public partial class RecruitmentRequest : Form
     {
-        private readonly Form mainForm;
-        public RecruitmentRequest(Form mainForm)
+        private readonly ManageRecruitmentForm mainForm;
+        public RecruitmentRequest(ManageRecruitmentForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
@@ -28,6 +28,7 @@ namespace PresentationTier
 
             recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExperience, jobTitle, jobDescription);
             this.Close();
+            mainForm.RefreshRecruitmentDatagrid();
             mainForm.Show();
         }
 
