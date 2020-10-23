@@ -61,7 +61,7 @@ namespace PresentationTier
             {
                 case DataTier.Role.AdministrationDepartmentManager:
                     this.eventRequestButton.Enabled = true;
-                    this.recruitmentButton.Enabled = false;
+                    this.recruitmentButton.Enabled = true;
                     break;
                 case DataTier.Role.SeniorCustomerServiceOfficer:
                     this.eventRequestButton.Enabled = true;
@@ -99,7 +99,7 @@ namespace PresentationTier
                 case DataTier.Role.SeniorHRManager:
                     this.createClientButton.Enabled = true;
                     this.staffButton.Enabled = true;
-                    this.recruitmentButton.Enabled = false;
+                    this.recruitmentButton.Enabled = true;
                     break;
             }
         }

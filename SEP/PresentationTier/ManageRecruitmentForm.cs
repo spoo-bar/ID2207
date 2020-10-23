@@ -18,11 +18,16 @@ namespace PresentationTier
         {
             InitializeComponent();
             this.mainForm = mainForm;
-
-            var recruitmentsRequestController = new RecruitmentRequestController();
-            var recruitmentsRequests = recruitmentsRequestController.GetRecruitmentRequests();
+            var recruitmentsRequests = getRecruitmentRequests();
 
             this.recruitmentRequestDataGrid.DataSource = recruitmentsRequests;
+        }
+
+        private static List<DataTier.RecruitmentRequest> getRecruitmentRequests()
+        {
+            var recruitmentsRequestController = new RecruitmentRequestController();
+            var recruitmentsRequests = recruitmentsRequestController.GetRecruitmentRequests();
+            return recruitmentsRequests;
         }
 
         private void ManageRecruitmentRequest_FormClosed(object sender, FormClosedEventArgs e)
@@ -34,6 +39,12 @@ namespace PresentationTier
         {
             new RecruitmentRequest(this).Show();
             this.Hide();
+        }
+
+        public void RefreshTasks()
+        {
+            this.recruitmentRequestDataGrid.DataSource = null;
+            this.recruitmentRequestDataGrid.DataSource = getRecruitmentRequests();
         }
     }
 }

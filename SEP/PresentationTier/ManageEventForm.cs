@@ -74,10 +74,9 @@ namespace PresentationTier
 
         public void RefreshTasks()
         {
-            //TODO : refersh the tasks datagrid.
             var updatedEvent = new EventController().GetEvents().First(e => e.RecordNr == this.eventRecordNumber);
-            this.eventTasksDataGrid.DataSource = updatedEvent;
-            this.eventTasksDataGrid.Update();
+            this.eventTasksDataGrid.DataSource = null;
+            this.eventTasksDataGrid.DataSource = updatedEvent.Tasks;
         }
 
         private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)

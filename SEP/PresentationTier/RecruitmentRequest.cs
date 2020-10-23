@@ -14,8 +14,8 @@ namespace PresentationTier
 {
     public partial class RecruitmentRequest : Form
     {
-        private readonly Form mainForm;
-        public RecruitmentRequest(Form mainForm)
+        private readonly ManageRecruitmentForm mainForm;
+        public RecruitmentRequest(ManageRecruitmentForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
@@ -32,9 +32,17 @@ namespace PresentationTier
             var jobTitle = this.jobTitleText.Text;
             var jobDescription = this.jobDescText.Text;
 
-            var recruitmentRest = recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExperience, jobTitle, jobDescription);
-            this.Close();
-            mainForm.Show();
+            try
+            {
+                var recruitmentRest = recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExperience, jobTitle, jobDescription);
+                this.Close();
+                mainForm.RefreshTasks();
+                mainForm.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         private void RecruitmentRequest_FormClosed(object sender, FormClosedEventArgs e)

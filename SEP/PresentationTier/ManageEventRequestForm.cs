@@ -100,6 +100,7 @@ namespace PresentationTier
 
             if (result)
             {
+                MessageBox.Show("New event request created.");
                 this.Close();
             }
             else
