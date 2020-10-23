@@ -51,7 +51,7 @@ namespace PresentationTier
             {
                 case User.Roles.AdministrationDepartmentManager:
                     eventRequestButton.Enabled = true;
-                    recruitmentButton.Enabled = false;
+                    recruitmentButton.Enabled = true;
                     break;
                 case User.Roles.SeniorCustomerServiceOfficer:
                     eventRequestButton.Enabled = true;
@@ -64,7 +64,7 @@ namespace PresentationTier
                 case User.Roles.FinancialManager:
                     eventRequestButton.Enabled = true;
                     eventButton.Enabled = true;
-                    recruitmentButton.Enabled = false;
+                    recruitmentButton.Enabled = true;
                     financialRequestButton.Enabled = true;
                     break;
                 case User.Roles.ProductionManager:
@@ -90,7 +90,7 @@ namespace PresentationTier
                 case User.Roles.SeniorHRManager:
                     createClientButton.Enabled = true;
                     staffButton.Enabled = true;
-                    recruitmentButton.Enabled = false;
+                    recruitmentButton.Enabled = true;
                     break;
             }
         }
