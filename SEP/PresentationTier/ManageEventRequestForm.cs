@@ -99,6 +99,7 @@ namespace PresentationTier
 
             if (result)
             {
+                MessageBox.Show("New event request created.", "Success", MessageBoxButtons.OK);
                 this.Close();
             }
             else
