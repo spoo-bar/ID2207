@@ -1,0 +1,23 @@
+Specifies users to use
+
+Create event:
+	sarah@sep.se
+	janet@sep.se
+	alice@sep.se
+	mike@sep.se
+	janet@sep.se
+
+Assign task:
+	jack@sep.se
+	julia@sep.se
+	jack@sep.se
+
+staff recruitment:
+	jack@sep.se
+	simon@sep.se
+	jack@sep.se
+
+financial request:
+	jack@sep.se
+	alice@sep.se
+	jack@sep.se
