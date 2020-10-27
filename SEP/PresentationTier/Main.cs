@@ -46,6 +46,7 @@ namespace PresentationTier
 
         private void DisableButtonsWithoutPermission()
         {
+            DisableAllButtons();
             var userRole = Session.UserSession.LoggedInUser.Role;
             switch (userRole)
             {
@@ -95,6 +96,18 @@ namespace PresentationTier
             }
         }
 
+        private void DisableAllButtons()
+        {
+            // This is needed so all buttons can be reset when relogin
+            eventRequestButton.Enabled = false;
+            createClientButton.Enabled = false;
+            staffButton.Enabled = false;
+            eventButton.Enabled = false;
+            assignmentButton.Enabled = false;
+            recruitmentButton.Enabled = false;
+            financialRequestButton.Enabled = false;
+        }
+
         private void EventRequestButton_Click(object sender, EventArgs e)
         {
             new EventRequestForm(this).Show();
@@ -135,6 +148,11 @@ namespace PresentationTier
         {
             new FinancialRequestForm(this).Show();
             this.Hide();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            ShowLogin();
         }
     }
 }

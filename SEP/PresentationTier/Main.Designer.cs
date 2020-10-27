@@ -38,98 +38,110 @@ namespace PresentationTier
             this.assignmentButton = new System.Windows.Forms.Button();
             this.recruitmentButton = new System.Windows.Forms.Button();
             this.financialRequestButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loggedinUserLabel
             // 
             this.loggedinUserLabel.AutoSize = true;
-            this.loggedinUserLabel.Location = new System.Drawing.Point(608, 9);
+            this.loggedinUserLabel.Location = new System.Drawing.Point(524, 9);
             this.loggedinUserLabel.Name = "loggedinUserLabel";
-            this.loggedinUserLabel.Size = new System.Drawing.Size(0, 17);
+            this.loggedinUserLabel.Size = new System.Drawing.Size(175, 17);
             this.loggedinUserLabel.TabIndex = 0;
             // 
             // eventRequestButton
             // 
-            this.eventRequestButton.Location = new System.Drawing.Point(16, 16);
+            this.eventRequestButton.Enabled = false;
+            this.eventRequestButton.Location = new System.Drawing.Point(32, 34);
             this.eventRequestButton.Name = "eventRequestButton";
             this.eventRequestButton.Size = new System.Drawing.Size(200, 23);
             this.eventRequestButton.TabIndex = 6;
             this.eventRequestButton.Text = "event requests";
             this.eventRequestButton.UseVisualStyleBackColor = true;
             this.eventRequestButton.Click += new System.EventHandler(this.EventRequestButton_Click);
-            this.eventRequestButton.Enabled = false;
             // 
             // createClientButton
             // 
-            this.createClientButton.Location = new System.Drawing.Point(16, 50);
+            this.createClientButton.Enabled = false;
+            this.createClientButton.Location = new System.Drawing.Point(32, 68);
             this.createClientButton.Name = "createClientButton";
             this.createClientButton.Size = new System.Drawing.Size(200, 23);
             this.createClientButton.TabIndex = 6;
             this.createClientButton.Text = "Create client";
             this.createClientButton.UseVisualStyleBackColor = true;
             this.createClientButton.Click += new System.EventHandler(this.CreateClientButton_Click);
-            this.createClientButton.Enabled = false;
             // 
             // staffButton
             // 
-            this.staffButton.Location = new System.Drawing.Point(16, 84);
+            this.staffButton.Enabled = false;
+            this.staffButton.Location = new System.Drawing.Point(32, 102);
             this.staffButton.Name = "staffButton";
             this.staffButton.Size = new System.Drawing.Size(200, 23);
             this.staffButton.TabIndex = 6;
             this.staffButton.Text = "Review staff";
             this.staffButton.UseVisualStyleBackColor = true;
             this.staffButton.Click += new System.EventHandler(this.StaffButton_Click);
-            this.staffButton.Enabled = false;
             // 
             // eventButton
             // 
-            this.eventButton.Location = new System.Drawing.Point(16, 118);
+            this.eventButton.Enabled = false;
+            this.eventButton.Location = new System.Drawing.Point(32, 136);
             this.eventButton.Name = "eventButton";
             this.eventButton.Size = new System.Drawing.Size(200, 23);
             this.eventButton.TabIndex = 6;
             this.eventButton.Text = "Event";
             this.eventButton.UseVisualStyleBackColor = true;
             this.eventButton.Click += new System.EventHandler(this.EventButton_Click);
-            this.eventButton.Enabled = false;
             // 
             // assignmentButton
             // 
-            this.assignmentButton.Location = new System.Drawing.Point(16, 147);
+            this.assignmentButton.Enabled = false;
+            this.assignmentButton.Location = new System.Drawing.Point(32, 165);
             this.assignmentButton.Name = "assignmentButton";
             this.assignmentButton.Size = new System.Drawing.Size(200, 23);
             this.assignmentButton.TabIndex = 7;
             this.assignmentButton.Text = "Assignment";
             this.assignmentButton.UseVisualStyleBackColor = true;
             this.assignmentButton.Click += new System.EventHandler(this.AssignmentButton_Click);
-            this.assignmentButton.Enabled = false;
             // 
             // recruitmentButton
             // 
-            this.recruitmentButton.Location = new System.Drawing.Point(16, 176);
+            this.recruitmentButton.Enabled = false;
+            this.recruitmentButton.Location = new System.Drawing.Point(32, 194);
             this.recruitmentButton.Name = "recruitmentButton";
             this.recruitmentButton.Size = new System.Drawing.Size(200, 23);
             this.recruitmentButton.TabIndex = 8;
             this.recruitmentButton.Text = "Recruitment";
             this.recruitmentButton.UseVisualStyleBackColor = true;
             this.recruitmentButton.Click += new System.EventHandler(this.RecruitmentButton_Click);
-            this.recruitmentButton.Enabled = false;
             // 
             // financialRequestButton
             // 
-            this.financialRequestButton.Location = new System.Drawing.Point(16, 205);
+            this.financialRequestButton.Enabled = false;
+            this.financialRequestButton.Location = new System.Drawing.Point(32, 223);
             this.financialRequestButton.Name = "financialRequestButton";
             this.financialRequestButton.Size = new System.Drawing.Size(200, 23);
             this.financialRequestButton.TabIndex = 9;
             this.financialRequestButton.Text = "Financial requests";
             this.financialRequestButton.UseVisualStyleBackColor = true;
             this.financialRequestButton.Click += new System.EventHandler(this.FinancialRequestButton_Click);
-            this.financialRequestButton.Enabled = false;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(713, 6);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 10;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.financialRequestButton);
             this.Controls.Add(this.recruitmentButton);
             this.Controls.Add(this.assignmentButton);
@@ -154,5 +166,6 @@ namespace PresentationTier
         private System.Windows.Forms.Button assignmentButton;
         private System.Windows.Forms.Button recruitmentButton;
         private System.Windows.Forms.Button financialRequestButton;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
