@@ -202,61 +202,61 @@
             // 
             // eventRecordText
             // 
+            this.eventRecordText.Enabled = false;
             this.eventRecordText.Location = new System.Drawing.Point(185, 17);
             this.eventRecordText.Name = "eventRecordText";
             this.eventRecordText.Size = new System.Drawing.Size(100, 22);
             this.eventRecordText.TabIndex = 15;
-            this.eventRecordText.Enabled = false;
             // 
             // eventClientText
             // 
+            this.eventClientText.Enabled = false;
             this.eventClientText.Location = new System.Drawing.Point(185, 51);
             this.eventClientText.Name = "eventClientText";
             this.eventClientText.Size = new System.Drawing.Size(100, 22);
             this.eventClientText.TabIndex = 16;
-            this.eventClientText.Enabled = false;
             // 
             // eventTypeText
             // 
+            this.eventTypeText.Enabled = false;
             this.eventTypeText.Location = new System.Drawing.Point(185, 84);
             this.eventTypeText.Name = "eventTypeText";
             this.eventTypeText.Size = new System.Drawing.Size(100, 22);
             this.eventTypeText.TabIndex = 17;
-            this.eventTypeText.Enabled = false;
             // 
             // descriptionText
             // 
+            this.descriptionText.Enabled = false;
             this.descriptionText.Location = new System.Drawing.Point(185, 116);
             this.descriptionText.Name = "descriptionText";
             this.descriptionText.Size = new System.Drawing.Size(100, 22);
             this.descriptionText.TabIndex = 18;
-            this.descriptionText.Enabled = false;
             // 
             // fromDatePicker
             // 
+            this.fromDatePicker.Enabled = false;
             this.fromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fromDatePicker.Location = new System.Drawing.Point(83, 157);
             this.fromDatePicker.Name = "fromDatePicker";
             this.fromDatePicker.Size = new System.Drawing.Size(200, 22);
             this.fromDatePicker.TabIndex = 20;
-            this.fromDatePicker.Enabled = false;
             // 
             // toDatePicker
             // 
+            this.toDatePicker.Enabled = false;
             this.toDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.toDatePicker.Location = new System.Drawing.Point(320, 157);
             this.toDatePicker.Name = "toDatePicker";
             this.toDatePicker.Size = new System.Drawing.Size(200, 22);
             this.toDatePicker.TabIndex = 21;
-            this.toDatePicker.Enabled = false;
             // 
             // attendeesText
             // 
+            this.attendeesText.Enabled = false;
             this.attendeesText.Location = new System.Drawing.Point(582, 56);
             this.attendeesText.Name = "attendeesText";
             this.attendeesText.Size = new System.Drawing.Size(100, 22);
             this.attendeesText.TabIndex = 22;
-            this.attendeesText.Enabled = false;
             // 
             // decorationsText
             // 
@@ -309,11 +309,11 @@
             // 
             // budgetText
             // 
+            this.budgetText.Enabled = false;
             this.budgetText.Location = new System.Drawing.Point(582, 89);
             this.budgetText.Name = "budgetText";
             this.budgetText.Size = new System.Drawing.Size(100, 22);
             this.budgetText.TabIndex = 30;
-            this.budgetText.Enabled = false;
             // 
             // addTaskButton
             // 
@@ -332,10 +332,12 @@
             this.eventTasksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventTasksDataGrid.Location = new System.Drawing.Point(24, 462);
             this.eventTasksDataGrid.Name = "eventTasksDataGrid";
+            this.eventTasksDataGrid.ReadOnly = true;
             this.eventTasksDataGrid.RowHeadersWidth = 51;
             this.eventTasksDataGrid.RowTemplate.Height = 24;
             this.eventTasksDataGrid.Size = new System.Drawing.Size(699, 150);
             this.eventTasksDataGrid.TabIndex = 32;
+            this.eventTasksDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EventTasksDataGrid_CellDoubleClick);
             // 
             // statusComboBox
             // 

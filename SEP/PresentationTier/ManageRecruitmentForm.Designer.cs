@@ -40,10 +40,13 @@
             this.recruitmentRequestDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.recruitmentRequestDataGrid.Location = new System.Drawing.Point(0, 0);
             this.recruitmentRequestDataGrid.Name = "recruitmentRequestDataGrid";
+            this.recruitmentRequestDataGrid.ReadOnly = true;
             this.recruitmentRequestDataGrid.RowHeadersWidth = 51;
             this.recruitmentRequestDataGrid.RowTemplate.Height = 24;
             this.recruitmentRequestDataGrid.Size = new System.Drawing.Size(800, 394);
             this.recruitmentRequestDataGrid.TabIndex = 0;
+            this.recruitmentRequestDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.RecruitmentRequestDataGrid_CellFormatting);
+            this.recruitmentRequestDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RecruitmentRequestDataGrid_CellMouseClick);
             // 
             // createRecruitmentRequestButton
             // 

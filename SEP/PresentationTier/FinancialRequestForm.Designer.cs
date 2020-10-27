@@ -44,6 +44,7 @@
             this.financialRequestDataGridView.RowTemplate.Height = 24;
             this.financialRequestDataGridView.Size = new System.Drawing.Size(775, 425);
             this.financialRequestDataGridView.TabIndex = 0;
+            this.financialRequestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FinancialRequestDataGridView_CellFormatting);
             this.financialRequestDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.FinancialRequestDataGridView_CellMouseClick);
             // 
             // FinancialRequestForm

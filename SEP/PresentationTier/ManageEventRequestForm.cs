@@ -8,10 +8,10 @@ namespace PresentationTier
 {
     public partial class ManageEventRequestForm : Form
     {
-        private readonly Form mainForm;
+        private readonly EventRequestForm mainForm;
         private readonly EventRequest eventRequest = null;
 
-        public ManageEventRequestForm(Form mainForm)// create new event request
+        public ManageEventRequestForm(EventRequestForm mainForm)// create new event request
         {
             InitializeComponent();
 
@@ -25,7 +25,7 @@ namespace PresentationTier
             feedbackTextBox.Hide();
         }
 
-        public ManageEventRequestForm(Form mainForm, EventRequest eventRequest) // working with existing request
+        public ManageEventRequestForm(EventRequestForm mainForm, EventRequest eventRequest) // working with existing request
         {
             InitializeComponent();
 
@@ -99,7 +99,7 @@ namespace PresentationTier
 
             if (result)
             {
-                MessageBox.Show("New event request created.", "Success", MessageBoxButtons.OK);
+                MessageBox.Show("Changes made.", "Success", MessageBoxButtons.OK);
                 this.Close();
             }
             else
@@ -111,6 +111,7 @@ namespace PresentationTier
 
         private void CreateEventRequestForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            mainForm.SetEventRequests();
             mainForm.Show();
         }
     }

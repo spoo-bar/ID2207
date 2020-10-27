@@ -27,6 +27,7 @@ namespace PresentationTier
                 case DialogResult.OK:
                     SetLoginInUserLabel();
                     DisableButtonsWithoutPermission();
+                    this.Show();
                     break;
                 case DialogResult.Cancel:
                     this.Close();
@@ -71,6 +72,8 @@ namespace PresentationTier
                 case User.Roles.ProductionManager:
                     eventButton.Enabled = true;
                     assignmentButton.Enabled = true;
+                    recruitmentButton.Enabled = true;
+                    financialRequestButton.Enabled = true;
                     break;
                 case User.Roles.Photographer:
                     assignmentButton.Enabled = true;
@@ -81,6 +84,8 @@ namespace PresentationTier
                 case User.Roles.ServicesDepartmentManager:
                     assignmentButton.Enabled = true;
                     eventButton.Enabled = true;
+                    recruitmentButton.Enabled = true;
+                    financialRequestButton.Enabled = true;
                     break;
                 case User.Roles.TopChef:
                     assignmentButton.Enabled = true;
@@ -150,8 +155,9 @@ namespace PresentationTier
             this.Hide();
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
+        private void LogoutButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ShowLogin();
         }
     }

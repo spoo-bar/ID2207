@@ -46,6 +46,7 @@
             this.requestDataGridView.RowTemplate.Height = 24;
             this.requestDataGridView.Size = new System.Drawing.Size(775, 373);
             this.requestDataGridView.TabIndex = 0;
+            this.requestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.RequestDataGridView_CellFormatting);
             this.requestDataGridView.DoubleClick += new System.EventHandler(this.RequestDataGridView_DoubleClick);
             // 
             // createEventRequestButton

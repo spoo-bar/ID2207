@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace PresentationTier
 {
-    public partial class RecruitmentRequest : Form
+    public partial class RecruitmentRequestForm : Form
     {
         private readonly ManageRecruitmentForm mainForm;
-        public RecruitmentRequest(ManageRecruitmentForm mainForm)
+        public RecruitmentRequestForm(ManageRecruitmentForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
@@ -26,9 +26,9 @@ namespace PresentationTier
             var jobTitle = jobTitleText.Text;
             var jobDescription = jobDescText.Text;
 
-            recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExperience, jobTitle, jobDescription);
+            recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExperience, jobTitle, jobDescription, Session.UserSession.LoggedInUser);
             this.Close();
-            mainForm.RefreshRecruitmentDatagrid();
+            mainForm.SetRecruitmentRequests();
             mainForm.Show();
         }
 

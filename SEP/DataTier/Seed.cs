@@ -6,8 +6,8 @@ namespace DataTier
 {
     public class Seed
     {
-        public static IEnumerable<User> users = Users;
-        private static IEnumerable<User> Users
+        public static List<User> users = Users;
+        private static List<User> Users
         {
             get
             {
@@ -180,7 +180,8 @@ namespace DataTier
                     RequestingDepartment.Production, 
                     3, 
                     "Graphic Designer", 
-                    "");
+                    "",
+                    Users[9]);
                 return new List<RecruitmentRequest>
                 {
                     recruitmentRequest
@@ -197,7 +198,8 @@ namespace DataTier
                     RequestingDepartment.Production,
                     Events[0],
                     123.4,
-                    "Having Picasso painting is not cheap");
+                    "Having Picasso painting is not cheap",
+                    users[9]);
                 return new List<FinancialRequest>
                 {
                     financialRequest

@@ -1,6 +1,6 @@
 ﻿namespace PresentationTier
 {
-    partial class RecruitmentRequest
+    partial class RecruitmentRequestForm
     {
         /// <summary>
         /// Required designer variable.

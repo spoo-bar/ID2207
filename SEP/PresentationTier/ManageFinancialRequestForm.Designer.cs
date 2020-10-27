@@ -124,6 +124,7 @@
             this.ammountTextBox.Name = "ammountTextBox";
             this.ammountTextBox.Size = new System.Drawing.Size(140, 22);
             this.ammountTextBox.TabIndex = 19;
+            this.ammountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmmountTextBox_KeyPress);
             // 
             // ammountLabel
             // 
@@ -161,7 +162,7 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // FinancialRequestForm
+            // ManageFinancialRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +175,7 @@
             this.Controls.Add(this.eventTextBox);
             this.Controls.Add(this.eventLabel);
             this.Controls.Add(this.departmentGroupBox);
-            this.Name = "FinancialRequestForm";
+            this.Name = "ManageFinancialRequestForm";
             this.Text = "FinancialRequestForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FinancialRequestForm_FormClosed);
             this.departmentGroupBox.ResumeLayout(false);

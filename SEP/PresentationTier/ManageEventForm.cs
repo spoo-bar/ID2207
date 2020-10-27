@@ -66,5 +66,12 @@ namespace PresentationTier
         {
             evnt.Status = statusComboBox.Text;
         }
+
+        private void EventTasksDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EventTask selected = (EventTask)eventTasksDataGrid.CurrentRow.DataBoundItem;
+            new ManageAssignmentForm(this, selected).Show();
+            this.Hide();
+        }
     }
 }

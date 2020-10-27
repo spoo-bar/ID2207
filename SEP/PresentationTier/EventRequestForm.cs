@@ -1,6 +1,7 @@
 ﻿using BusinessTier;
 using DataTier;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PresentationTier
@@ -14,10 +15,16 @@ namespace PresentationTier
             InitializeComponent();
             this.mainForm = mainForm;
 
+            SetEventRequests();
+        }
+
+        public void SetEventRequests()
+        {
+            requestDataGridView.DataSource = null;
             EventRequestController eventRequestController = new EventRequestController();
             requestDataGridView.DataSource = eventRequestController.GetEventRequests(Session.UserSession.LoggedInUser.Role);
 
-            if(Session.UserSession.LoggedInUser.Role != User.Roles.CustomerService)
+            if (Session.UserSession.LoggedInUser.Role != User.Roles.CustomerService)
             {
                 createEventRequestButton.Visible = false;
             }
@@ -39,6 +46,21 @@ namespace PresentationTier
         private void EventRequestForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.Show();
+        }
+
+        private void RequestDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                if (Session.UserSession.LoggedInUser.Role != User.Roles.FinancialManager && e.ColumnIndex == requestDataGridView.Columns[6].Index)
+                {
+                    if ((EventRequest.States)e.Value == EventRequest.States.Finalized)
+                    {
+                        requestDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gray;
+                    }
+                }
+            }
+            catch (Exception) { }
         }
     }
 }
