@@ -39,9 +39,11 @@
             // 
             // firstNameTextBox
             // 
+            this.firstNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.firstNameTextBox.Location = new System.Drawing.Point(224, 13);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.firstNameTextBox.Size = new System.Drawing.Size(564, 22);
             this.firstNameTextBox.TabIndex = 0;
             // 
             // firstNameLabel
@@ -64,9 +66,11 @@
             // 
             // lastNameTextBox
             // 
+            this.lastNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lastNameTextBox.Location = new System.Drawing.Point(224, 50);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.lastNameTextBox.Size = new System.Drawing.Size(564, 22);
             this.lastNameTextBox.TabIndex = 2;
             // 
             // phoneNrLabel
@@ -80,16 +84,19 @@
             // 
             // phoneNrTextBox
             // 
+            this.phoneNrTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.phoneNrTextBox.Location = new System.Drawing.Point(224, 87);
             this.phoneNrTextBox.Name = "phoneNrTextBox";
-            this.phoneNrTextBox.Size = new System.Drawing.Size(100, 22);
+            this.phoneNrTextBox.Size = new System.Drawing.Size(564, 22);
             this.phoneNrTextBox.TabIndex = 4;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(16, 128);
+            this.saveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.saveButton.Location = new System.Drawing.Point(0, 427);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(800, 23);
             this.saveButton.TabIndex = 6;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -108,7 +115,7 @@
             this.Controls.Add(this.firstNameLabel);
             this.Controls.Add(this.firstNameTextBox);
             this.Name = "ClientForm";
-            this.Text = "ClientForm";
+            this.Text = "Client information";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

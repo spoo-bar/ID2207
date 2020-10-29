@@ -37,12 +37,13 @@
             this.assignmentDataGridView.AllowUserToAddRows = false;
             this.assignmentDataGridView.AllowUserToDeleteRows = false;
             this.assignmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.assignmentDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.assignmentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.assignmentDataGridView.Location = new System.Drawing.Point(0, 0);
             this.assignmentDataGridView.Name = "assignmentDataGridView";
             this.assignmentDataGridView.ReadOnly = true;
             this.assignmentDataGridView.RowHeadersWidth = 51;
             this.assignmentDataGridView.RowTemplate.Height = 24;
-            this.assignmentDataGridView.Size = new System.Drawing.Size(776, 426);
+            this.assignmentDataGridView.Size = new System.Drawing.Size(800, 450);
             this.assignmentDataGridView.TabIndex = 0;
             this.assignmentDataGridView.DoubleClick += new System.EventHandler(this.AssignmentDataGridView_DoubleClick);
             // 
@@ -53,7 +54,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.assignmentDataGridView);
             this.Name = "AssignmentForm";
-            this.Text = "AssignmentForm";
+            this.Text = "Assignments";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssignmentForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.assignmentDataGridView)).EndInit();
             this.ResumeLayout(false);

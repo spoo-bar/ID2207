@@ -74,6 +74,7 @@ namespace PresentationTier
                     assignmentButton.Enabled = true;
                     recruitmentButton.Enabled = true;
                     financialRequestButton.Enabled = true;
+                    staffButton.Enabled = true;
                     break;
                 case User.Roles.Photographer:
                     assignmentButton.Enabled = true;
@@ -86,6 +87,7 @@ namespace PresentationTier
                     eventButton.Enabled = true;
                     recruitmentButton.Enabled = true;
                     financialRequestButton.Enabled = true;
+                    staffButton.Enabled = true;
                     break;
                 case User.Roles.TopChef:
                     assignmentButton.Enabled = true;
@@ -95,7 +97,6 @@ namespace PresentationTier
                     break;
                 case User.Roles.SeniorHRManager:
                     createClientButton.Enabled = true;
-                    staffButton.Enabled = true;
                     recruitmentButton.Enabled = true;
                     break;
             }
@@ -145,7 +146,7 @@ namespace PresentationTier
 
         private void RecruitmentButton_Click(object sender, EventArgs e)
         {
-            new ManageRecruitmentForm(this).Show();
+            new RecruitmentForm(this).Show();
             this.Hide();
         }
 

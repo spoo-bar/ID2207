@@ -37,12 +37,13 @@
             this.financialRequestDataGridView.AllowUserToAddRows = false;
             this.financialRequestDataGridView.AllowUserToDeleteRows = false;
             this.financialRequestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.financialRequestDataGridView.Location = new System.Drawing.Point(13, 13);
+            this.financialRequestDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.financialRequestDataGridView.Location = new System.Drawing.Point(0, 0);
             this.financialRequestDataGridView.Name = "financialRequestDataGridView";
             this.financialRequestDataGridView.ReadOnly = true;
             this.financialRequestDataGridView.RowHeadersWidth = 51;
             this.financialRequestDataGridView.RowTemplate.Height = 24;
-            this.financialRequestDataGridView.Size = new System.Drawing.Size(775, 425);
+            this.financialRequestDataGridView.Size = new System.Drawing.Size(800, 450);
             this.financialRequestDataGridView.TabIndex = 0;
             this.financialRequestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.FinancialRequestDataGridView_CellFormatting);
             this.financialRequestDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.FinancialRequestDataGridView_CellMouseClick);
@@ -54,7 +55,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.financialRequestDataGridView);
             this.Name = "FinancialRequestForm";
-            this.Text = "FinancialRequestForm";
+            this.Text = "Financial Requests";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FinancialRequestForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.financialRequestDataGridView)).EndInit();
             this.ResumeLayout(false);

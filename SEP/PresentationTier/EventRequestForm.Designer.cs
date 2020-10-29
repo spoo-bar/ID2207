@@ -38,22 +38,24 @@
             this.requestDataGridView.AllowUserToAddRows = false;
             this.requestDataGridView.AllowUserToDeleteRows = false;
             this.requestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.requestDataGridView.Location = new System.Drawing.Point(13, 13);
+            this.requestDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requestDataGridView.Location = new System.Drawing.Point(0, 0);
             this.requestDataGridView.MultiSelect = false;
             this.requestDataGridView.Name = "requestDataGridView";
             this.requestDataGridView.ReadOnly = true;
             this.requestDataGridView.RowHeadersWidth = 51;
             this.requestDataGridView.RowTemplate.Height = 24;
-            this.requestDataGridView.Size = new System.Drawing.Size(775, 373);
+            this.requestDataGridView.Size = new System.Drawing.Size(800, 450);
             this.requestDataGridView.TabIndex = 0;
             this.requestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.RequestDataGridView_CellFormatting);
             this.requestDataGridView.DoubleClick += new System.EventHandler(this.RequestDataGridView_DoubleClick);
             // 
             // createEventRequestButton
             // 
-            this.createEventRequestButton.Location = new System.Drawing.Point(13, 392);
+            this.createEventRequestButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.createEventRequestButton.Location = new System.Drawing.Point(0, 404);
             this.createEventRequestButton.Name = "createEventRequestButton";
-            this.createEventRequestButton.Size = new System.Drawing.Size(775, 46);
+            this.createEventRequestButton.Size = new System.Drawing.Size(800, 46);
             this.createEventRequestButton.TabIndex = 2;
             this.createEventRequestButton.Text = "Create Event Request";
             this.createEventRequestButton.UseVisualStyleBackColor = true;
@@ -67,7 +69,7 @@
             this.Controls.Add(this.createEventRequestButton);
             this.Controls.Add(this.requestDataGridView);
             this.Name = "EventRequestForm";
-            this.Text = "EventRequestForm";
+            this.Text = "Event Requests";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventRequestForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.requestDataGridView)).EndInit();
             this.ResumeLayout(false);

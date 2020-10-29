@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace PresentationTier
 {
-    public partial class ManageRecruitmentForm : Form
+    public partial class RecruitmentForm : Form
     {
         private readonly Form mainForm;
-        public ManageRecruitmentForm(Form mainForm)
+        public RecruitmentForm(Form mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
@@ -25,7 +25,7 @@ namespace PresentationTier
 
         private void CreateRecruitmentRequestButton_Click(object sender, EventArgs e)
         {
-            new RecruitmentRequestForm(this).Show();
+            new ManageRecruitmentRequestForm(this).Show();
             this.Hide();
         }
 

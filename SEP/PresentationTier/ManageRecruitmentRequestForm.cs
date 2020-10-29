@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace PresentationTier
 {
-    public partial class RecruitmentRequestForm : Form
+    public partial class ManageRecruitmentRequestForm : Form
     {
-        private readonly ManageRecruitmentForm mainForm;
-        public RecruitmentRequestForm(ManageRecruitmentForm mainForm)
+        private readonly RecruitmentForm mainForm;
+        public ManageRecruitmentRequestForm(RecruitmentForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;

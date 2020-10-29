@@ -137,10 +137,13 @@
             // 
             // reasonTextBox
             // 
+            this.reasonTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reasonTextBox.Location = new System.Drawing.Point(108, 179);
             this.reasonTextBox.Multiline = true;
             this.reasonTextBox.Name = "reasonTextBox";
-            this.reasonTextBox.Size = new System.Drawing.Size(641, 205);
+            this.reasonTextBox.Size = new System.Drawing.Size(680, 242);
             this.reasonTextBox.TabIndex = 21;
             // 
             // reasonLabel
@@ -154,9 +157,10 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(12, 415);
+            this.saveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.saveButton.Location = new System.Drawing.Point(0, 427);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(800, 23);
             this.saveButton.TabIndex = 22;
             this.saveButton.Text = "save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -176,7 +180,7 @@
             this.Controls.Add(this.eventLabel);
             this.Controls.Add(this.departmentGroupBox);
             this.Name = "ManageFinancialRequestForm";
-            this.Text = "FinancialRequestForm";
+            this.Text = "Financial Request";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FinancialRequestForm_FormClosed);
             this.departmentGroupBox.ResumeLayout(false);
             this.departmentGroupBox.PerformLayout();

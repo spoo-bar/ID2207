@@ -182,9 +182,10 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(12, 415);
+            this.saveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.saveButton.Location = new System.Drawing.Point(0, 427);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(800, 23);
             this.saveButton.TabIndex = 15;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -192,10 +193,13 @@
             // 
             // feedbackTextBox
             // 
+            this.feedbackTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.feedbackTextBox.Location = new System.Drawing.Point(129, 305);
             this.feedbackTextBox.Multiline = true;
             this.feedbackTextBox.Name = "feedbackTextBox";
-            this.feedbackTextBox.Size = new System.Drawing.Size(565, 104);
+            this.feedbackTextBox.Size = new System.Drawing.Size(659, 93);
             this.feedbackTextBox.TabIndex = 33;
             // 
             // feedbackLabel
@@ -209,9 +213,10 @@
             // 
             // declineButton
             // 
-            this.declineButton.Location = new System.Drawing.Point(93, 415);
+            this.declineButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.declineButton.Location = new System.Drawing.Point(0, 404);
             this.declineButton.Name = "declineButton";
-            this.declineButton.Size = new System.Drawing.Size(75, 23);
+            this.declineButton.Size = new System.Drawing.Size(800, 23);
             this.declineButton.TabIndex = 34;
             this.declineButton.Text = "Decline";
             this.declineButton.UseVisualStyleBackColor = true;
@@ -241,7 +246,7 @@
             this.Controls.Add(this.recordNrLabel);
             this.Controls.Add(this.recordNrTextBox);
             this.Name = "ManageEventRequestForm";
-            this.Text = "Request for new event";
+            this.Text = "Event Request";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateEventRequestForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendeesNumericUpDown)).EndInit();

@@ -15,7 +15,7 @@ namespace Tests
         public void GetRecruitmentRequestTest()
         {
             // Arrange
-            var expectedRecruitmentRequest = new RecruitmentRequest(Contractype.PartTime, RequestingDepartment.Production, 3, "Graphic Designer", "");
+            var expectedRecruitmentRequest = new RecruitmentRequest(Contractype.PartTime, RequestingDepartment.Production, 3, "Graphic Designer", "", new User("test", "test", User.Roles.AdministrationDepartmentManager));
 
             // Act
             var recruitmentRequests = recruitmentRequestController.GetRecruitmentRequests();
@@ -40,7 +40,7 @@ namespace Tests
             var jobDescrimination = "";
 
             // Act
-            var requirementRequest = recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination);
+            var requirementRequest = recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination, new User("test", "test", User.Roles.AdministrationDepartmentManager));
 
             // Assert
             Assert.IsNotNull(requirementRequest);
@@ -62,7 +62,7 @@ namespace Tests
             var jobDescrimination = "";
 
             // Act
-            var exception = Assert.ThrowsException<ApplicationException>(() => recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination));
+            var exception = Assert.ThrowsException<ApplicationException>(() => recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination, new User("test", "test", User.Roles.AdministrationDepartmentManager)));
 
             // Assert
             Assert.AreEqual("Years of experience for the job is not specified", exception.Message);
@@ -79,7 +79,7 @@ namespace Tests
             var jobDescrimination = "";
 
             // Act
-            var exception = Assert.ThrowsException<ApplicationException>(() => recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination));
+            var exception = Assert.ThrowsException<ApplicationException>(() => recruitmentRequestController.Create(contractType, requestingDepartment, yearsOfExp, jobTitle, jobDescrimination, new User("test", "test", User.Roles.AdministrationDepartmentManager)));
 
             // Assert
             Assert.AreEqual("Job Title is not specified", exception.Message);

@@ -2,6 +2,7 @@
 using DataTier;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Tests
 {
@@ -29,7 +30,7 @@ namespace Tests
             int oldCount = financialRequestController.GetFinancialRequests().Count;
 
             // Act
-            financialRequestController.AddFinancialRequest(RequestingDepartment.Administration, new Event(), "122", "test");
+            financialRequestController.AddFinancialRequest(RequestingDepartment.Administration, new Event(), "122", "test", new User("test", "test", User.Roles.AdministrationDepartmentManager));
             List<FinancialRequest> financialRequests = financialRequestController.GetFinancialRequests();
 
             // Assert
@@ -40,15 +41,15 @@ namespace Tests
         public void SolveFinancialRequestTest()
         {
             // Arrange
-            financialRequestController.AddFinancialRequest(RequestingDepartment.Administration, new Event(), "122", "test");
-            int oldCount = financialRequestController.GetFinancialRequests().Count;
+            financialRequestController.AddFinancialRequest(RequestingDepartment.Administration, new Event(), "122", "test", new User("test", "test", User.Roles.AdministrationDepartmentManager));
+            int oldCount = financialRequestController.GetFinancialRequests().Where(x => x.Result == true).ToList().Count;
 
             // Act
-            financialRequestController.SolveFinancialRequest(financialRequestController.GetFinancialRequests()[0]);
-            List<FinancialRequest> financialRequests = financialRequestController.GetFinancialRequests();
+            financialRequestController.SolveFinancialRequest(financialRequestController.GetFinancialRequests()[0], "approve");
+            List<FinancialRequest> financialRequests = financialRequestController.GetFinancialRequests().Where(x => x.Result == true).ToList();
 
             // Assert
-            Assert.AreEqual(oldCount - 1, financialRequests.Count);
+            Assert.AreEqual(oldCount + 1, financialRequests.Count);
         }
     }
 }

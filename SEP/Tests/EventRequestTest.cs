@@ -89,7 +89,7 @@ namespace Tests
             EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.ChangeState(eventRequest, User.Roles.SeniorCustomerServiceOfficer, "");
+            eventRequestController.ChangeState(eventRequest, User.Roles.SeniorCustomerServiceOfficer, "", true);
 
             //Assert
             Assert.AreEqual(EventRequest.States.ApprovedBySCSO, eventRequest.State);
@@ -103,7 +103,7 @@ namespace Tests
             EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.ChangeState(eventRequest, User.Roles.FinancialManager, "");
+            eventRequestController.ChangeState(eventRequest, User.Roles.FinancialManager, "", true);
 
             //Assert
             Assert.AreEqual(EventRequest.States.FinancialFeedbackAdded, eventRequest.State);
@@ -117,7 +117,7 @@ namespace Tests
             EventRequest eventRequest = eventRequestController.Create("123abc", new Client("", "", ""), "", DateTime.Now, DateTime.Now, 3, "23.4");
 
             //Act
-            eventRequestController.ChangeState(eventRequest, User.Roles.AdministrationDepartmentManager, "");
+            eventRequestController.ChangeState(eventRequest, User.Roles.AdministrationDepartmentManager, "", true);
 
             //Assert
             Assert.AreEqual(EventRequest.States.Finalized, eventRequest.State);

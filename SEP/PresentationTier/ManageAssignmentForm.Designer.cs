@@ -32,9 +32,9 @@
             this.planTextBox = new System.Windows.Forms.TextBox();
             this.commentLabel = new System.Windows.Forms.Label();
             this.commentDataGridView = new System.Windows.Forms.DataGridView();
-            this.saveButton = new System.Windows.Forms.Button();
             this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.commentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +49,8 @@
             // 
             // planTextBox
             // 
+            this.planTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.planTextBox.Location = new System.Drawing.Point(15, 29);
             this.planTextBox.Multiline = true;
             this.planTextBox.Name = "planTextBox";
@@ -66,6 +68,9 @@
             // 
             // commentDataGridView
             // 
+            this.commentDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.commentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.commentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Comment,
@@ -76,16 +81,6 @@
             this.commentDataGridView.RowTemplate.Height = 24;
             this.commentDataGridView.Size = new System.Drawing.Size(773, 138);
             this.commentDataGridView.TabIndex = 3;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(15, 415);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(773, 23);
-            this.saveButton.TabIndex = 4;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // Comment
             // 
@@ -102,6 +97,17 @@
             this.User.ReadOnly = true;
             this.User.Width = 125;
             // 
+            // saveButton
+            // 
+            this.saveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.saveButton.Location = new System.Drawing.Point(0, 427);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(800, 23);
+            this.saveButton.TabIndex = 4;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // ManageAssignmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -113,7 +119,7 @@
             this.Controls.Add(this.planTextBox);
             this.Controls.Add(this.planLabel);
             this.Name = "ManageAssignmentForm";
-            this.Text = "AssignmentForm";
+            this.Text = "Assignment";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssignmentForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.commentDataGridView)).EndInit();
             this.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿namespace PresentationTier
 {
-    partial class RecruitmentRequestForm
+    partial class ManageRecruitmentRequestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.parttimeRadioButton = new System.Windows.Forms.RadioButton();
             this.fulltimeRadioButton = new System.Windows.Forms.RadioButton();
+            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 263);
+            this.label4.Location = new System.Drawing.Point(35, 242);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 17);
             this.label4.TabIndex = 3;
@@ -87,7 +88,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 317);
+            this.label5.Location = new System.Drawing.Point(35, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             this.administrationRadioButton.AutoSize = true;
             this.administrationRadioButton.Checked = true;
-            this.administrationRadioButton.Location = new System.Drawing.Point(38, 102);
+            this.administrationRadioButton.Location = new System.Drawing.Point(16, 20);
             this.administrationRadioButton.Name = "administrationRadioButton";
             this.administrationRadioButton.Size = new System.Drawing.Size(118, 21);
             this.administrationRadioButton.TabIndex = 7;
@@ -108,7 +109,7 @@
             // productionRadioButton
             // 
             this.productionRadioButton.AutoSize = true;
-            this.productionRadioButton.Location = new System.Drawing.Point(38, 140);
+            this.productionRadioButton.Location = new System.Drawing.Point(16, 58);
             this.productionRadioButton.Name = "productionRadioButton";
             this.productionRadioButton.Size = new System.Drawing.Size(97, 21);
             this.productionRadioButton.TabIndex = 8;
@@ -119,7 +120,7 @@
             // serviceRadioButton
             // 
             this.serviceRadioButton.AutoSize = true;
-            this.serviceRadioButton.Location = new System.Drawing.Point(181, 102);
+            this.serviceRadioButton.Location = new System.Drawing.Point(159, 20);
             this.serviceRadioButton.Name = "serviceRadioButton";
             this.serviceRadioButton.Size = new System.Drawing.Size(83, 21);
             this.serviceRadioButton.TabIndex = 9;
@@ -130,7 +131,7 @@
             // financialRadioButton
             // 
             this.financialRadioButton.AutoSize = true;
-            this.financialRadioButton.Location = new System.Drawing.Point(181, 140);
+            this.financialRadioButton.Location = new System.Drawing.Point(159, 58);
             this.financialRadioButton.Name = "financialRadioButton";
             this.financialRadioButton.Size = new System.Drawing.Size(85, 21);
             this.financialRadioButton.TabIndex = 10;
@@ -148,24 +149,28 @@
             // 
             // jobTitleText
             // 
-            this.jobTitleText.Location = new System.Drawing.Point(209, 260);
+            this.jobTitleText.Location = new System.Drawing.Point(209, 239);
             this.jobTitleText.Name = "jobTitleText";
             this.jobTitleText.Size = new System.Drawing.Size(172, 22);
             this.jobTitleText.TabIndex = 12;
             // 
             // jobDescText
             // 
-            this.jobDescText.Location = new System.Drawing.Point(209, 317);
+            this.jobDescText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.jobDescText.Location = new System.Drawing.Point(209, 277);
             this.jobDescText.Multiline = true;
             this.jobDescText.Name = "jobDescText";
-            this.jobDescText.Size = new System.Drawing.Size(540, 73);
+            this.jobDescText.Size = new System.Drawing.Size(579, 144);
             this.jobDescText.TabIndex = 14;
             // 
             // createRecruitmentButton
             // 
-            this.createRecruitmentButton.Location = new System.Drawing.Point(38, 415);
+            this.createRecruitmentButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.createRecruitmentButton.Location = new System.Drawing.Point(0, 427);
             this.createRecruitmentButton.Name = "createRecruitmentButton";
-            this.createRecruitmentButton.Size = new System.Drawing.Size(75, 23);
+            this.createRecruitmentButton.Size = new System.Drawing.Size(800, 23);
             this.createRecruitmentButton.TabIndex = 15;
             this.createRecruitmentButton.Text = "Create";
             this.createRecruitmentButton.UseVisualStyleBackColor = true;
@@ -173,7 +178,11 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 88);
+            this.panel2.Controls.Add(this.administrationRadioButton);
+            this.panel2.Controls.Add(this.productionRadioButton);
+            this.panel2.Controls.Add(this.serviceRadioButton);
+            this.panel2.Controls.Add(this.financialRadioButton);
+            this.panel2.Location = new System.Drawing.Point(64, 88);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 106);
             this.panel2.TabIndex = 17;
@@ -212,7 +221,7 @@
             this.fulltimeRadioButton.Text = "Full time";
             this.fulltimeRadioButton.UseVisualStyleBackColor = true;
             // 
-            // RecruitmentRequest
+            // ManageRecruitmentRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,18 +231,16 @@
             this.Controls.Add(this.jobDescText);
             this.Controls.Add(this.jobTitleText);
             this.Controls.Add(this.yearsOfExpText);
-            this.Controls.Add(this.financialRadioButton);
-            this.Controls.Add(this.serviceRadioButton);
-            this.Controls.Add(this.productionRadioButton);
-            this.Controls.Add(this.administrationRadioButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
-            this.Name = "RecruitmentRequest";
-            this.Text = "RecruitmentRequest";
+            this.Name = "ManageRecruitmentRequestForm";
+            this.Text = "Recruitment Request";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

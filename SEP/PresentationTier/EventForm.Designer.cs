@@ -37,12 +37,13 @@
             this.eventFormGridView.AllowUserToAddRows = false;
             this.eventFormGridView.AllowUserToDeleteRows = false;
             this.eventFormGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eventFormGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventFormGridView.Location = new System.Drawing.Point(0, 0);
             this.eventFormGridView.Name = "eventFormGridView";
             this.eventFormGridView.ReadOnly = true;
             this.eventFormGridView.RowHeadersWidth = 51;
             this.eventFormGridView.RowTemplate.Height = 24;
-            this.eventFormGridView.Size = new System.Drawing.Size(788, 438);
+            this.eventFormGridView.Size = new System.Drawing.Size(800, 450);
             this.eventFormGridView.TabIndex = 0;
             this.eventFormGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EventFormGridView_CellMouseClick);
             this.eventFormGridView.DoubleClick += new System.EventHandler(this.EventDataGridView_DoubleClick);
@@ -54,7 +55,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.eventFormGridView);
             this.Name = "EventForm";
-            this.Text = "EventForm";
+            this.Text = "Events";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.eventFormGridView)).EndInit();
             this.ResumeLayout(false);

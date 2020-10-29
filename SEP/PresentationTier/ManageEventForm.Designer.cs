@@ -103,8 +103,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(446, 56);
+            this.label4.Location = new System.Drawing.Point(469, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 4;
@@ -112,8 +113,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(446, 89);
+            this.label5.Location = new System.Drawing.Point(469, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 17);
             this.label5.TabIndex = 5;
@@ -148,8 +150,9 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(359, 197);
+            this.label9.Location = new System.Drawing.Point(382, 197);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 17);
             this.label9.TabIndex = 9;
@@ -166,8 +169,9 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(359, 254);
+            this.label11.Location = new System.Drawing.Point(382, 254);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 17);
             this.label11.TabIndex = 11;
@@ -184,8 +188,9 @@
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(359, 309);
+            this.label13.Location = new System.Drawing.Point(382, 309);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(166, 17);
             this.label13.TabIndex = 13;
@@ -252,8 +257,9 @@
             // 
             // attendeesText
             // 
+            this.attendeesText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.attendeesText.Enabled = false;
-            this.attendeesText.Location = new System.Drawing.Point(582, 56);
+            this.attendeesText.Location = new System.Drawing.Point(605, 56);
             this.attendeesText.Name = "attendeesText";
             this.attendeesText.Size = new System.Drawing.Size(100, 22);
             this.attendeesText.TabIndex = 22;
@@ -267,14 +273,16 @@
             // 
             // foodText
             // 
-            this.foodText.Location = new System.Drawing.Point(531, 194);
+            this.foodText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.foodText.Location = new System.Drawing.Point(554, 194);
             this.foodText.Name = "foodText";
             this.foodText.Size = new System.Drawing.Size(192, 22);
             this.foodText.TabIndex = 24;
             // 
             // musicText
             // 
-            this.musicText.Location = new System.Drawing.Point(531, 251);
+            this.musicText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.musicText.Location = new System.Drawing.Point(554, 251);
             this.musicText.Name = "musicText";
             this.musicText.Size = new System.Drawing.Size(192, 22);
             this.musicText.TabIndex = 26;
@@ -288,7 +296,8 @@
             // 
             // computerText
             // 
-            this.computerText.Location = new System.Drawing.Point(531, 304);
+            this.computerText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.computerText.Location = new System.Drawing.Point(554, 304);
             this.computerText.Name = "computerText";
             this.computerText.Size = new System.Drawing.Size(192, 22);
             this.computerText.TabIndex = 28;
@@ -302,22 +311,28 @@
             // 
             // otherText
             // 
+            this.otherText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.otherText.Location = new System.Drawing.Point(142, 358);
+            this.otherText.Multiline = true;
             this.otherText.Name = "otherText";
-            this.otherText.Size = new System.Drawing.Size(581, 22);
+            this.otherText.Size = new System.Drawing.Size(604, 79);
             this.otherText.TabIndex = 29;
             // 
             // budgetText
             // 
+            this.budgetText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.budgetText.Enabled = false;
-            this.budgetText.Location = new System.Drawing.Point(582, 89);
+            this.budgetText.Location = new System.Drawing.Point(605, 89);
             this.budgetText.Name = "budgetText";
             this.budgetText.Size = new System.Drawing.Size(100, 22);
             this.budgetText.TabIndex = 30;
             // 
             // addTaskButton
             // 
-            this.addTaskButton.Location = new System.Drawing.Point(24, 415);
+            this.addTaskButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addTaskButton.Location = new System.Drawing.Point(12, 441);
             this.addTaskButton.Name = "addTaskButton";
             this.addTaskButton.Size = new System.Drawing.Size(75, 23);
             this.addTaskButton.TabIndex = 31;
@@ -330,23 +345,25 @@
             this.eventTasksDataGrid.AllowUserToAddRows = false;
             this.eventTasksDataGrid.AllowUserToDeleteRows = false;
             this.eventTasksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventTasksDataGrid.Location = new System.Drawing.Point(24, 462);
+            this.eventTasksDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.eventTasksDataGrid.Location = new System.Drawing.Point(0, 470);
             this.eventTasksDataGrid.Name = "eventTasksDataGrid";
             this.eventTasksDataGrid.ReadOnly = true;
             this.eventTasksDataGrid.RowHeadersWidth = 51;
             this.eventTasksDataGrid.RowTemplate.Height = 24;
-            this.eventTasksDataGrid.Size = new System.Drawing.Size(699, 150);
+            this.eventTasksDataGrid.Size = new System.Drawing.Size(782, 150);
             this.eventTasksDataGrid.TabIndex = 32;
             this.eventTasksDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EventTasksDataGrid_CellDoubleClick);
             // 
             // statusComboBox
             // 
+            this.statusComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.statusComboBox.FormattingEnabled = true;
             this.statusComboBox.Items.AddRange(new object[] {
             "open",
             "in progress",
             "finalized"});
-            this.statusComboBox.Location = new System.Drawing.Point(572, 17);
+            this.statusComboBox.Location = new System.Drawing.Point(595, 17);
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(121, 24);
             this.statusComboBox.TabIndex = 33;
@@ -354,8 +371,9 @@
             // 
             // statusLabel
             // 
+            this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(446, 20);
+            this.statusLabel.Location = new System.Drawing.Point(469, 20);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(48, 17);
             this.statusLabel.TabIndex = 34;
@@ -365,7 +383,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 591);
+            this.ClientSize = new System.Drawing.Size(782, 620);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.statusComboBox);
             this.Controls.Add(this.eventTasksDataGrid);
@@ -401,7 +419,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.eventRecordLabel);
             this.Name = "ManageEventForm";
-            this.Text = "ManageEventForm";
+            this.Text = "Event";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageEventForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.eventTasksDataGrid)).EndInit();
             this.ResumeLayout(false);

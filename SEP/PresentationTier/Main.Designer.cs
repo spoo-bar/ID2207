@@ -43,16 +43,18 @@ namespace PresentationTier
             // 
             // loggedinUserLabel
             // 
+            this.loggedinUserLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loggedinUserLabel.AutoSize = true;
             this.loggedinUserLabel.Location = new System.Drawing.Point(524, 9);
             this.loggedinUserLabel.Name = "loggedinUserLabel";
-            this.loggedinUserLabel.Size = new System.Drawing.Size(175, 17);
+            this.loggedinUserLabel.Size = new System.Drawing.Size(127, 17);
             this.loggedinUserLabel.TabIndex = 0;
+            this.loggedinUserLabel.Text = "loggedinUserLabel";
             // 
             // eventRequestButton
             // 
             this.eventRequestButton.Enabled = false;
-            this.eventRequestButton.Location = new System.Drawing.Point(32, 34);
+            this.eventRequestButton.Location = new System.Drawing.Point(12, 12);
             this.eventRequestButton.Name = "eventRequestButton";
             this.eventRequestButton.Size = new System.Drawing.Size(200, 23);
             this.eventRequestButton.TabIndex = 6;
@@ -63,7 +65,7 @@ namespace PresentationTier
             // createClientButton
             // 
             this.createClientButton.Enabled = false;
-            this.createClientButton.Location = new System.Drawing.Point(32, 68);
+            this.createClientButton.Location = new System.Drawing.Point(12, 41);
             this.createClientButton.Name = "createClientButton";
             this.createClientButton.Size = new System.Drawing.Size(200, 23);
             this.createClientButton.TabIndex = 6;
@@ -74,7 +76,7 @@ namespace PresentationTier
             // staffButton
             // 
             this.staffButton.Enabled = false;
-            this.staffButton.Location = new System.Drawing.Point(32, 102);
+            this.staffButton.Location = new System.Drawing.Point(12, 70);
             this.staffButton.Name = "staffButton";
             this.staffButton.Size = new System.Drawing.Size(200, 23);
             this.staffButton.TabIndex = 6;
@@ -85,7 +87,7 @@ namespace PresentationTier
             // eventButton
             // 
             this.eventButton.Enabled = false;
-            this.eventButton.Location = new System.Drawing.Point(32, 136);
+            this.eventButton.Location = new System.Drawing.Point(12, 99);
             this.eventButton.Name = "eventButton";
             this.eventButton.Size = new System.Drawing.Size(200, 23);
             this.eventButton.TabIndex = 6;
@@ -96,7 +98,7 @@ namespace PresentationTier
             // assignmentButton
             // 
             this.assignmentButton.Enabled = false;
-            this.assignmentButton.Location = new System.Drawing.Point(32, 165);
+            this.assignmentButton.Location = new System.Drawing.Point(12, 128);
             this.assignmentButton.Name = "assignmentButton";
             this.assignmentButton.Size = new System.Drawing.Size(200, 23);
             this.assignmentButton.TabIndex = 7;
@@ -107,7 +109,7 @@ namespace PresentationTier
             // recruitmentButton
             // 
             this.recruitmentButton.Enabled = false;
-            this.recruitmentButton.Location = new System.Drawing.Point(32, 194);
+            this.recruitmentButton.Location = new System.Drawing.Point(12, 157);
             this.recruitmentButton.Name = "recruitmentButton";
             this.recruitmentButton.Size = new System.Drawing.Size(200, 23);
             this.recruitmentButton.TabIndex = 8;
@@ -118,7 +120,7 @@ namespace PresentationTier
             // financialRequestButton
             // 
             this.financialRequestButton.Enabled = false;
-            this.financialRequestButton.Location = new System.Drawing.Point(32, 223);
+            this.financialRequestButton.Location = new System.Drawing.Point(12, 186);
             this.financialRequestButton.Name = "financialRequestButton";
             this.financialRequestButton.Size = new System.Drawing.Size(200, 23);
             this.financialRequestButton.TabIndex = 9;
@@ -128,6 +130,7 @@ namespace PresentationTier
             // 
             // logoutButton
             // 
+            this.logoutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logoutButton.Location = new System.Drawing.Point(713, 6);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(75, 23);
