@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventTaskForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.descriptionText = new System.Windows.Forms.TextBox();
@@ -95,6 +96,7 @@
             this.Controls.Add(this.descriptionText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EventTaskForm";
             this.Text = "Event Task";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventTaskForm_FormClosed);

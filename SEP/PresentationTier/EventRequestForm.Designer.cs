@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventRequestForm));
             this.requestDataGridView = new System.Windows.Forms.DataGridView();
             this.createEventRequestButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.requestDataGridView)).BeginInit();
@@ -45,7 +46,7 @@
             this.requestDataGridView.ReadOnly = true;
             this.requestDataGridView.RowHeadersWidth = 51;
             this.requestDataGridView.RowTemplate.Height = 24;
-            this.requestDataGridView.Size = new System.Drawing.Size(800, 450);
+            this.requestDataGridView.Size = new System.Drawing.Size(986, 450);
             this.requestDataGridView.TabIndex = 0;
             this.requestDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.RequestDataGridView_CellFormatting);
             this.requestDataGridView.DoubleClick += new System.EventHandler(this.RequestDataGridView_DoubleClick);
@@ -55,7 +56,7 @@
             this.createEventRequestButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.createEventRequestButton.Location = new System.Drawing.Point(0, 404);
             this.createEventRequestButton.Name = "createEventRequestButton";
-            this.createEventRequestButton.Size = new System.Drawing.Size(800, 46);
+            this.createEventRequestButton.Size = new System.Drawing.Size(986, 46);
             this.createEventRequestButton.TabIndex = 2;
             this.createEventRequestButton.Text = "Create Event Request";
             this.createEventRequestButton.UseVisualStyleBackColor = true;
@@ -65,9 +66,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(986, 450);
             this.Controls.Add(this.createEventRequestButton);
             this.Controls.Add(this.requestDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EventRequestForm";
             this.Text = "Event Requests";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventRequestForm_FormClosed);

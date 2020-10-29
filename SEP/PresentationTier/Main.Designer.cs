@@ -30,6 +30,7 @@ namespace PresentationTier
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.loggedinUserLabel = new System.Windows.Forms.Label();
             this.eventRequestButton = new System.Windows.Forms.Button();
             this.createClientButton = new System.Windows.Forms.Button();
@@ -153,6 +154,7 @@ namespace PresentationTier
             this.Controls.Add(this.createClientButton);
             this.Controls.Add(this.staffButton);
             this.Controls.Add(this.eventButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Main";
             this.ResumeLayout(false);

@@ -49,7 +49,6 @@ namespace PresentationTier
             toDateTimePicker.Enabled = false;
             attendeesNumericUpDown.Enabled = false;
             BudgetTextBox.Enabled = false;
-            declineButton.Hide();
             #endregion
 
             if (eventRequest.State == EventRequest.States.Finalized || eventRequest.State == EventRequest.States.Declined)

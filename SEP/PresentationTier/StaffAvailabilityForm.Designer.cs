@@ -30,6 +30,7 @@ namespace PresentationTier
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffAvailabilityForm));
             this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.toDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fromLabel = new System.Windows.Forms.Label();
@@ -113,6 +114,7 @@ namespace PresentationTier
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.staffDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StaffAvailabilityForm";
             this.Text = "Staff Availability";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StaffAvailabilityForm_FormClosed);

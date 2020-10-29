@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageAssignmentForm));
             this.planLabel = new System.Windows.Forms.Label();
             this.planTextBox = new System.Windows.Forms.TextBox();
             this.commentLabel = new System.Windows.Forms.Label();
@@ -118,6 +119,7 @@
             this.Controls.Add(this.commentLabel);
             this.Controls.Add(this.planTextBox);
             this.Controls.Add(this.planLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageAssignmentForm";
             this.Text = "Assignment";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssignmentForm_FormClosed);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEventRequestForm));
             this.recordNrTextBox = new System.Windows.Forms.TextBox();
             this.recordNrLabel = new System.Windows.Forms.Label();
             this.attendeesLabel = new System.Windows.Forms.Label();
@@ -134,7 +135,6 @@
             this.fromDateTimePicker.Name = "fromDateTimePicker";
             this.fromDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.fromDateTimePicker.TabIndex = 9;
-            this.fromDateTimePicker.Value = new System.DateTime(2020, 10, 11, 0, 0, 0, 0);
             // 
             // fromLabel
             // 
@@ -161,7 +161,6 @@
             this.toDateTimePicker.Name = "toDateTimePicker";
             this.toDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.toDateTimePicker.TabIndex = 11;
-            this.toDateTimePicker.Value = new System.DateTime(2020, 10, 11, 0, 0, 0, 0);
             // 
             // budgetLabel
             // 
@@ -220,6 +219,7 @@
             this.declineButton.TabIndex = 34;
             this.declineButton.Text = "Decline";
             this.declineButton.UseVisualStyleBackColor = true;
+            this.declineButton.Visible = false;
             this.declineButton.Click += new System.EventHandler(this.DeclineButton_Click);
             // 
             // ManageEventRequestForm
@@ -245,6 +245,7 @@
             this.Controls.Add(this.attendeesLabel);
             this.Controls.Add(this.recordNrLabel);
             this.Controls.Add(this.recordNrTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageEventRequestForm";
             this.Text = "Event Request";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateEventRequestForm_FormClosed);

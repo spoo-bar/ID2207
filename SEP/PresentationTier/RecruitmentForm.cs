@@ -73,7 +73,7 @@ namespace PresentationTier
         {
             try
             {
-                if (Session.UserSession.LoggedInUser.Role != User.Roles.FinancialManager && e.ColumnIndex == recruitmentRequestDataGrid.Columns[6].Index)
+                if (Session.UserSession.LoggedInUser.Role != User.Roles.SeniorHRManager && e.ColumnIndex == recruitmentRequestDataGrid.Columns[6].Index)
                 {
                     if (e.Value is true)
                     {

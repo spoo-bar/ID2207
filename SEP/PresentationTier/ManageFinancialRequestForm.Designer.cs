@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageFinancialRequestForm));
             this.financialRadioButton = new System.Windows.Forms.RadioButton();
             this.serviceRadioButton = new System.Windows.Forms.RadioButton();
             this.productionRadioButton = new System.Windows.Forms.RadioButton();
@@ -179,6 +180,7 @@
             this.Controls.Add(this.eventTextBox);
             this.Controls.Add(this.eventLabel);
             this.Controls.Add(this.departmentGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageFinancialRequestForm";
             this.Text = "Financial Request";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FinancialRequestForm_FormClosed);
