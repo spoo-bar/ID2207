@@ -42,7 +42,8 @@ namespace DataTier
             Created,
             ApprovedBySCSO,
             FinancialFeedbackAdded,
-            Finalized
+            Finalized,
+            Declined
         }
     }
 }

@@ -58,6 +58,10 @@ namespace PresentationTier
                     {
                         requestDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gray;
                     }
+                    else if ((EventRequest.States)e.Value == EventRequest.States.Declined)
+                    {
+                        requestDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    }
                 }
             }
             catch (Exception) { }

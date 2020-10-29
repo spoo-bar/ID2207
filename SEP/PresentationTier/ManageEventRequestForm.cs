@@ -49,9 +49,10 @@ namespace PresentationTier
             toDateTimePicker.Enabled = false;
             attendeesNumericUpDown.Enabled = false;
             BudgetTextBox.Enabled = false;
+            declineButton.Hide();
             #endregion
 
-            if (eventRequest.State == EventRequest.States.Finalized)
+            if (eventRequest.State == EventRequest.States.Finalized || eventRequest.State == EventRequest.States.Declined)
             {
                 feedbackTextBox.Enabled = false;
                 saveButton.Hide();
@@ -60,6 +61,7 @@ namespace PresentationTier
             {//if cannot edit can only approve
                 feedbackTextBox.Enabled = false;
                 saveButton.Text = "Approve";
+                declineButton.Show();
             }
         }
 
@@ -94,7 +96,7 @@ namespace PresentationTier
             }
             else
             {
-                result = eventRequestController.ChangeState(eventRequest, Session.UserSession.LoggedInUser.Role, feedbackTextBox.Text);
+                result = eventRequestController.ChangeState(eventRequest, Session.UserSession.LoggedInUser.Role, feedbackTextBox.Text, true);
             }
 
             if (result)
@@ -113,6 +115,23 @@ namespace PresentationTier
         {
             mainForm.SetEventRequests();
             mainForm.Show();
+        }
+
+        private void DeclineButton_Click(object sender, EventArgs e)
+        {
+            EventRequestController eventRequestController = new EventRequestController();
+            bool result = eventRequestController.ChangeState(eventRequest, Session.UserSession.LoggedInUser.Role, "", false);
+
+            if (result)
+            {
+                MessageBox.Show("Request denied successfully.", "Success", MessageBoxButtons.OK);
+                this.Close();
+            }
+            else
+            {
+                //failed to do the operation
+                declineButton.BackColor = Color.Red;
+            }
         }
     }
 }

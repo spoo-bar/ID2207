@@ -47,6 +47,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.feedbackTextBox = new System.Windows.Forms.TextBox();
             this.feedbackLabel = new System.Windows.Forms.Label();
+            this.declineButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendeesNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -206,11 +207,22 @@
             this.feedbackLabel.TabIndex = 32;
             this.feedbackLabel.Text = "Budget feedback:";
             // 
-            // CreateEventRequestForm
+            // declineButton
+            // 
+            this.declineButton.Location = new System.Drawing.Point(93, 415);
+            this.declineButton.Name = "declineButton";
+            this.declineButton.Size = new System.Drawing.Size(75, 23);
+            this.declineButton.TabIndex = 34;
+            this.declineButton.Text = "Decline";
+            this.declineButton.UseVisualStyleBackColor = true;
+            this.declineButton.Click += new System.EventHandler(this.DeclineButton_Click);
+            // 
+            // ManageEventRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.declineButton);
             this.Controls.Add(this.feedbackTextBox);
             this.Controls.Add(this.feedbackLabel);
             this.Controls.Add(this.saveButton);
@@ -228,7 +240,7 @@
             this.Controls.Add(this.attendeesLabel);
             this.Controls.Add(this.recordNrLabel);
             this.Controls.Add(this.recordNrTextBox);
-            this.Name = "CreateEventRequestForm";
+            this.Name = "ManageEventRequestForm";
             this.Text = "Request for new event";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateEventRequestForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
@@ -258,6 +270,7 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TextBox feedbackTextBox;
         private System.Windows.Forms.Label feedbackLabel;
+        private System.Windows.Forms.Button declineButton;
     }
 }
 
